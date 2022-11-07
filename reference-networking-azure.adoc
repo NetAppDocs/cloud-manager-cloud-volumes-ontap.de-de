@@ -1,0 +1,473 @@
+---
+sidebar: sidebar 
+permalink: reference-networking-azure.html 
+keywords: networking, network, requirements, connection, connections, vnet, security group, security groups, subnet, vpn, internet, proxy, HTTP, private, proxy server, routing, firewall, autosupport, connection, jump host, outbound, ports, blob, service endpoint 
+summary: Richten Sie Ihr Azure Netzwerk ein, um Cloud Volumes ONTAP Systeme ordnungsgemäß funktionieren zu können. Dazu gehört auch die Vernetzung von Connector und Cloud Volumes ONTAP. 
+---
+= Netzwerkanforderungen für Cloud Volumes ONTAP in Azure
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Richten Sie Ihr Azure Netzwerk ein, um Cloud Volumes ONTAP Systeme ordnungsgemäß funktionieren zu können. Dazu gehört auch die Vernetzung von Connector und Cloud Volumes ONTAP.
+
+
+
+== Anforderungen für Cloud Volumes ONTAP
+
+Die folgenden Netzwerkanforderungen müssen in Azure erfüllt werden.
+
+
+
+=== Outbound-Internetzugang
+
+Cloud Volumes ONTAP Nodes benötigen Outbound-Internetzugang für NetApp AutoSupport, der den Zustand Ihres Systems proaktiv überwacht und Meldungen an den technischen Support von NetApp sendet.
+
+Routing- und Firewall-Richtlinien müssen HTTP-/HTTPS-Datenverkehr an die folgenden Endpunkte ermöglichen, damit Cloud Volumes ONTAP AutoSupport-Meldungen senden kann:
+
+* \https://support.netapp.com/aods/asupmessage
+* \https://support.netapp.com/asupprod/post/1.0/postAsup
+
+
+Wenn keine ausgehende Internetverbindung zum Senden von AutoSupport-Nachrichten verfügbar ist, konfiguriert BlueXP Ihre Cloud Volumes ONTAP-Systeme automatisch so, dass der Connector als Proxy-Server verwendet wird. Die einzige Anforderung besteht darin, sicherzustellen, dass die Sicherheitsgruppe des Connectors _eingehende_ -Verbindungen über Port 3128 zulässt. Nach der Bereitstellung des Connectors müssen Sie diesen Port öffnen.
+
+Wenn Sie strenge ausgehende Regeln für Cloud Volumes ONTAP definiert haben, müssen Sie auch sicherstellen, dass die Cloud Volumes ONTAP-Sicherheitsgruppe _Outbound_-Verbindungen über Port 3128 zulässt.
+
+Nachdem Sie bestätigt haben, dass der ausgehende Internetzugang verfügbar ist, können Sie AutoSupport testen, um sicherzustellen, dass er Nachrichten senden kann. Anweisungen finden Sie unter https://docs.netapp.com/us-en/ontap/system-admin/setup-autosupport-task.html["ONTAP Dokumentation: Einrichten von AutoSupport"^].
+
+Wenn Sie von BlueXP darüber informiert werden, dass AutoSupport-Meldungen nicht gesendet werden können, link:task-verify-autosupport.html#troubleshoot-your-autosupport-configuration["Fehler bei der AutoSupport Konfiguration beheben"].
+
+
+
+=== IP-Adressen
+
+BlueXP weist Cloud Volumes ONTAP in Azure die folgende Anzahl von IP-Adressen zu:
+
+* Single Node: 5 IP-Adressen
+* HA-Paar: 16 IP-Adressen
+
+
+Beachten Sie, dass BlueXP in Azure eine SVM Management-LIF auf HA-Paaren erstellt, nicht jedoch auf Systemen mit einzelnen Nodes.
+
+
+TIP: Ein LIF ist eine IP-Adresse, die einem physischen Port zugewiesen ist. Für Managementtools wie SnapCenter ist eine SVM-Management-LIF erforderlich.
+
+
+
+=== Sichere Verbindung zu Azure Services
+
+Standardmäßig aktiviert BlueXP einen Azure Private Link für Verbindungen zwischen Cloud Volumes ONTAP- und Azure-Speicherkonten.
+
+In den meisten Fällen müssen Sie nichts tun – ​BlueXP managt den Azure Private Link für Sie. Aber wenn Sie Azure Private DNS verwenden, dann müssen Sie eine Konfigurationsdatei bearbeiten. Sie sollten auch eine Anforderung für den Connector-Standort in Azure kennen.
+
+Sie können die Private Link-Verbindung auch deaktivieren, wenn dies von Ihren geschäftlichen Anforderungen erforderlich ist. Wenn Sie den Link deaktivieren, konfiguriert BlueXP stattdessen Cloud Volumes ONTAP für die Verwendung eines Service-Endpunkts.
+
+link:task-enabling-private-link.html["Weitere Informationen zur Verwendung von Azure Private Links oder Service-Endpunkten mit Cloud Volumes ONTAP"].
+
+
+
+=== Verbindungen zu anderen ONTAP Systemen
+
+Um Daten zwischen einem Cloud Volumes ONTAP System in Azure und ONTAP Systemen in anderen Netzwerken zu replizieren, benötigen Sie eine VPN-Verbindung zwischen dem Azure vnet und dem anderen Netzwerk, beispielsweise Ihrem Unternehmensnetzwerk.
+
+Anweisungen finden Sie unter https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal["Microsoft Azure Dokumentation: Erstellen Sie eine Site-to-Site-Verbindung im Azure-Portal"^].
+
+
+
+=== Port für den HA Interconnect
+
+Ein Cloud Volumes ONTAP HA-Paar enthält einen HA Interconnect, der jedem Knoten erlaubt, kontinuierlich zu überprüfen, ob sein Partner funktioniert und um Protokolldaten für den anderen nichtflüchtigen Speicher zu spiegeln. Das HA Interconnect verwendet TCP Port 10006 für die Kommunikation.
+
+Standardmäßig ist die Kommunikation zwischen den HA Interconnect LIFs offen, und es gibt keine Sicherheitsgruppenregeln für diesen Port. Wenn Sie jedoch eine Firewall zwischen den HA Interconnect LIFs erstellen, müssen Sie sicherstellen, dass TCP Traffic für Port 10006 offen ist, damit das HA-Paar ordnungsgemäß arbeiten kann.
+
+
+
+=== Nur ein HA-Paar in einer Azure-Ressourcengruppe
+
+Sie müssen für jedes Cloud Volumes ONTAP HA-Paar, das Sie in Azure implementieren, eine _dedizierte_ Ressourcengruppe verwenden. Es wird nur ein HA-Paar in einer Ressourcengruppe unterstützt.
+
+Bei BlueXP treten Verbindungsprobleme auf, wenn Sie versuchen, ein zweites Cloud Volumes ONTAP HA-Paar in einer Azure Ressourcengruppe bereitzustellen.
+
+
+
+=== Sicherheitsgruppen
+
+Sie müssen keine Sicherheitsgruppen erstellen, weil BlueXP das für Sie tut. Wenn Sie Ihre eigene Verwendung benötigen, lesen Sie die unten aufgeführten Sicherheitsgruppenregeln.
+
+
+
+=== Regeln für Sicherheitsgruppen
+
+BlueXP erstellt Azure-Sicherheitsgruppen mit den ein- und ausgehenden Regeln, die für den erfolgreichen Betrieb von Cloud Volumes ONTAP erforderlich sind. Sie können die Ports zu Testzwecken oder zur Verwendung eigener Sicherheitsgruppen verwenden.
+
+Die Sicherheitsgruppe für Cloud Volumes ONTAP erfordert sowohl eingehende als auch ausgehende Regeln.
+
+
+
+==== Eingehende Regeln für Single-Node-Systeme
+
+Wenn Sie eine Arbeitsumgebung erstellen und eine vordefinierte Sicherheitsgruppe auswählen, können Sie den Datenverkehr innerhalb einer der folgenden Optionen zulassen:
+
+* *Nur vnet ausgewählt*: Die Quelle für eingehenden Datenverkehr ist der Subnetz-Bereich des vnet für das Cloud Volumes ONTAP-System und der Subnetz-Bereich des vnet, in dem sich der Connector befindet. Dies ist die empfohlene Option.
+* *Alle VNets*: Die Quelle für eingehenden Datenverkehr ist der IP-Bereich 0.0.0.0/0.
+
+
+[cols="4*"]
+|===
+| Priorität und Name | Port und Protokoll | Quelle und Ziel | Beschreibung 
+
+
+| 1000 Inbound_SSH | 22 TCP | Beliebige Art | SSH-Zugriff auf die IP-Adresse der Cluster Management LIF oder einer Node Management LIF 
+
+
+| 1001 Inbound_http | 80 TCP | Beliebige Art | HTTP-Zugriff auf die System Manager Webkonsole mit der IP-Adresse der Cluster-Management-LIF 
+
+
+| 1002 Inbound_111_tcp | 111 TCP | Beliebige Art | Remote-Prozeduraufruf für NFS 
+
+
+| 1003 Inbound_111_udp | 111 UDP | Beliebige Art | Remote-Prozeduraufruf für NFS 
+
+
+| 1004 eingehend_139 | 139 TCP | Beliebige Art | NetBIOS-Servicesitzung für CIFS 
+
+
+| 1005 Inbound_161-162 _tcp | 161-162 TCP | Beliebige Art | Einfaches Netzwerkverwaltungsprotokoll 
+
+
+| 1006 Inbound_161-162 _udp | 161-162 UDP | Beliebige Art | Einfaches Netzwerkverwaltungsprotokoll 
+
+
+| 1007 eingehend_443 | 443 TCP | Beliebige Art | Konnektivität mit dem Connector und HTTPS-Zugriff auf die System Manager Webkonsole unter Verwendung der IP-Adresse der Cluster-Management-LIF 
+
+
+| 1008 eingehend_445 | 445 TCP | Beliebige Art | Microsoft SMB/CIFS über TCP mit NETBIOS-Framing 
+
+
+| 1009 Inbound_635_tcp | 635 TCP | Beliebige Art | NFS-Mount 
+
+
+| 1010 Inbound_635_udp | 635 UDP | Beliebige Art | NFS-Mount 
+
+
+| 1011 eingehend_749 | 749 TCP | Beliebige Art | Kerberos 
+
+
+| 1012 Inbound_2049_tcp | 2049 TCP | Beliebige Art | NFS-Server-Daemon 
+
+
+| 1013 Inbound_2049_udp | 2049 UDP | Beliebige Art | NFS-Server-Daemon 
+
+
+| 1014 eingehend_3260 | 3260 TCP | Beliebige Art | ISCSI-Zugriff über die iSCSI-Daten-LIF 
+
+
+| 1015 Inbound_4045-4046_tcp | 4045-4046 TCP | Beliebige Art | NFS Lock Daemon und Network Status Monitor 
+
+
+| 1016 Inbound_4045-4046_udp | 4045-4046 UDP | Beliebige Art | NFS Lock Daemon und Network Status Monitor 
+
+
+| 1017 eingehend_10000 | 10000 TCP | Beliebige Art | Backup mit NDMP 
+
+
+| 1018 eingehend_11104-11105 | 11104-11105 TCP | Beliebige Art | SnapMirror Datenübertragung 
+
+
+| 3000 Inbound_Deny_all_tcp | Alle TCP-Ports | Beliebige Art | Blockieren Sie den gesamten anderen TCP-eingehenden Datenverkehr 
+
+
+| 3001 Inbound_Deny_all_udp | Alle Ports UDP | Beliebige Art | Alle anderen UDP-eingehenden Datenverkehr blockieren 
+
+
+| 65000 AllowVnetInBound | Alle Ports und Protokolle | VirtualNetwork zu VirtualNetwork | Eingehender Verkehr aus dem vnet 
+
+
+| 65001 AllowAzureLoad BalancerInBound | Alle Ports und Protokolle | AzureLoadBalancer zu jedem | Datenverkehr vom Azure Standard Load Balancer 
+
+
+| 65500 DenyAllInBound | Alle Ports und Protokolle | Beliebige Art | Alle anderen eingehenden Datenverkehr blockieren 
+|===
+
+
+==== Eingehende Regeln für HA-Systeme
+
+Wenn Sie eine Arbeitsumgebung erstellen und eine vordefinierte Sicherheitsgruppe auswählen, können Sie den Datenverkehr innerhalb einer der folgenden Optionen zulassen:
+
+* *Nur vnet ausgewählt*: Die Quelle für eingehenden Datenverkehr ist der Subnetz-Bereich des vnet für das Cloud Volumes ONTAP-System und der Subnetz-Bereich des vnet, in dem sich der Connector befindet. Dies ist die empfohlene Option.
+* *Alle VNets*: Die Quelle für eingehenden Datenverkehr ist der IP-Bereich 0.0.0.0/0.
+
+
+
+NOTE: HA-Systeme weisen weniger eingehende Regeln als Systeme mit einzelnen Nodes auf, da eingehender Datenverkehr durch den Azure Standard Load Balancer geleitet wird. Aus diesem Grund sollte der Verkehr aus dem Load Balancer geöffnet sein, wie in der Regel "AllowAzureLoadBalancerInBound" gezeigt.
+
+[cols="4*"]
+|===
+| Priorität und Name | Port und Protokoll | Quelle und Ziel | Beschreibung 
+
+
+| 100 eingehend_443 | 443 beliebiges Protokoll | Beliebige Art | Konnektivität mit dem Connector und HTTPS-Zugriff auf die System Manager Webkonsole unter Verwendung der IP-Adresse der Cluster-Management-LIF 
+
+
+| 101 Inbound_111_tcp | 111 beliebiges Protokoll | Beliebige Art | Remote-Prozeduraufruf für NFS 
+
+
+| 102 Inbound_2049_tcp | 2049 beliebiges Protokoll | Beliebige Art | NFS-Server-Daemon 
+
+
+| 111 Inbound_SSH | 22 beliebiges Protokoll | Beliebige Art | SSH-Zugriff auf die IP-Adresse der Cluster Management LIF oder einer Node Management LIF 
+
+
+| 121 eingehend_53 | 53 beliebiges Protokoll | Beliebige Art | DNS und CIFS 
+
+
+| 65000 AllowVnetInBound | Alle Ports und Protokolle | VirtualNetwork zu VirtualNetwork | Eingehender Verkehr aus dem vnet 
+
+
+| 65001 AllowAzureLoad BalancerInBound | Alle Ports und Protokolle | AzureLoadBalancer zu jedem | Datenverkehr vom Azure Standard Load Balancer 
+
+
+| 65500 DenyAllInBound | Alle Ports und Protokolle | Beliebige Art | Alle anderen eingehenden Datenverkehr blockieren 
+|===
+
+
+==== Regeln für ausgehende Anrufe
+
+Die vordefinierte Sicherheitsgruppe für Cloud Volumes ONTAP öffnet den gesamten ausgehenden Datenverkehr. Wenn dies akzeptabel ist, befolgen Sie die grundlegenden Regeln für ausgehende Anrufe. Wenn Sie strengere Regeln benötigen, verwenden Sie die erweiterten Outbound-Regeln.
+
+
+
+===== Grundlegende Regeln für ausgehende Anrufe
+
+Die vordefinierte Sicherheitsgruppe für Cloud Volumes ONTAP enthält die folgenden ausgehenden Regeln.
+
+[cols="3*"]
+|===
+| Port | Protokoll | Zweck 
+
+
+| Alle | Alle TCP | Gesamter abgehender Datenverkehr 
+
+
+| Alle | Alle UDP-Protokolle | Gesamter abgehender Datenverkehr 
+|===
+
+
+===== Erweiterte Outbound-Regeln
+
+Wenn Sie strenge Regeln für ausgehenden Datenverkehr benötigen, können Sie mit den folgenden Informationen nur die Ports öffnen, die für die ausgehende Kommunikation durch Cloud Volumes ONTAP erforderlich sind.
+
+
+NOTE: Die Quelle ist die Schnittstelle (IP-Adresse) auf dem Cloud Volumes ONTAP System.
+
+[cols="10,10,6,20,20,34"]
+|===
+| Service | Port | Protokoll | Quelle | Ziel | Zweck 
+
+
+.18+| Active Directory | 88 | TCP | Node Management-LIF | Active Directory-Gesamtstruktur | Kerberos V-Authentifizierung 
+
+
+| 137 | UDP | Node Management-LIF | Active Directory-Gesamtstruktur | NetBIOS-Namensdienst 
+
+
+| 138 | UDP | Node Management-LIF | Active Directory-Gesamtstruktur | Netbios Datagramm-Dienst 
+
+
+| 139 | TCP | Node Management-LIF | Active Directory-Gesamtstruktur | Sitzung für den NETBIOS-Dienst 
+
+
+| 389 | TCP UND UDP | Node Management-LIF | Active Directory-Gesamtstruktur | LDAP 
+
+
+| 445 | TCP | Node Management-LIF | Active Directory-Gesamtstruktur | Microsoft SMB/CIFS über TCP mit NETBIOS-Framing 
+
+
+| 464 | TCP | Node Management-LIF | Active Directory-Gesamtstruktur | Kerberos V Passwort ändern und festlegen (SET_CHANGE) 
+
+
+| 464 | UDP | Node Management-LIF | Active Directory-Gesamtstruktur | Kerberos-Schlüsselverwaltung 
+
+
+| 749 | TCP | Node Management-LIF | Active Directory-Gesamtstruktur | Kerberos V - Kennwort ändern und festlegen (RPCSEC_GSS) 
+
+
+| 88 | TCP | Daten-LIF (NFS, CIFS, iSCSI) | Active Directory-Gesamtstruktur | Kerberos V-Authentifizierung 
+
+
+| 137 | UDP | Data LIF (NFS, CIFS) | Active Directory-Gesamtstruktur | NetBIOS-Namensdienst 
+
+
+| 138 | UDP | Data LIF (NFS, CIFS) | Active Directory-Gesamtstruktur | Netbios Datagramm-Dienst 
+
+
+| 139 | TCP | Data LIF (NFS, CIFS) | Active Directory-Gesamtstruktur | Sitzung für den NETBIOS-Dienst 
+
+
+| 389 | TCP UND UDP | Data LIF (NFS, CIFS) | Active Directory-Gesamtstruktur | LDAP 
+
+
+| 445 | TCP | Data LIF (NFS, CIFS) | Active Directory-Gesamtstruktur | Microsoft SMB/CIFS über TCP mit NETBIOS-Framing 
+
+
+| 464 | TCP | Data LIF (NFS, CIFS) | Active Directory-Gesamtstruktur | Kerberos V Passwort ändern und festlegen (SET_CHANGE) 
+
+
+| 464 | UDP | Data LIF (NFS, CIFS) | Active Directory-Gesamtstruktur | Kerberos-Schlüsselverwaltung 
+
+
+| 749 | TCP | Data LIF (NFS, CIFS) | Active Directory-Gesamtstruktur | Kerberos V - Passwort ändern und festlegen (RPCSEC_GSS) 
+
+
+.3+| AutoSupport | HTTPS | 443 | Node Management-LIF | support.netapp.com | AutoSupport (HTTPS ist der Standard) 
+
+
+| HTTP | 80 | Node Management-LIF | support.netapp.com | AutoSupport (nur wenn das Transportprotokoll von HTTPS zu HTTP geändert wird) 
+
+
+| TCP | 3128 | Node Management-LIF | Stecker | Senden von AutoSupport-Nachrichten über einen Proxy-Server auf dem Connector, falls keine ausgehende Internetverbindung verfügbar ist 
+
+
+| DHCP | 68 | UDP | Node Management-LIF | DHCP | DHCP-Client für die erstmalige Einrichtung 
+
+
+| DHCPS | 67 | UDP | Node Management-LIF | DHCP | DHCP-Server 
+
+
+| DNS | 53 | UDP | Node Management LIF und Daten LIF (NFS, CIFS) | DNS | DNS 
+
+
+| NDMP | 18600-18699 | TCP | Node Management-LIF | Zielserver | NDMP-Kopie 
+
+
+| SMTP | 25 | TCP | Node Management-LIF | Mailserver | SMTP-Warnungen können für AutoSupport verwendet werden 
+
+
+.4+| SNMP | 161 | TCP | Node Management-LIF | Server überwachen | Überwachung durch SNMP-Traps 
+
+
+| 161 | UDP | Node Management-LIF | Server überwachen | Überwachung durch SNMP-Traps 
+
+
+| 162 | TCP | Node Management-LIF | Server überwachen | Überwachung durch SNMP-Traps 
+
+
+| 162 | UDP | Node Management-LIF | Server überwachen | Überwachung durch SNMP-Traps 
+
+
+.2+| SnapMirror | 11104 | TCP | Intercluster-LIF | ONTAP Intercluster-LIFs | Management von interclusterübergreifenden Kommunikationssitzungen für SnapMirror 
+
+
+| 11105 | TCP | Intercluster-LIF | ONTAP Intercluster-LIFs | SnapMirror Datenübertragung 
+
+
+| Syslog | 514 | UDP | Node Management-LIF | Syslog-Server | Syslog-Weiterleitungsmeldungen 
+|===
+
+
+== Anforderungen an den Steckverbinder
+
+Richten Sie Ihr Netzwerk ein, damit der Connector Ressourcen und Prozesse in Ihrer Public Cloud-Umgebung managen kann. Der wichtigste Schritt besteht darin, ausgehenden Internetzugriff auf verschiedene Endpunkte zu gewährleisten.
+
+
+TIP: Wenn Ihr Netzwerk für die gesamte Kommunikation mit dem Internet einen Proxyserver verwendet, können Sie den Proxyserver über die Seite Einstellungen angeben. Siehe link:task_configuring_proxy.html["Konfigurieren des Connectors für die Verwendung eines Proxy-Servers"].
+
+
+
+=== Verbindungen zu Zielnetzwerken
+
+Für einen Connector ist eine Netzwerkverbindung zu den VPCs und VNets erforderlich, in denen Cloud Volumes ONTAP bereitgestellt werden soll.
+
+Wenn Sie beispielsweise einen Connector in Ihrem Unternehmensnetzwerk installieren, müssen Sie eine VPN-Verbindung zur VPC oder vnet einrichten, in der Sie Cloud Volumes ONTAP starten.
+
+
+
+=== Outbound-Internetzugang
+
+Für den Connector ist ein abgehender Internetzugang erforderlich, um Ressourcen und Prozesse in Ihrer Public Cloud-Umgebung zu managen.
+
+[cols="2*"]
+|===
+| Endpunkte | Zweck 
+
+
+| \https://support.netapp.com | Um Lizenzinformationen zu erhalten und AutoSupport Meldungen an den NetApp Support zu senden. 
+
+
+| \https://*.cloudmanager.cloud.netapp.com \https://cloudmanager.cloud.netapp.com | Um SaaS-Funktionen und -Services in BlueXP zur Verfügung zu stellen. 
+
+
+| \https://cloudmanagerinfraprod.azurecr.io \https://*.blob.core.windows.net | Aktualisierung des Connectors und seiner Docker Komponenten. 
+|===
+
+
+=== Regeln für Sicherheitsgruppen
+
+Die Sicherheitsgruppe für den Konnektor erfordert sowohl ein- als auch ausgehende Regeln.
+
+
+
+==== Regeln für eingehende Anrufe
+
+[cols="3*"]
+|===
+| Port | Protokoll | Zweck 
+
+
+| 22 | SSH | Bietet SSH-Zugriff auf den Connector-Host 
+
+
+| 80 | HTTP | Bietet HTTP-Zugriff von Client-Webbrowsern auf die lokale Benutzeroberfläche 
+
+
+| 443 | HTTPS | Bietet HTTPS-Zugriff von Client-Webbrowsern auf die lokale Benutzeroberfläche 
+
+
+| TCP | 3128 | Ermöglicht Cloud Volumes ONTAP den Zugang zum Internet, um AutoSupport-Nachrichten an den NetApp Support zu senden. Sie müssen diesen Port nach der Bereitstellung des Connectors manuell öffnen. 
+|===
+
+
+==== Regeln für ausgehende Anrufe
+
+Die vordefinierte Sicherheitsgruppe für den Konnektor öffnet den gesamten ausgehenden Datenverkehr. Wenn dies akzeptabel ist, befolgen Sie die grundlegenden Regeln für ausgehende Anrufe. Wenn Sie strengere Regeln benötigen, verwenden Sie die erweiterten Outbound-Regeln.
+
+
+
+===== Grundlegende Regeln für ausgehende Anrufe
+
+Die vordefinierte Sicherheitsgruppe für den Connector enthält die folgenden ausgehenden Regeln.
+
+[cols="3*"]
+|===
+| Port | Protokoll | Zweck 
+
+
+| Alle | Alle TCP | Gesamter abgehender Datenverkehr 
+
+
+| Alle | Alle UDP-Protokolle | Gesamter abgehender Datenverkehr 
+|===
+
+
+===== Erweiterte Outbound-Regeln
+
+Wenn Sie starre Regeln für ausgehenden Datenverkehr benötigen, können Sie die folgenden Informationen verwenden, um nur die Ports zu öffnen, die für die ausgehende Kommunikation durch den Konnektor erforderlich sind.
+
+
+NOTE: Die Quell-IP-Adresse ist der Connector-Host.
+
+[cols="5*"]
+|===
+| Service | Port | Protokoll | Ziel | Zweck 
+
+
+| API-Aufrufe und AutoSupport | 443 | HTTPS | Outbound-Internet und ONTAP Cluster Management LIF | API-Aufrufe an Azure und ONTAP, Cloud Data Sense, zum Ransomware-Service und Senden von AutoSupport-Nachrichten an NetApp 
+
+
+| DNS | 53 | UDP | DNS | Wird für DNS Resolve von BlueXP verwendet 
+|===

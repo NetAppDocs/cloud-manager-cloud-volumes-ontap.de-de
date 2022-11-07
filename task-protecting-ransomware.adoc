@@ -1,0 +1,48 @@
+---
+sidebar: sidebar 
+permalink: task-protecting-ransomware.html 
+keywords: snapshot policy, ransomware, protection, fpolicy, block, extension, attacks 
+summary: Ransomware-Angriffe können das Unternehmen Zeit, Ressourcen und Image-Schäden kosten. BlueXP ermöglicht Ihnen die Implementierung der NetApp Lösung für Ransomware, die mit effektiven Tools für Transparenz, Erkennung und Problembehebung ausgestattet ist. 
+---
+= Besserer Schutz gegen Ransomware
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Ransomware-Angriffe können das Unternehmen Zeit, Ressourcen und Image-Schäden kosten. BlueXP ermöglicht Ihnen die Implementierung der NetApp Lösung für Ransomware, die mit effektiven Tools für Transparenz, Erkennung und Problembehebung ausgestattet ist.
+
+.Schritte
+. Klicken Sie in der Arbeitsumgebung auf das Symbol *Ransomware*.
++
+image:screenshot_ransomware_icon.gif["Ein Screenshot, der das Ransomware-Symbol zeigt, das in der oberen rechten Seite der Seite verfügbar ist, wenn Sie eine Arbeitsumgebung betrachten."]
+
+. Implementierung der NetApp Lösung für Ransomware:
++
+.. Klicken Sie auf *Snapshot-Richtlinie aktivieren*, wenn Volumes ohne Snapshot-Richtlinie aktiviert sind.
++
+Die NetApp Snapshot-Technologie bietet die branchenweit beste Lösung zur Behebung von Ransomware. Der Schlüssel zu einer erfolgreichen Recovery liegt im Restore aus einem nicht infizierten Backup. Snapshot Kopien sind schreibgeschützt, der Ransomware-Beschädigungen verhindert. Sie können außerdem die Granularität nutzen, um Images einer einzelnen Dateikopie oder einer kompletten Disaster-Recovery-Lösung zu erstellen.
+
+.. Klicken Sie auf *FPolicy* aktivieren, um die FPolicy Lösung von ONTAP zu aktivieren, die Dateivorgänge auf Basis der Dateierweiterung blockieren kann.
++
+Diese präventive Lösung verbessert den Schutz vor Ransomware-Angriffen, indem sie gängige Ransomware-Dateitypen blockiert.
+
++
+Die standardmäßige FPolicy Scope blockiert Dateien, die die folgenden Erweiterungen haben:
+
++
+Micro, verschlüsselt, gesperrt, Crypto, Crypt, Crinf, r5a, XRNT, XTBL, R16M01D05, Pzdc, gut, LOL!, OMG!, RDM, RK, verschlüsseltedRS, Crjoker, entschlüsselt, LeChiffre
+
++
+
+TIP: BlueXP erstellt diesen Bereich, wenn Sie FPolicy auf Cloud Volumes ONTAP aktivieren. Die Liste basiert auf gängigen Ransomware-Dateitypen. Sie können die blockierten Dateierweiterungen mithilfe der Befehle _vserver fpolicy Scope_ von der Cloud Volumes ONTAP CLI anpassen.
+
+
+
+
+
+image:screenshot_ransomware_protection.gif["Ein Screenshot, der die Ransomware-Schutz-Seite zeigt, die aus einer Arbeitsumgebung verfügbar ist. Der Bildschirm zeigt die Anzahl der Volumes ohne Snapshot-Richtlinie und die Fähigkeit, Ransomware-Dateierweiterungen zu blockieren."]

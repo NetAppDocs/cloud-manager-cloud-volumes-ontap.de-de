@@ -1,0 +1,38 @@
+---
+sidebar: sidebar 
+permalink: task-registering.html 
+keywords: Cloud Volumes ONTAP, register, registering, paygo, pay-as-you-go, registration, instance id, serial number, account id, support 
+summary: Der Support von NetApp ist bei Cloud Volumes ONTAP PAYGO Systemen enthalten. Sie müssen jedoch zuerst den Support aktivieren, indem Sie die Systeme bei NetApp registrieren. 
+---
+= Registrieren von Pay-as-you-go-Systemen
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der Support von NetApp ist bei Cloud Volumes ONTAP PAYGO Systemen enthalten. Sie müssen jedoch zuerst den Support aktivieren, indem Sie die Systeme bei NetApp registrieren.
+
+Die Registrierung eines PAYGO-Systems bei NetApp ist für ein Upgrade der ONTAP Software anhand einer der Methoden erforderlich link:task-updating-ontap-cloud.html["Auf dieser Seite beschrieben"].
+
+
+TIP: Ein System, das nicht für den Support registriert ist, erhält weiterhin die Benachrichtigungen zum Softwareupdate, die in BlueXP angezeigt werden, wenn eine neue Version verfügbar ist. Sie müssen das System aber registrieren, bevor Sie die Software aktualisieren können.
+
+.Schritte
+. Wenn Sie noch kein NetApp Support Site Konto bei BlueXP hinzugefügt haben, gehen Sie zu *Account Settings* und fügen Sie es jetzt hinzu.
++
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html["Erfahren Sie, wie Sie Konten der NetApp Support Site hinzufügen"^].
+
+. Wählen Sie im linken Navigationsmenü die Option *Speicherung > Leinwand*
+. Doppelklicken Sie auf der Seite Arbeitsfläche auf den Namen des Systems, das Sie registrieren möchten.
+. Klicken Sie auf das Menü-Symbol und dann auf *Support-Registrierung*:
++
+image:screenshot_menu_registration.gif["Screenshot: Zeigt die im Menüsymbol für ein Cloud Volumes ONTAP System ausgewählte Support-Registrierungsoption an."]
+
+. Wählen Sie ein NetApp Support Site Konto aus und klicken Sie auf *Registrieren*.
+
+
+BlueXP registriert das System bei NetApp.

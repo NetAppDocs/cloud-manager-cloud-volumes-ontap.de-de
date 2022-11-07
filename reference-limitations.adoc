@@ -1,0 +1,43 @@
+---
+sidebar: sidebar 
+permalink: reference-limitations.html 
+keywords: limitations, flexgroup, ontap s3, s3 configuration, svm dr, svm disaster recovery, disaster recovery, storage vm dr 
+summary: Bekannte Einschränkungen identifizieren Plattformen, Geräte oder Funktionen, die von dieser Version des Produkts nicht unterstützt werden oder nicht korrekt mit dem Produkt zusammenarbeiten. Lesen Sie diese Einschränkungen sorgfältig durch. 
+---
+= Bekannte Einschränkungen
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Bekannte Einschränkungen identifizieren Plattformen, Geräte oder Funktionen, die von dieser Version des Produkts nicht unterstützt werden oder nicht korrekt mit dem Produkt zusammenarbeiten. Lesen Sie diese Einschränkungen sorgfältig durch.
+
+Diese Einschränkungen gelten insbesondere für das Cloud Volumes ONTAP Management in BlueXP (ehemals Cloud Manager). Um Einschränkungen an der Cloud Volumes ONTAP Software selbst anzuzeigen, https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limitations.html["Wechseln Sie zu den Versionshinweisen zu Cloud Volumes ONTAP"^]
+
+
+
+== BlueXP unterstützt keine FlexGroup Volumes
+
+Cloud Volumes ONTAP unterstützt zwar FlexGroup-Volumes, aber BlueXP nicht. Wenn Sie ein FlexGroup-Volume aus dem System Manager oder aus der CLI erstellen, sollten Sie den Kapazitätsmanagement-Modus von BlueXP auf manuell einstellen. Der automatische Modus funktioniert möglicherweise nicht ordnungsgemäß mit FlexGroup-Volumes.
+
+
+
+== BlueXP unterstützt S3 nicht mit Cloud Volumes ONTAP
+
+Während Cloud Volumes ONTAP bei einigen Cloud-Providern S3 als Option für horizontal skalierbaren Storage unterstützt, bietet BlueXP für diese Funktion keine Managementfunktionen. Als Best Practice empfiehlt sich die Konfiguration des S3-Client-Zugriffs über Cloud Volumes ONTAP mithilfe der CLI. Weitere Informationen finden Sie im http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-s3-cg/home.html["S3 Configuration Power Guide"^].
+
+link:concept-client-protocols.html["Weitere Informationen zur Cloud Volumes ONTAP-Unterstützung für S3 und andere Client-Protokolle"].
+
+
+
+== BlueXP unterstützt keine Disaster Recovery für Storage VMs
+
+BlueXP bietet keine Unterstützung für die Einrichtung oder Orchestrierung von Storage VM Disaster Recovery. Sie müssen System Manager oder die CLI verwenden.
+
+* https://library.netapp.com/ecm/ecm_get_file/ECMLP2839856["Express Guide zur Vorbereitung des SVM-Disaster Recovery"^]
+* https://library.netapp.com/ecm/ecm_get_file/ECMLP2839857["SVM Disaster Recovery Express Guide"^]
+

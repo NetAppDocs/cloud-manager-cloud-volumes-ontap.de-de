@@ -1,0 +1,83 @@
+---
+sidebar: sidebar 
+permalink: task-managing-state.html 
+keywords: schedule, schedules, scheduling, shutdowns, shut down, restart, stop, stopping, turn off, weekday, weekend 
+summary: Sie können Cloud Volumes ONTAP von BlueXP stoppen und starten, um Ihre Cloud-Computing-Kosten zu managen. 
+---
+= Managen des Status von Cloud Volumes ONTAP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie können Cloud Volumes ONTAP von BlueXP stoppen und starten, um Ihre Cloud-Computing-Kosten zu managen.
+
+
+
+== Planen automatischer Abschaltungen von Cloud Volumes ONTAP
+
+Sie sollten Cloud Volumes ONTAP in bestimmten Zeitintervallen herunterfahren, um Ihre Computing-Kosten zu senken. Statt dies manuell zu tun, können Sie BlueXP so konfigurieren, dass es automatisch heruntergefahren wird und die Systeme zu bestimmten Zeiten neu gestartet werden.
+
+.Über diese Aufgabe
+* Wenn Sie ein automatisches Herunterfahren des Cloud Volumes ONTAP-Systems planen, verschiebt BlueXP das Herunterfahren, wenn eine aktive Datenübertragung ausgeführt wird.
++
+BlueXP schaltet das System nach Abschluss der Übertragung aus.
+
+* Diese Aufgabe plant das automatische Herunterfahren beider Nodes in einem HA-Paar.
+* Snapshots von Boot- und Root-Festplatten werden nicht erstellt, wenn Cloud Volumes ONTAP durch geplante Herunterfahren ausgeschaltet wird.
++
+Snapshots werden automatisch nur beim manuellen Herunterfahren erstellt, wie im nächsten Abschnitt beschrieben.
+
+
+
+.Schritte
+. Klicken Sie in der Arbeitsumgebung auf das Uhrsymbol:
++
+image:screenshot_shutdown_icon.gif["Screenshot: Zeigt das Symbol, mit dem die Seite zum automatischen Herunterfahren geladen wird."]
+
+. Geben Sie den Zeitplan für das Herunterfahren an:
++
+.. Wählen Sie aus, ob Sie das System täglich, jeden Werktag, jedes Wochenende oder eine beliebige Kombination der drei Optionen herunterfahren möchten.
+.. Geben Sie an, wann und wie lange das System ausgeschaltet werden soll.
++
+*Beispiel*
+
++
+Das folgende Bild zeigt einen Zeitplan, der BlueXP dazu auffordert, das System jeden Samstag um 12:00 Uhr herunterzufahren Für 48 Stunden. BlueXP startet das System jeden Montag um 12:00 Uhr neu
+
++
+image:screenshot_shutdown.gif["Screenshot: Zeigt einen Zeitplan zum Herunterfahren, der Cloud Volumes ONTAP jedes Wochenende um 12:00 Uhr für 48 Stunden herunterfährt."]
+
+
+
+. Klicken Sie Auf *Speichern*.
+
+
+BlueXP speichert den Zeitplan. Das Uhrensymbol ändert sich, um anzuzeigen, dass ein Zeitplan festgelegt wurde: image:screenshot_shutdown_icon_scheduled.gif["Screenshot: Zeigt das Symbol für das automatische Herunterfahren an, nachdem ein Zeitplan definiert wurde."]
+
+
+
+== Beenden von Cloud Volumes ONTAP
+
+Stoppen von Cloud Volumes ONTAP erspart Ihnen das Ansteigen von Computing-Kosten und erstellt Snapshots der Root- und Boot-Festplatten, was bei der Fehlerbehebung hilfreich sein kann.
+
+
+NOTE: Zur Senkung der Kosten löscht BlueXP in regelmäßigen Abständen ältere Snapshots von Root- und Boot-Festplatten. Nur die beiden letzten Snapshots werden sowohl für die Root- als auch für Boot Disks beibehalten.
+
+Wenn Sie ein HA-Paar anhalten, werden beide Nodes von BlueXP heruntergefahren.
+
+.Schritte
+. Klicken Sie in der Arbeitsumgebung auf das Symbol *Ausschalten*.
++
+image:screenshot_otc_turn_off.gif["Screenshot: Zeigt das Symbol zum Ausschalten eines Cloud Volumes ONTAP Systems."]
+
+. Behalten Sie die Option zum Erstellen von Snapshots aktiviert bei, da die Snapshots die System-Recovery ermöglichen können.
+. Klicken Sie Auf *Ausschalten*.
++
+Es kann bis zu einigen Minuten dauern, bis das System gestoppt wird. Sie können Systeme zu einem späteren Zeitpunkt von der Seite "Arbeitsumgebung" aus neu starten.
+
+

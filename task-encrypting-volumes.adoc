@@ -1,0 +1,76 @@
+---
+sidebar: sidebar 
+permalink: task-encrypting-volumes.html 
+keywords: encrypt, encryption, data, volumes, netapp volume encryption, volume encryption, nve, key managers, kmip, key management servers, license, ssl certificates, nae, netapp aggregate encryption 
+summary: 'Cloud Volumes ONTAP unterstützt sowohl NetApp Volume Encryption (NVE) als auch NetApp Aggregate Encryption (NAE) mit einem externen Schlüsselmanager. NVE und NAE sind standardmäßig aktiviert, wenn Sie einen externen Schlüsselmanager einrichten.' 
+---
+= Verschlüsseln von Volumes mit NetApp Verschlüsselungslösungen
+:toc: macro
+:hardbreaks:
+:allow-uri-read: 
+:toc: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Cloud Volumes ONTAP unterstützt NetApp Volume Encryption (NVE) und NetApp Aggregate Encryption (NAE). NVE und NAE sind softwarebasierte Lösungen, die die Verschlüsselung von Daten im Ruhezustand nach FIPS 140 ermöglichen. link:concept-security.html["Weitere Informationen zu diesen Verschlüsselungslösungen"].
+
+Sowohl NVE als auch NAE werden von einem externen Schlüsselmanager unterstützt.
+
+ifdef::azure[]
+
+endif::azure[]
+
+ifdef::gcp[]
+
+endif::gcp[]
+
+Neue Aggregate haben standardmäßig NAE aktiviert, nachdem Sie einen externen Schlüsselmanager eingerichtet haben. Für neue Volumes, die nicht Teil eines NAE-Aggregats sind, ist NVE standardmäßig aktiviert (bei vorhandenen Aggregaten, die vor dem Einrichten eines externen Schlüsselmanagers erstellt wurden).
+
+Cloud Volumes ONTAP unterstützt kein Onboard-Verschlüsselungsmanagement.
+
+Ihr Cloud Volumes ONTAP System sollte beim NetApp Support registriert sein. Auf jedem Cloud Volumes ONTAP System, das beim NetApp Support registriert ist, wird automatisch eine Lizenz für NetApp Volume Encryption installiert.
+
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html["Hinzufügen von Konten für die NetApp Support Site zu BlueXP"^]
+* link:task-registering.html["Registrieren von Pay-as-you-go-Systemen"]
+
+
+
+NOTE: BlueXP installiert die NVE-Lizenz nicht auf Systemen, die sich in der Region China befinden.
+
+.Schritte
+. Überprüfen Sie die Liste der unterstützten Schlüsselmanager im http://mysupport.netapp.com/matrix["NetApp Interoperabilitäts-Matrix-Tool"^].
++
+
+TIP: Suchen Sie nach der *Key Manager*-Lösung.
+
+. link:task-connecting-to-otc.html["Stellen Sie eine Verbindung zur Cloud Volumes ONTAP-CLI her"^].
+. Externes Verschlüsselungsmanagement konfigurieren.
++
+ifdef::aws[]
+
++
+** AWS, https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-external-key-management-overview-concept.html["Die entsprechenden Anweisungen finden Sie in der ONTAP-Dokumentation"^]
+
+
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+* Azure: link:task-azure-key-vault.html["Azure Key Vault (AKV)"]
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+* Google Cloud: link:task-google-key-manager.html["Google Cloud Key Management Service"]
+
+
+endif::gcp[]

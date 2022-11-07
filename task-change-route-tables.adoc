@@ -1,0 +1,25 @@
+---
+sidebar: sidebar 
+permalink: task-change-route-tables.html 
+keywords: route tables, update route tables, modify route tables, change route table 
+summary: Sie können die AWS-Routingtabellen ändern, die Routen zu den unverankerten IP-Adressen für ein HA-Paar einschließen, das in mehreren AWS Availability Zones bereitgestellt wird. Vielleicht möchten Sie dies tun, wenn neue NFS- oder CIFS-Clients auf ein HA-Paar in AWS zugreifen müssen. 
+---
+= Ändern Sie Routingtabellen für HA-Paare in mehreren AZS
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie können die AWS-Routingtabellen ändern, die Routen zu den unverankerten IP-Adressen für ein HA-Paar einschließen, das in mehreren AWS Availability Zones (AZS) implementiert wird. Vielleicht möchten Sie dies tun, wenn neue NFS- oder CIFS-Clients auf ein HA-Paar in AWS zugreifen müssen.
+
+.Schritte
+. Klicken Sie in der Arbeitsumgebung auf das Menü-Symbol und dann auf *Information*.
+. Klicken Sie Auf *Routentabellen*.
+. Ändern Sie die Liste der ausgewählten Routentabellen und klicken Sie dann auf *Speichern*.
+
+
+BlueXP sendet eine AWS-Anforderung, um die Routingtabellen zu ändern.

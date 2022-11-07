@@ -1,0 +1,153 @@
+---
+sidebar: sidebar 
+permalink: task-manage-capacity-licenses.html 
+keywords: license, licensing, capacity license, capacity based license, add license, install license, digital wallet 
+summary: Managen Sie Ihre kapazitätsbasierten Lizenzen über die digitale Geldbörse, um sicherzustellen, dass Ihr NetApp Konto über genügend Kapazität für Ihre Cloud Volumes ONTAP Systeme verfügt. 
+---
+= Management kapazitätsbasierter Lizenzen
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Managen Sie Ihre kapazitätsbasierten Lizenzen über die digitale Geldbörse, um sicherzustellen, dass Ihr NetApp Konto über genügend Kapazität für Ihre Cloud Volumes ONTAP Systeme verfügt.
+
+_Kapazitätsbasierte Lizenzen_ ermöglichen es Ihnen, Cloud Volumes ONTAP pro tib Kapazität zu bezahlen.
+
+Mit der _Digitalbörse_ können Sie Lizenzen für Cloud Volumes ONTAP von einem einzigen Ort aus verwalten. Sie können neue Lizenzen hinzufügen und vorhandene Lizenzen aktualisieren.
+
+link:concept-licensing.html["Weitere Informationen zu Cloud Volumes ONTAP Lizenzen"].
+
+
+
+== Wie Lizenzen auf das Digital Wallet hinzugefügt werden
+
+Nach dem Kauf einer Lizenz bei Ihrem NetApp Vertriebsmitarbeiter sendet NetApp Ihnen eine E-Mail mit der Seriennummer und den zusätzlichen Lizenzdetails.
+
+In der Zwischenzeit fragt BlueXP automatisch den NetApp Lizenzservice ab, um Informationen zu den Lizenzen zu erhalten, die mit Ihrem NetApp Support Site Konto verknüpft sind. Wenn keine Fehler auftreten, fügt BlueXP die Lizenzen automatisch dem Digital Wallet hinzu.
+
+Wenn BlueXP die Lizenz nicht hinzufügen kann, müssen Sie sie manuell zum Digital Wallet selbst hinzufügen. Wenn der Connector z. B. an einem Standort installiert ist, der keinen Internetzugang hat, müssen Sie die Lizenzen selbst hinzufügen.  purchased licenses to your account,Erfahren Sie, wie Sie Ihrem Konto erworbene Lizenzen hinzufügen.
+
+
+
+== Zeigen Sie die verbrauchte Kapazität in Ihrem Konto an
+
+Auf der Digital Wallet werden die verbrauchte Gesamtkapazität Ihres Kontos und die verbrauchte Kapazität nach Lizenzpaket angezeigt. Dadurch können Sie nachvollziehen, wie Sie belastet sind und ob Sie zusätzliche Kapazität erwerben müssen.
+
+.Schritte
+. Wählen Sie im linken Navigationsmenü die Option *Digital Wallet* aus.
+. Zeigen Sie bei Auswahl von *kapazitätsbasierten Lizenzen* die Paketübersicht an, in der Sie die verbrauchte Kapazität, die gesamte lizenzierte Kapazität und die gesamte PAYGO-Gesamtkapazität angezeigt werden.
++
+** _Verbrauchte Gesamtkapazität_ ist die insgesamt bereitgestellte Kapazität aller Cloud Volumes ONTAP Systeme in Ihrem NetApp Konto. Die Abrechnung basiert auf der bereitgestellten Größe eines jeden Volumes, unabhängig vom lokalen, genutzten, gespeicherten oder effektiven Speicherplatz innerhalb des Volumes.
+** _Total lizensiert_ ist die gesamte lizenzierte Kapazität (BYOL), die Sie von NetApp gekauft haben.
+** _Total PAYGO_ ist die insgesamt bereitgestellte Kapazität anhand von Cloud-Marketplace-Abonnements. Das Aufladen über PAYGO erfolgt nur, wenn die verbrauchte Kapazität über der lizenzierten Kapazität liegt oder wenn in Digital Wallet keine BYOL-Lizenz verfügbar ist.
++
+Hier ist ein Beispiel für ein Konto, das 2000 tib verbrauchte Kapazität besitzt:
+
++
+image:screenshot_capacity-based-licenses.png["Ein Screenshot mit der Menge der bereitgestellten Kapazität im Vergleich zur lizenzierten Kapazität für das Paket mit Professional und Essentials"]
+
+
+
+. Zeigen Sie unter der Zusammenfassung die verbrauchte Kapazität für jedes Ihrer Lizenzierungspakete an.
++
+** _Verbrauchte Kapazität_ zeigt Ihnen die Gesamtkapazität der Volumes für dieses Paket an. Wenn Sie weitere Informationen zu einem bestimmten Paket wünschen, bewegen Sie den Mauszeiger über die QuickInfo.
++
+Um die Kapazitäten besser zu verstehen, die für das Essentials-Paket angezeigt werden, sollten Sie mit der Funktionsweise des Ladevorgangs vertraut sein. link:concept-licensing.html#notes-about-charging["Erfahren Sie mehr über das Laden des Essentials-Pakets"].
+
+** _BYOL_ zeigt Ihnen die lizenzierte Kapazität, die Sie von NetApp erworben haben.
+** _PAYGO_ zeigt Ihnen die insgesamt verbrauchte Kapazität nach Lizenzverbrauchsmodell.
++
+Hier ein Beispiel für ein Konto mit mehreren Lizenzierungspaketen:
+
++
+image:screenshot-digital-wallet-packages.png["Ein Screenshot, der die verbrauchte Kapazität für die professionellen, optimierten und wichtigen Pakete anzeigt."]
+
+
+
+
+
+
+
+== Fügen Sie gekaufte Lizenzen zu Ihrem Konto hinzu
+
+Wenn Ihre erworbenen Lizenzen auf der digitalen Geldbörse nicht angezeigt werden, müssen Sie die Lizenzen zu BlueXP hinzufügen, damit die Kapazität für Cloud Volumes ONTAP verfügbar ist.
+
+.Was Sie und#8217;ll benötigen
+* Sie müssen BlueXP die Seriennummer der Lizenz oder der Lizenzdatei angeben.
+* Wenn Sie die Seriennummer eingeben möchten, müssen Sie zunächst eingeben https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html["Fügen Sie Ihr Konto für die NetApp Support Website zu BlueXP hinzu"^]. Hierbei handelt es sich um das Konto für die NetApp Support Site, das befugt ist, auf die Seriennummer zuzugreifen.
+
+
+.Schritte
+. Wählen Sie im linken Navigationsmenü die Option *Digital Wallet* aus.
+. Halten Sie auf der Registerkarte *Cloud Volumes ONTAP* die Option *kapazitätsbasierte Lizenzen* ausgewählt und klicken Sie auf *Lizenz hinzufügen*.
+. Geben Sie die Seriennummer für Ihre kapazitätsbasierte Lizenz ein, oder laden Sie die Lizenzdatei hoch.
++
+Wenn Sie eine Seriennummer eingegeben haben, müssen Sie auch das NetApp Support Site Konto auswählen, über das Sie Zugriff auf die Seriennummer haben.
+
+. Klicken Sie Auf *Lizenz Hinzufügen*.
+
+
+
+
+== Aktualisieren einer kapazitätsbasierten Lizenz
+
+Wenn Sie zusätzliche Kapazität erworben oder die Laufzeit Ihrer Lizenz verlängert haben, aktualisiert BlueXP die Lizenz automatisch im Digital Wallet. Es gibt nichts, was Sie tun müssen.
+
+Wenn Sie BlueXP jedoch an einem Standort bereitgestellt haben, der keinen Internetzugang hat, müssen Sie die Lizenz in BlueXP manuell aktualisieren.
+
+Die Lizenzdatei (oder _Files_ wenn Sie ein HA-Paar haben).
+
+.Schritte
+. Wählen Sie im linken Navigationsmenü die Option *Digital Wallet* aus.
+. Klicken Sie auf der Registerkarte *Cloud Volumes ONTAP* auf das Aktionsmenü neben der Lizenz und wählen Sie *Lizenz aktualisieren*.
+. Laden Sie die Lizenzdatei hoch.
+. Klicken Sie Auf *Lizenz Hochladen*.
+
+
+
+
+== Ändern Sie die Lademethoden
+
+Sie können die Abrechnungsmethode für ein Cloud Volumes ONTAP System ändern, das kapazitätsbasierte Lizenzierung nutzt. Wenn Sie beispielsweise ein Cloud Volumes ONTAP-System mit dem Essentials-Paket bereitgestellt haben, können Sie es in das Professional-Paket ändern, wenn sich Ihre Geschäftsanforderungen ändern.
+
+ifdef::azure[]
+
+Das Ändern in oder von der Edge Cache Lizenz wird nicht unterstützt.
+
+endif::azure[]
+
+Wenn Sie über ein privates Angebot oder einen Vertrag von Ihrem Cloud-Provider-Markt verfügen, wird eine Änderung auf eine Abrechnungsmethode, die nicht im Vertrag enthalten ist, zu einer Abrechnung für BYOL (bei dem Kauf einer Lizenz von NetApp) oder PAYGO führen.
+
+.Schritte
+. Wählen Sie im linken Navigationsmenü die Option *Digital Wallet* aus.
+. Klicken Sie auf der Registerkarte *Cloud Volumes ONTAP* auf *Lademethode ändern*.
++
+image:screenshot-digital-wallet-charging-method-button.png["Ein Screenshot der Cloud Volumes ONTAP-Seite in der digitalen Geldbörse, in der sich die Schaltfläche „Lademethode ändern“ direkt über der Tabelle befindet."]
+
+. Wählen Sie eine Arbeitsumgebung aus, wählen Sie die neue Lademethode aus, und bestätigen Sie anschließend, dass sich eine Änderung des Paketyps auf Servicegebühren auswirkt.
++
+image:screenshot-digital-wallet-charging-method.png["Ein Screenshot des Dialogfelds „Lademethode ändern“, in dem Sie eine neue Lademethode für eine Cloud Volumes ONTAP-Arbeitsumgebung auswählen."]
+
+. Klicken Sie Auf *Lademethode Ändern*.
+
+
+BlueXP ändert die Lademethode des Cloud Volumes ONTAP-Systems.
+
+Möglicherweise werden Sie auch feststellen, dass das Digital Wallet die verbrauchte Kapazität für jeden Pakettyp aktualisiert, um die soeben vorgenommene Änderung zu berücksichtigen.
+
+
+
+== Entfernen einer kapazitätsbasierten Lizenz
+
+Wenn eine kapazitätsbasierte Lizenz abgelaufen ist und nicht mehr verwendet wird, können Sie sie jederzeit entfernen.
+
+.Schritte
+. Wählen Sie im linken Navigationsmenü die Option *Digital Wallet* aus.
+. Klicken Sie auf der Registerkarte *Cloud Volumes ONTAP* auf das Aktionsmenü neben der Lizenz und wählen Sie *Lizenz entfernen*.
+. Klicken Sie zur Bestätigung auf *Entfernen*.
+

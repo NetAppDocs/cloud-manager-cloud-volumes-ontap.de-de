@@ -1,0 +1,47 @@
+---
+sidebar: sidebar 
+permalink: task-getting-started-azure.html 
+keywords: microsoft, azure, netapp, data fabric, hybrid cloud, cloud, public cloud, networking, marketplace, virtual machine, vnet, quick, getting started, install, installing, deploy, deploying, setup, setting up, launching, requirements, prerequisites, cloud central, permissions, custom role, role, json, permissions, virtual machine, video, connectivity, internet, outbound, endpoint, connection, networks, vpn, replicating, policy, iam, setupasservice, sign up, cloud manager, BlueXP, cloud volumes ontap, cloud ontap, subscription, create 
+summary: Erste Schritte mit Cloud Volumes ONTAP für Azure 
+---
+= Schnellstart für Cloud Volumes ONTAP in Azure
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Erste Schritte mit Cloud Volumes ONTAP für Azure
+
+[role="quick-margin-para"]
+Wenn Sie keine haben https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["Stecker"^] Dennoch muss ein Kontoadministrator einen erstellen. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-azure.html["Erfahren Sie, wie Sie in Azure einen Connector erstellen"^].
+
+[role="quick-margin-para"]
+Wenn Sie Ihre erste Cloud Volumes ONTAP-Arbeitsumgebung erstellen, werden Sie von BlueXP (früher Cloud Manager) aufgefordert, einen Connector bereitzustellen, falls noch nicht vorhanden ist.
+
+[role="quick-margin-para"]
+BlueXP bietet vorkonfigurierte Pakete, die Ihren Workload-Anforderungen entsprechen, oder Sie können eine eigene Konfiguration erstellen. Wenn Sie sich für eine eigene Konfiguration entscheiden, sollten Sie sich mit den verfügbaren Optionen vertraut machen. link:task-planning-your-config-azure.html["Weitere Informationen ."].
+
+.<span class=„image“><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png"[] alt=„drei“></span> Einrichten des Netzwerks
+. Stellen Sie sicher, dass Ihre vnet und Subnetze Verbindungen zwischen dem Connector und Cloud Volumes ONTAP unterstützen.
+. Aktivieren Sie den ausgehenden Internetzugriff über das Ziel-vnet, damit der Konnektor und der Cloud Volumes ONTAP mehrere Endpunkte kontaktieren können.
++
+Dieser Schritt ist wichtig, da der Connector Cloud Volumes ONTAP nicht ohne Outbound-Internetzugang verwalten kann. Wenn Sie die ausgehende Verbindung begrenzen müssen, lesen Sie die Liste der Endpunkte für link:reference-networking-azure.html["Anschluss und Cloud Volumes ONTAP"].
+
+
+
+[role="quick-margin-para"]
+link:reference-networking-azure.html["Erfahren Sie mehr über Netzwerkanforderungen"].
+
+[role="quick-margin-para"]
+Klicken Sie auf *Arbeitsumgebung hinzufügen*, wählen Sie den Systemtyp aus, den Sie bereitstellen möchten, und führen Sie die Schritte im Assistenten aus. link:task-deploying-otc-azure.html["Lesen Sie Schritt-für-Schritt-Anleitungen"].
+
+.Weiterführende Links
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-azure.html["Erstellen eines Connectors von BlueXP"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-launching-azure-mktp.html["Erstellen eines Connectors über den Azure Marketplace"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-installing-linux.html["Installieren der Connector-Software auf einem Linux-Host"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-azure.html["Was BlueXP mit Berechtigungen macht"^]
+

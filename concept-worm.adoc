@@ -1,0 +1,63 @@
+---
+sidebar: sidebar 
+permalink: concept-worm.html 
+keywords: worm, write once, read many, snaplock, retain, retention, period, cloud worm, worm storage 
+summary: 'Sie können WORM-Storage (Write Once, Read Many) auf einem Cloud Volumes ONTAP System aktivieren, um Dateien für einen bestimmten Aufbewahrungszeitraum in unveränderter Form aufzubewahren. Cloud-WORM-Storage wird durch SnapLock Technologie unterstützt, d. h., WORM-Dateien sind auf Dateiebene gesichert.' 
+---
+= WORM-Storage
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie können WORM-Storage (Write Once, Read Many) auf einem Cloud Volumes ONTAP System aktivieren, um Dateien für einen bestimmten Aufbewahrungszeitraum in unveränderter Form aufzubewahren. Cloud-WORM-Storage wird durch SnapLock Technologie unterstützt, d. h., WORM-Dateien sind auf Dateiebene gesichert.
+
+
+
+== Funktionsweise VON WORM-Speicher
+
+Sobald eine Datei im WORM-Storage gespeichert wurde, kann sie nicht mehr verändert werden, selbst wenn der Aufbewahrungszeitraum abgelaufen ist. Eine manipulationssichere Uhr bestimmt, wann die Aufbewahrungsfrist für eine WORM-Datei abgelaufen ist.
+
+Nach Ablauf der Aufbewahrungsfrist sind Sie dafür verantwortlich, alle Dateien zu löschen, die Sie nicht mehr benötigen.
+
+
+
+== Wird Geladen
+
+Die Abrechnung FÜR WORM-Speicher erfolgt stündlich, entsprechend der insgesamt bereitgestellten Kapazität von WORM-Volumes.
+
+https://cloud.netapp.com/pricing["Informieren Sie sich über die Preisgestaltung für WORM Storage"^].
+
+
+
+== WORM-Storage wird aktiviert
+
+Sie können WORM Storage auf einem Cloud Volumes ONTAP System aktivieren, wenn Sie eine neue Arbeitsumgebung erstellen. Dies umfasst auch die Einstellung des Standardaufbewahrungszeitraums für Dateien.
+
+
+NOTE: SIE können WORM Storage nicht auf einzelnen Volumes aktivieren --WORM muss auf Systemebene aktiviert sein.
+
+Die folgende Abbildung zeigt, wie WORM-Storage beim Erstellen einer Arbeitsumgebung aktiviert wird:
+
+image:screenshot_enable_worm.png["Zeigt die WORM-Option an, die beim Erstellen einer neuen Arbeitsumgebung verfügbar ist."]
+
+
+
+== Dateien werden in WORM gespeichert
+
+Sie können eine Applikation verwenden, um Dateien über NFS oder CIFS in WORM zu übergeben, oder die ONTAP CLI verwenden, um Dateien automatisch in WORM zu übertragen. Sie können auch eine WORM-Datei verwenden, die Daten speichert, die inkrementell geschrieben werden, z. B. Protokollinformationen.
+
+Nachdem Sie WORM Storage auf einem Cloud Volumes ONTAP System aktiviert haben, müssen Sie die ONTAP CLI für das gesamte Management von WORM Storage verwenden. Anweisungen finden Sie unter http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-arch-con/home.html["ONTAP-Dokumentation"^].
+
+
+
+== Einschränkungen
+
+* WORM Storage in Cloud Volumes ONTAP wird als „vertrauenswürdiger Storage-Administrator“ eingesetzt. WORM-Dateien sind vor Änderungen oder Änderungen geschützt, aber können von einem Cluster-Administrator gelöscht werden, selbst wenn diese Volumes nicht ABGELAUFENE WORM-Daten enthalten.
+* Neben dem Modell eines vertrauenswürdigen Storage-Administrators arbeitet WORM Storage in Cloud Volumes ONTAP auch implizit unter einem Modell eines „vertrauenswürdigen Cloud-Administrators“. Ein Cloud-Administrator kann WORM-Daten vor dem Ablaufdatum löschen, indem er Cloud-Storage direkt vom Cloud-Provider entfernt oder bearbeitet.
+* Wenn WORM-Storage aktiviert ist, kann das Daten-Tiering zu Objekt-Storage nicht aktiviert werden.
+

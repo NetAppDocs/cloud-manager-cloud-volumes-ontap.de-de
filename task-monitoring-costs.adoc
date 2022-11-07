@@ -1,0 +1,45 @@
+---
+sidebar: sidebar 
+permalink: task-monitoring-costs.html 
+keywords: cost, costs, storage, compute, savings, aws, aws costs, billing 
+summary: Mit BlueXP können Sie sich die Kosten für die Ausführung von Cloud Volumes ONTAP in AWS anzeigen lassen. Außerdem erfahren Sie, wie viel Geld Sie durch den Einsatz von NetApp Funktionen zur Senkung der Storage-Kosten gespart haben. 
+---
+= Überwachung der AWS-Ressourcenkosten
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Mit BlueXP können Sie sich die Ressourcenkosten anzeigen lassen, die für die Ausführung von Cloud Volumes ONTAP in AWS anfallen. Außerdem erfahren Sie, wie viel Geld Sie durch den Einsatz von NetApp Funktionen zur Senkung der Storage-Kosten gespart haben.
+
+BlueXP aktualisiert die Kosten, wenn Sie die Seite aktualisieren. Die endgültigen Kostendetails finden Sie in AWS.
+
+.Schritt
+. Stellen Sie sicher, dass BlueXP Kosteninformationen von AWS beziehen kann:
++
+.. Stellen Sie sicher, dass die IAM-Richtlinie, die BlueXP Berechtigungen bereitstellt, die erforderlichen Berechtigungen enthält.
++
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html["Zeigen Sie die erforderlichen Berechtigungen an"^]
+
+.. https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/activating-tags.html["Aktivieren Sie das Tag *WorkingEnvironment ID*"^].
++
+Um die AWS-Kosten zu verfolgen, weist BlueXP Cloud Volumes ONTAP-Instanzen ein Tag der Kostenzuteilung zu. Nachdem Sie Ihre erste Arbeitsumgebung erstellt haben, aktivieren Sie das Tag *WorkingEnvironment ID*. Benutzerdefinierte Tags werden erst in den AWS Abrechnungsberichten angezeigt, wenn Sie sie in der Konsole „Rechnungsstellung“ und „Kostenmanagement“ aktivieren.
+
+
+
+. Wählen Sie im linken Navigationsmenü die Option *Speicherung > Leinwand*.
+. Wählen Sie auf der Seite „Arbeitsfläche“ eine Cloud Volumes ONTAP-Arbeitsumgebung aus und klicken Sie dann auf *Kosten*.
++
+Auf der Kostenseite werden die Kosten für die aktuelle und die vorherigen Monate angezeigt sowie Ihre jährlichen NetApp Einsparungen angezeigt, wenn Sie die kostensparenden Funktionen von NetApp auf den Volumes aktiviert haben.
+
++
+Das folgende Bild zeigt eine Beispiel-Kostenseite:
+
++
+image:screenshot_cost.gif["Screenshot: Zeigt die Kosten pro Monat für eine Cloud Volumes ONTAP Instanz."]
+
+
