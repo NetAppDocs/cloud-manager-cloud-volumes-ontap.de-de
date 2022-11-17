@@ -111,9 +111,6 @@ Wie bereits erwähnt, wird die Auswahl einer Festplattengröße mit Cloud Volume
 --
 
 
-Sehen Sie sich das folgende Video an, um weitere Informationen zur Dimensionierung Ihres Cloud Volumes ONTAP-Systems in AWS zu erhalten:
-
-video::GELcXmOuYPw[youtube,width=848,height=480]
 
 
 == Anzeigen von Standard-Systemfestplatten
