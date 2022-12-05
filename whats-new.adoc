@@ -20,6 +20,24 @@ Die auf dieser Seite beschriebenen Verbesserungen beziehen sich nur auf BlueXP-F
 
 
 
+== Bis 4. Dezember 2022
+
+Die folgenden Änderungen wurden mit der Version 3.9.24 des Connectors eingeführt.
+
+
+
+=== WORM + Cloud Backup sind jetzt bei der Cloud Volumes ONTAP-Erstellung verfügbar
+
+Im Rahmen der Cloud Volumes ONTAP-Erstellung können DIE Funktionen für WORM (Write Once, Read Many) und Cloud Backup aktiviert werden.
+
+
+
+=== Israel Region jetzt in Google Cloud unterstützt
+
+Die Region Israel wird nun in Google Cloud für Cloud Volumes ONTAP und der Connector für Cloud Volumes ONTAP 9.11.1 P3 und höher unterstützt.
+
+
+
 == 6. November 2022
 
 Die folgenden Änderungen wurden mit der Version 3.9.23 des Connectors eingeführt.
