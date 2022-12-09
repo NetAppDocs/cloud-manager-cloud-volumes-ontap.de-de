@@ -20,6 +20,10 @@ Die auf dieser Seite beschriebenen Verbesserungen beziehen sich nur auf BlueXP-F
 
 
 
+== Bis 8. Dezember 2022
+
+
+
 === Cloud Volumes ONTAP 9.12.1
 
 BlueXP kann jetzt Cloud Volumes ONTAP 9.12.1 implementieren und verwalten, was auch Unterstützung für neue Funktionen und zusätzliche Regionen von Cloud-Providern umfasst.https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes["Erfahren Sie mehr über die neuen Funktionen in dieser Version von Cloud Volumes ONTAP"^]
