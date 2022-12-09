@@ -87,7 +87,14 @@ Sie können eine gemanagte Festplatte mit Azure Blob Storage kombinieren link:co
 
 
 --
-HA-Paare:: HA-Paare verwenden Premium-Blobs auf Seite mit einer maximalen Festplattengröße von 8 tib.
+HA-Paare:: HA-Paare verwenden zwei Festplattenarten, die eine hohe Performance für I/O-intensive Workloads zu höheren Kosten bieten:
++
+--
+* _Premium Seite Blobs_ mit einer maximalen Festplattengröße von 8 tib
+* _Gemanagte Festplatten_ mit einer maximalen Festplattengröße von 32 tib
+
+
+--
 
 
 *Verwandte Links*

@@ -40,6 +40,15 @@ Wenn Sie eine neue Version Ihres Schlüssels erstellen, verwendet Cloud Volumes 
 
 Nachdem Sie eine Cloud Volumes ONTAP Arbeitsumgebung erstellt haben, in der ein vom Kunden gemanagter Schlüssel verwendet wird, werden Cloud Volumes ONTAP Daten wie folgt verschlüsselt.
 
+Azure HA Multi-Verfügbarkeitszone::
++
+--
+* Alle Azure-Storage-Konten für Cloud Volumes ONTAP werden mit einem vom Kunden gemanagten Schlüssel verschlüsselt.^1^
+* Für Root-, Boot-, NVRAM-, Core- und Datenfestplatten verwendet Cloud Manager einen Festplattenverschlüsselungssatz, der das Management von Verschlüsselungsschlüsseln mit gemanagten Festplatten ermöglicht.
+* Neue Festplatten verwenden ebenfalls denselben Festplattenverschlüsselungssatz.
+
+
+--
 Azure HA, eine einzelne Verfügbarkeitszone::
 +
 --
@@ -49,7 +58,7 @@ Azure HA, eine einzelne Verfügbarkeitszone::
 
 
 --
-Single Node oder HA-Paare in mehreren Zonen::
+Single Node::
 +
 --
 * Alle Azure-Storage-Konten für Cloud Volumes ONTAP werden über einen vom Kunden gemanagten Schlüssel verschlüsselt. ^1^
@@ -62,7 +71,7 @@ Single Node oder HA-Paare in mehreren Zonen::
 
 
 .Fußnote
-. Wenn Sie Ihre Speicherkonten während ihrer Erstellung verschlüsseln möchten, müssen Sie in der Cloud Volumes ONTAP-Erstellungsanforderung die ID der Ressource erstellen und angeben. Dies gilt für alle Implementierungsarten. Wenn Sie dies nicht bereitstellen, werden die Speicherkonten weiterhin verschlüsselt, BlueXP erstellt jedoch zuerst die Speicherkonten mit von Microsoft administrierter Verschlüsselungsmethode und aktualisiert dann die Speicherkonten, um den vom Kunden verwalteten Schlüssel zu verwenden.
+. Wenn Sie Ihre Speicherkonten während ihrer Erstellung verschlüsseln möchten, müssen Sie in der CVO-Erstellungsanforderung die ID der Ressource erstellen und angeben. Dies gilt für alle Implementierungsarten. Wenn Sie es nicht bereitstellen, werden die Speicherkonten immer noch verschlüsselt, aber BlueXP erstellt zuerst die Speicherkonten mit von Microsoft administrierter Verschlüsselungsmethode und aktualisiert dann die Speicherkonten, um den vom Kunden verwalteten Schlüssel zu verwenden.
 
 
 

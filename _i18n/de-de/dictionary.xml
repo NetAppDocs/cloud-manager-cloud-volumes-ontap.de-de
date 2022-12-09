@@ -584,8 +584,6 @@
   <block id="1d9e509ddb93a176b7d369a91ad7deaf" category="section-title">IP-Adressen</block>
   <block id="a972bcad179af301a93e1049da5fbbbb" category="paragraph">Beachten Sie, dass BlueXP in Azure eine SVM Management-LIF auf HA-Paaren erstellt, nicht jedoch auf Systemen mit einzelnen Nodes.</block>
   <block id="0af87aead9b1478c9d33afc90cbcbf02" category="section-title">Sichere Verbindung zu Azure Services</block>
-  <block id="577b6951c15b466f5924970deafc3651" category="paragraph">Standardmäßig aktiviert BlueXP einen Azure Private Link für Verbindungen zwischen Cloud Volumes ONTAP- und Azure-Speicherkonten.</block>
-  <block id="794331bacb4698d7019a1d66cb1649e3" category="paragraph">In den meisten Fällen müssen Sie nichts tun – ​BlueXP managt den Azure Private Link für Sie. Aber wenn Sie Azure Private DNS verwenden, dann müssen Sie eine Konfigurationsdatei bearbeiten. Sie sollten auch eine Anforderung für den Connector-Standort in Azure kennen.</block>
   <block id="6065260b6e2ca957f806162cf33800f6" category="paragraph">Sie können die Private Link-Verbindung auch deaktivieren, wenn dies von Ihren geschäftlichen Anforderungen erforderlich ist. Wenn Sie den Link deaktivieren, konfiguriert BlueXP stattdessen Cloud Volumes ONTAP für die Verwendung eines Service-Endpunkts.</block>
   <block id="4ff3b739a9573101f05111dd5136fe72" category="inline-link-macro">Weitere Informationen zur Verwendung von Azure Private Links oder Service-Endpunkten mit Cloud Volumes ONTAP</block>
   <block id="47d9f4d696319d2e54439849e1a532f3" category="paragraph"><block ref="c666fc2bdc96ffeac9aa956ec79d2d3c" category="inline-link-macro-rx"></block>.</block>
@@ -788,7 +786,6 @@
   <block id="b8724da75fb917e992576b17378e66b3" category="cell">Endpunkte</block>
   <block id="8963387394e2ee3e2a5a9ba160566a58" category="cell">\https://support.netapp.com</block>
   <block id="db9e137068a05efe5440105c2494b7f1" category="cell">Um Lizenzinformationen zu erhalten und AutoSupport Meldungen an den NetApp Support zu senden.</block>
-  <block id="f61e4d929e921b5a3ae0bb6f78fe9b6c" category="cell">\https://*.cloudmanager.cloud.netapp.com \https://cloudmanager.cloud.netapp.com</block>
   <block id="23486ca53d499245ebae5460cf6d10ad" category="cell">Um SaaS-Funktionen und -Services in BlueXP zur Verfügung zu stellen.</block>
   <block id="554841a7559bd190d883de523464d1d1" category="cell">\https://cloudmanagerinfraprod.azurecr.io \https://*.blob.core.windows.net</block>
   <block id="065880318484084e9bfe33ea9c6a8702" category="cell">Aktualisierung des Connectors und seiner Docker Komponenten.</block>
@@ -850,7 +847,6 @@
   <block id="334c4a4c42fdb79d7ebc3e73b517e6f8" category="cell">Keine</block>
   <block id="a9d7fa44202df11fe8273a5c1aa2fdb4" category="cell">UNIX-Berechtigungen (nur NFS)</block>
   <block id="f1c1592588411002af340cbaedd6fc33" category="cell">777</block>
-  <block id="9c0138124129d2360f012b596b8f42a6" category="paragraph">Informationen zu diesen Attributen finden Sie auf der Seite „_Volume create_ man“.</block>
   <block id="e5288c9c9df3485512af1ad66920a6f4" category="section-title">Interne Festplatten für Systemdaten</block>
   <block id="9f3e8e28b8288d2d66ebc481e1f389d6" category="paragraph">Neben dem Speicher für Benutzerdaten kauft BlueXP auch Cloud-Speicher für Systemdaten ein.</block>
   <block id="6fa32f5b70701d0a688b6541beb74a09" category="list-text">Drei Festplatten pro Node für Boot-, Root- und Core-Daten:</block>
@@ -911,12 +907,10 @@
   <block id="dcd61ff34229ba534213e8501446885a" category="list-text">Alle Azure-Storage-Konten für Cloud Volumes ONTAP werden mit einem vom Kunden gemanagten Schlüssel verschlüsselt.^1^</block>
   <block id="08408518b6366a9a8bb69802d83d5e3c" category="list-text">Neue Storage-Konten (z. B. beim Hinzufügen von Festplatten oder Aggregaten) verwenden ebenfalls den gleichen Schlüssel.^1^</block>
   <block id="2301d2b9fcb3fe6f26482aff37ea2c54" category="inline-link">Festplattenverschlüsselungssatz</block>
-  <block id="efbd2c7930ae2087a4719eb7c262b95d" category="list-text">Ab ONTAP 9.10.1P3 verwendet BlueXP für NVRAM und die Core-Festplatte einen<block ref="c7a6854bb19ab523fbe585f89a860944" category="inline-link-rx"></block>, Die das Management von Schlüsseln mit verwalteten Festplatten ermöglicht. Bei niedrigeren Versionen wird der von Microsoft verwaltete Schlüssel anstelle des vom Kunden verwalteten Schlüssels verwendet.</block>
   <block id="9dca67fbd1fac23e7aff5774ec0afa2a" category="list-text">Alle Azure-Storage-Konten für Cloud Volumes ONTAP werden über einen vom Kunden gemanagten Schlüssel verschlüsselt. ^1^</block>
   <block id="648dd7242e5228e0d91d90eaf1e79ebd" category="list-text">Für Root-, Boot- und Datenfestplatten verwendet BlueXP einen<block ref="c7a6854bb19ab523fbe585f89a860944" category="inline-link-rx"></block>, Die das Management von Schlüsseln mit verwalteten Festplatten ermöglicht.</block>
   <block id="5dab396463f2f277886102bf78fe661b" category="list-text">Neue Festplatten verwenden ebenfalls denselben Festplattenverschlüsselungssatz.</block>
   <block id="8b213ded385c637758f8c3705eb6386a" category="list-title">Fußnote</block>
-  <block id="ab9a6656c154c96464d829868998ba40" category="list-text">Wenn Sie Ihre Speicherkonten während ihrer Erstellung verschlüsseln möchten, müssen Sie in der Cloud Volumes ONTAP-Erstellungsanforderung die ID der Ressource erstellen und angeben. Dies gilt für alle Implementierungsarten. Wenn Sie dies nicht bereitstellen, werden die Speicherkonten weiterhin verschlüsselt, BlueXP erstellt jedoch zuerst die Speicherkonten mit von Microsoft administrierter Verschlüsselungsmethode und aktualisiert dann die Speicherkonten, um den vom Kunden verwalteten Schlüssel zu verwenden.</block>
   <block id="8764c9ec9f17252b7df37e1710ec9e5a" category="section-title">Erstellen eines Schlüsselgewölbes und Generieren eines Schlüssels</block>
   <block id="d01b7a4314685f64d972ad7a1fad92aa" category="paragraph">Der Schlüsselspeicher muss in demselben Azure Abonnement und derselben Region liegen, in der Sie das Cloud Volumes ONTAP System erstellen möchten.</block>
   <block id="0355ddb77a5b72eb0604153dc1393f12" category="inline-link">Erstellen Sie einen Schlüsselspeicher in Ihrem Azure-Abonnement</block>
@@ -1067,7 +1061,6 @@
   <block id="88683f91a600720f22d2f3542a3af2ea" category="list-text">*Standort*: Wählen Sie eine Region, eine Verfügbarkeitszone, vnet und ein Subnetz aus, und aktivieren Sie dann das Kontrollkästchen, um die Netzwerkverbindung zwischen dem Connector und dem Zielspeicherort zu bestätigen.</block>
   <block id="bdf4e55dfc8c401c4f033ec413d9962b" category="paragraph">Bei Single-Node-Systemen können Sie die Verfügbarkeitszone auswählen, in der Sie Cloud Volumes ONTAP implementieren möchten. Wenn Sie keine AZ auswählen, wählt BlueXP eine für Sie aus.</block>
   <block id="de908965dc022756e01253bb2ab070dc" category="list-text">*Konnektivität*: Wählen Sie eine neue oder bestehende Ressourcengruppe und wählen Sie dann aus, ob Sie die vordefinierte Sicherheitsgruppe verwenden oder Ihre eigene verwenden möchten.</block>
-  <block id="e95464b98c902ebad35546ca12a620a4" category="cell">Verfügbarkeitszone</block>
   <block id="dd23acac46f17cbfd4d5541f8ee3c7a1" category="cell">Ressourcengruppe</block>
   <block id="2d6e88c43d1b87d3d042cce1773371b7" category="paragraph">Erstellen Sie eine neue Ressourcengruppe für Cloud Volumes ONTAP, oder verwenden Sie eine vorhandene Ressourcengruppe. Als Best Practice empfiehlt es sich, eine neue, dedizierte Ressourcengruppe für Cloud Volumes ONTAP zu verwenden. Es ist zwar möglich, Cloud Volumes ONTAP in einer vorhandenen, gemeinsam genutzten Ressourcengruppe bereitzustellen, jedoch wird dies aufgrund des Risikos eines Datenverlusts nicht empfohlen. Weitere Informationen finden Sie in der oben stehenden Warnung.</block>
   <block id="2ee98a0501e384793f8313582188d1f1" category="paragraph">Sie müssen für jedes Cloud Volumes ONTAP HA-Paar, das Sie in Azure implementieren, eine dedizierte Ressourcengruppe verwenden. Es wird nur ein HA-Paar in einer Ressourcengruppe unterstützt. Bei BlueXP treten Verbindungsprobleme auf, wenn Sie versuchen, ein zweites Cloud Volumes ONTAP HA-Paar in einer Azure Ressourcengruppe bereitzustellen.</block>
@@ -1097,14 +1090,11 @@
   <block id="e5a51dfb561fcfc9b976680f966d8796" category="list-text">Wenn Sie das Daten-Tiering deaktivieren, können Sie es bei nachfolgenden Aggregaten aktivieren.</block>
   <block id="40be323df7265fed128da31c2235f802" category="inline-link-macro">Weitere Informationen zum Daten-Tiering</block>
   <block id="963dc2ced33c135470b8d59948bed4db" category="paragraph"><block ref="9d2a2a02285bff8cac27941dbd566d2c" category="inline-link-macro-rx"></block>.</block>
-  <block id="5f785ef412cf3ae3f3656054cca2d342" category="list-text">*Schreibgeschwindigkeit &amp; WURM* (nur Systeme mit einem Knoten): Wählen Sie *normale* oder *hohe* Schreibgeschwindigkeit und aktivieren Sie ggf. den WORM-Speicher (Write Once, Read Many).</block>
   <block id="7e747f6f397a13c9ddfd3cf35ed0a063" category="inline-link-macro">Erfahren Sie mehr über Schreibgeschwindigkeit</block>
   <block id="154182f595466ead49f0896392c37343" category="paragraph"><block ref="12222f10612c9f092ca31c9e99478649" category="inline-link-macro-rx"></block>.</block>
   <block id="15cbb1f16ecbbcee7df3dcd252b9d2ef" category="paragraph">WORM kann nicht aktiviert werden, wenn Daten-Tiering aktiviert wurde.</block>
   <block id="750f81869269b4f604a849fb2104a6b3" category="inline-link-macro">Erfahren Sie mehr über WORM Storage</block>
   <block id="9fbcc7d5f14bd49b571c1a321923fd19" category="paragraph"><block ref="b8e9389aa16366d8b675fc0ac72edf2e" category="inline-link-macro-rx"></block>.</block>
-  <block id="99933c51e50b7da9dbe73f3421397211" category="list-text">*Secure Communication to Storage &amp; WORM* (nur HA): Wählen Sie, ob eine HTTPS-Verbindung zu Azure-Speicherkonten aktiviert und ggf. WORM-Speicher (Write Once, Read Many) aktiviert werden soll.</block>
-  <block id="02c690c7e2df5602e590fab55c30a15e" category="paragraph">Die HTTPS-Verbindung besteht aus einem Cloud Volumes ONTAP 9.7 HA-Paar zu Azure Storage-Konten. Beachten Sie, dass die Aktivierung dieser Option sich auf die Schreib-Performance auswirken kann. Sie können die Einstellung nicht ändern, nachdem Sie die Arbeitsumgebung erstellt haben.</block>
   <block id="7fd530af1ffbe88c56d08b069efeba9e" category="list-text">*Create Volume*: Geben Sie Details für den neuen Datenträger ein oder klicken Sie auf *Skip*.</block>
   <block id="cad02caeb4ee636c87f28b0bb1263080" category="inline-link-macro">Hier erhalten Sie Informationen zu den unterstützten Client-Protokollen und -Versionen</block>
   <block id="f0ddee23dd0d83f105bbdaa15ff5d87a" category="paragraph"><block ref="43c09f3d08ec80b50648a2a905bca06c" category="inline-link-macro-rx"></block>.</block>
@@ -1364,9 +1354,7 @@
   <block id="03cd53d9a632404d9be539683276c7a2" category="list-text"><block ref="03cd53d9a632404d9be539683276c7a2" category="inline-link-rx"></block></block>
   <block id="6fd456d71c345eb38fe1c0337056dc63" category="inline-link">Azure-Dokumentation: Für den Speicher optimierte Größen virtueller Maschinen</block>
   <block id="05bb9e686e11b905d394fe43829e10b1" category="list-text"><block ref="05bb9e686e11b905d394fe43829e10b1" category="inline-link-rx"></block></block>
-  <block id="7fb03ca4e54191d76e3b4e5f0efc51ef" category="list-text">Azure-Festplattentyp</block>
   <block id="4a9c0738bb69f1a7ecfd0fa8da86cc4a" category="list-text">Wenn Sie Volumes für Cloud Volumes ONTAP erstellen, müssen Sie den zugrunde liegenden Cloud-Storage auswählen, den Cloud Volumes ONTAP als Festplatte verwendet.</block>
-  <block id="1696f2853cc620dba07230c1c3ca8fbe" category="paragraph">HA-Systeme verwenden Premium-Blobs auf Seite. In der Zwischenzeit können Systeme mit einem Node zwei Typen von Azure Managed Disks nutzen:</block>
   <block id="81051201caf41e5e0650e52621884bfc" category="list-text">_Premium SSD Managed Disks_ bieten hohe Performance für I/O-intensive Workloads zu höheren Kosten.</block>
   <block id="cc9198979434b483c842956cafd0f2b9" category="list-text">_Standard SSD Managed Disks_ bieten konsistente Performance für Workloads, die niedrige IOPS erfordern.</block>
   <block id="3bd02bf5ff179461fb4f60bda2ac3a05" category="list-text">_Standard HDD Managed Disks_ sind eine gute Wahl, wenn Sie keine hohen IOPS benötigen und Ihre Kosten senken möchten.</block>
@@ -2127,7 +2115,6 @@
   <block id="e33d0575f3a1479ae00cc2fb1764511c" category="list-text">*CIFS Setup*: Wenn Sie das CIFS-Protokoll ausgewählt haben, richten Sie einen CIFS-Server ein.</block>
   <block id="08716c56b69c38a1d4f3bf5e2aa2e5c8" category="paragraph">BlueXP startet das Cloud Volumes ONTAP HA-Paar. Sie können den Fortschritt in der Timeline verfolgen.</block>
   <block id="63f5b3a996af84469a7cccd34a9a29c0" category="paragraph">Wenn beim Starten des HA-Paars Probleme auftreten, überprüfen Sie die Fehlermeldung. Sie können auch die Arbeitsumgebung auswählen und auf Umgebung neu erstellen klicken.</block>
-  <block id="8911c2770edec78a9b5da666d560dd90" category="summary">Cloud Volumes ONTAP unterstützt iSCSI-, NFS-, SMB- und S3-Client-Protokolle.</block>
   <block id="36f3832717137e178e376fc49ba4e550" category="doc">Client-Protokolle</block>
   <block id="5494b349161a941df24b2a8abfcb1bc9" category="paragraph">ISCSI ist ein Blockprotokoll, das in standardmäßigen Ethernet-Netzwerken ausgeführt werden kann. Die meisten Client-Betriebssysteme bieten einen Software-Initiator, der über einen Standard-Ethernet-Port ausgeführt wird.</block>
   <block id="a506035b6cec6c14b89e2274b8f507fc" category="paragraph">NFS ist das herkömmliche File-Zugriffsprotokoll für UNIX- und LINUX-Systeme. Clients können über die Protokolle NFSv3, NFSv4 und NFSv4.1 auf Dateien in ONTAP Volumes zugreifen. Sie können den Dateizugriff mithilfe von UNIX-Berechtigungen, NTFS-Berechtigungen oder einer Kombination beider Berechtigungen steuern.</block>
@@ -2853,20 +2840,14 @@
   <block id="8d6456bdd46775a0bde58d79fa727b86" category="paragraph">Weitere Informationen finden Sie unter<block ref="0d1fec14af342ac3f0970d5f69f9ea12" category="inline-link-rx"></block></block>
   <block id="4d5272b77be8e6cf2d9611b8c660d0aa" category="list-text">Verwenden Sie bei der Erstellung einer Arbeitsumgebung den Parameter „GcpEncryption“ in Verbindung mit Ihrer API-Anforderung.</block>
   <block id="2f75073874e4641aa2be5b8208fdfe64" category="paragraph">Siehe<block ref="cf06621be2a2bfce0ef0595deee16955" category="inline-link-rx"></block> Weitere Informationen zur Verwendung des Parameters „GcpEncryption“.</block>
-  <block id="f7690fbbd9c4bec12ed9f85841d43f31" category="summary">Jeder Cloud Volumes ONTAP-Knoten muss über eine angeschlossene IAM-Rolle verfügen, die die erforderlichen Berechtigungen bereitstellt. Das gleiche gilt für den HA Mediator. Es ist am einfachsten, BlueXP die IAM-Rollen für Sie erstellen zu lassen, aber Sie können Ihre eigenen Rollen verwenden.</block>
   <block id="75c41138bbd7704a1e0b806bef4b58ac" category="doc">Einrichten von IAM-Rollen für Cloud Volumes ONTAP</block>
-  <block id="7bc54dd1b995ca2563a466d2bee836e1" category="paragraph">An jeden Cloud Volumes ONTAP-Knoten muss eine IAM-Rolle mit den erforderlichen Berechtigungen angehängt werden. Das gleiche gilt für den HA Mediator. Es ist am einfachsten, BlueXP die IAM-Rollen für Sie erstellen zu lassen, aber Sie können Ihre eigenen Rollen verwenden.</block>
-  <block id="68cebae5c0de335945df8cad9ccbfee9" category="paragraph">Diese Aufgabe ist optional. Wenn Sie eine Cloud Volumes ONTAP-Arbeitsumgebung erstellen, können Sie mit BlueXP standardmäßig die IAM-Rollen für Sie erstellen. Wenn Sie in den Sicherheitsrichtlinien Ihres Unternehmens die IAM-Rolle selbst erstellen müssen, befolgen Sie die folgenden Schritte.</block>
   <block id="07561162983a030769cc8563b6143a06" category="inline-link-macro">Erfahren Sie, wie Cloud Volumes ONTAP in C2S eingesetzt wird</block>
   <block id="f6fe0c003ae0bc360a2c1d722f423983" category="admonition">In der AWS Commercial Cloud Services-Umgebung ist die Bereitstellung Ihrer eigenen IAM-Rolle erforderlich. <block ref="af622e808f4363be4413c4e256d0f137" category="inline-link-macro-rx"></block>.</block>
   <block id="1e71ce7defc90d8f5a2c46c08ba968df" category="list-text">Wechseln Sie zur AWS IAM-Konsole.</block>
-  <block id="2be2a83dff352bbae732dfe827629b52" category="list-text">IAM-Richtlinie erstellen, die die folgenden Berechtigungen enthält:</block>
-  <block id="f671db25e387df2f231d7d414ac6e1ba" category="list-text">Cloud Volumes ONTAP-Knoten</block>
   <block id="222ddb2f355a49f64fb3858123f2b97b" category="open-title">Standardregionen</block>
   <block id="1411debdb32e6b128ca27ec92a708cbd" category="open-title">GovCloud (USA) Regionen</block>
   <block id="a8416eae2db8c97eb943559351fab358" category="open-title">C2S-Umgebung</block>
   <block id="7b949d0cea1dcd058fa15d15e56dcb55" category="list-text">Ha Mediator</block>
-  <block id="3e5c966a065f647b413d08592c0e466d" category="list-text">Erstellen Sie eine IAM-Rolle, und hängen Sie die im vorherigen Schritt erstellte Richtlinie an die Rolle an.</block>
   <block id="a640e21419d545eaa2be7040f35bcbde" category="paragraph">Sie können jetzt IAM-Rollen auswählen, wenn Sie eine neue Cloud Volumes ONTAP-Arbeitsumgebung erstellen.</block>
   <block id="ab066b3292d8ab61ef3b5c77169cdd19" category="list-title">Weitere Informationen</block>
   <block id="0eab25f343df3cb0d26a483c0c7e529f" category="inline-link">AWS Dokumentation: Erstellung von IAM-Richtlinien</block>
@@ -3148,7 +3129,6 @@
   <block id="f7ccf02d84fa210180071ca2470f84e9" category="paragraph">Sie können eine Schreibgeschwindigkeit wählen, wenn Sie eine neue Arbeitsumgebung erstellen und Sie können <block ref="bb09c850cc1f480d84d76846ade7e379" category="inline-link-macro-rx"></block>.</block>
   <block id="a6b5c3b6343acd9e9c252b6734e21729" category="section-title">Was bei einem Datenverlust zu erwarten ist</block>
   <block id="3bc8827b2b8b4b47a25fb21994526d52" category="paragraph">Wenn Datenverlust aufgrund hoher Schreibgeschwindigkeit auftritt, meldet das Event Management System (EMS) die folgenden beiden Ereignisse:</block>
-  <block id="be98a72c550adaac0016c02f579ae8d6" category="list-text">Cloud Volumes ONTAP 9.11.0 oder höher</block>
   <block id="7cd42532925d5e610a9d3694b57652da" category="list-text">Cloud Volumes ONTAP 9.8 auf 9.10.1</block>
   <block id="deae9d093dee266b166a3693474231a9" category="paragraph">Sollte dies der Fall sein, sollte Cloud Volumes ONTAP in der Lage sein, ohne Eingreifen des Benutzers weitere Daten bereitzustellen.</block>
   <block id="ccd6abf00ee311d6ee0fe0cfa658d4af" category="section-title">So wird der Datenzugriff bei Datenverlust verhindert</block>
@@ -4316,7 +4296,6 @@
   <block id="cdafe606e8089437c767bd58ec7ea61d" category="list-text">Systeme mit einem Node können drei Typen von Azure Managed Disks verwenden:</block>
   <block id="aba7d83fbcf4393f33b8acf1f6ff00a3" category="paragraph">Jeder verwaltete Festplattentyp hat eine maximale Festplattengröße von 32 tib.</block>
   <block id="bb648ece982c20c24a62b827d539a0d3" category="paragraph">Sie können eine gemanagte Festplatte mit Azure Blob Storage kombinieren <block ref="767b2bdd82880da72a9a5d87e1fd40da" category="inline-link-macro-rx"></block>.</block>
-  <block id="8448f6e5509ce564a90ff731ff87cf81" category="list-text">HA-Paare verwenden Premium-Blobs auf Seite mit einer maximalen Festplattengröße von 8 tib.</block>
   <block id="d84a1b6afc8f4cdf056ef6e53b716320" category="inline-link">Microsoft Azure-Dokumentation: Verwaltete Festplattentypen in Azure</block>
   <block id="42c993d25b60960c2e27841e9528829e" category="list-text"><block ref="42c993d25b60960c2e27841e9528829e" category="inline-link-rx"></block></block>
   <block id="f43157c31e36a0c9272903ddab17b31c" category="inline-link">Microsoft Azure-Dokumentation: Übersicht über die Blobs der Azure-Seite</block>
@@ -4466,7 +4445,6 @@
   <block id="9832e39264a34e4e40dca8449efd019e" category="section-title">BlueXP unterstützt keine Disaster Recovery für Storage VMs</block>
   <block id="d59db7846bd10b6d60d21543df9faa9e" category="list-title">Was Sie benötigen</block>
   <block id="86f463a1f0f0879749d1274dc94305d9" category="paragraph-title">Wichtiger Hinweis</block>
-  <block id="ee7f3ee9c125b9b1f24e5bebb3409605" category="list-text">Single Node oder HA-Paare in mehreren Zonen</block>
   <block id="fdee261787c8d28a1d5af5c07b8580d6" category="list-text">Ab ONTAP 9.9.1P7 verwendet BlueXP für NVRAM und die Kernfestplatte einen Festplattenverschlüsselungssatz, der das Management von Schlüsseln mit verwalteten Laufwerken ermöglicht. Bei niedrigeren Versionen wird der von Microsoft verwaltete Schlüssel anstelle des vom Kunden verwalteten Schlüssels verwendet.</block>
   <block id="d01b00b7df0dd6620e8ab49fb88f67b9" category="list-text">*Azure Festplattenverschlüsselung für Volume Encryption* (für Single Node-Systeme oder HA-Paare in mehreren Zonen)</block>
   <block id="6337ff9e523cd4d0c21d00ce582cb8ca" category="admonition">Für HA-Paare in einer einzelnen Zone sind keine Berechtigungen erforderlich.</block>
@@ -4481,7 +4459,6 @@
   <block id="e6fbc0b9673f8c86726688d7607fc8f5" category="inline-image-macro">Sechs</block>
   <block id="b251b1d8bf96f666a018d6d8517138ae" category="paragraph-title"><block ref="ef78558f80439832e0f51cc22cee8b8c" category="inline-image-macro-rx" type="image"></block> Starten Sie Cloud Volumes ONTAP mit BlueXP</block>
   <block id="06e1f23900e79570eee02e1c5acec75a" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block> Starten Sie Cloud Volumes ONTAP mit BlueXP</block>
-  <block id="7d1d96e045e46f5da79febed668dfa02" category="section-title">HA-Seite Blob-Konfiguration</block>
   <block id="113bc9ef3b0433e67708f619cf1903ef" category="paragraph">Eine Cloud Volumes ONTAP HA-Page Blob-Konfiguration in Azure umfasst die folgenden Komponenten:</block>
   <block id="8dc221b1b499606ef0f0ca8c0370189b" category="section-title">KONFIGURATION der verschiedenen Verfügbarkeitszonen</block>
   <block id="3d9563c3da13e16d8921ac243a987129" category="paragraph">Eine Cloud Volumes ONTAP HA Konfiguration mit mehreren Verfügbarkeitszonen in Azure umfasst die folgenden Komponenten:</block>
@@ -4491,7 +4468,6 @@
   <block id="2b6a2a78ba6ba0d1bf316591f2c9f89b" category="list-text">Zwei Cloud Volumes ONTAP-Nodes werden in verschiedenen Verfügbarkeitszonen bereitgestellt. Verfügbarkeitszonen stellen sicher, dass sich die Nodes in unterschiedlichen Fehlerdomänen befinden.<block ref="c8912f6a29cb2653305e1189cf1fa38a" category="inline-link-rx"></block>.</block>
   <block id="0297170537ff589d5fd67ec8db7c4ae4" category="inline-link-macro">Boot-, Root-, Partner-Root- und Kerndaten</block>
   <block id="419c5f0dee6c475074f478e8aca659fd" category="list-text">Kundendaten befinden sich auf zonenredundanten Storage-Laufwerken (ZRS), die von gemanagt werden. Jeder Node hat Zugriff auf den Storage des anderen Nodes. Für ist auch zusätzlicher Speicher erforderlich <block ref="21b5d37c4ebe0dabed7cc2a884c8db5a" category="inline-link-macro-rx"></block>.</block>
-  <block id="53ad373b2d895bfe9513a423ed557fe0" category="list-text">Für verwaltete Festplatten ist ein Speicherkonto erforderlich. Storage-Konten, die BlueXP für HA-Paare erstellt, sind allgemeine v2 Storage-Konten.</block>
   <block id="b04fd67a98a3b32956894024aa6fcf4f" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block> AWS KMS einrichten</block>
   <block id="3af67a9dfd37709bb6e502fd7f303262" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block> Starten Sie Cloud Volumes ONTAP mit BlueXP</block>
   <block id="96f4c574f3909d1105768df05940587b" category="paragraph">BlueXP weist Cloud Volumes ONTAP in Azure automatisch die erforderliche Anzahl privater IP-Adressen zu. Sie müssen sicherstellen, dass Ihr Netzwerk über genügend private IP-Adressen verfügt.</block>
@@ -4514,7 +4490,6 @@
   <block id="4c0520ff9efdddb69b34a5b310ccacc4" category="list-text">Cluster Interconnect IP (HA-IC)</block>
   <block id="8eb6ec3fbc998fa6a60aa567596e9dea" category="paragraph">*NIC3*</block>
   <block id="1107a77f933d62fe584a3ae3bad83e30" category="list-text">PageBLOB NIC-IP (Festplattenzugriff)</block>
-  <block id="fd1fdbec8ccbf892f0037009d36357b7" category="admonition">NIC3 gilt nur für HA-Implementierungen mit BLOB-Systemen auf Seite.</block>
   <block id="43fb0e8e4573adece08f1409464dfa39" category="paragraph">Die oben genannten IP-Adressen migrieren nicht bei Failover-Ereignissen.</block>
   <block id="9d691acb8ea0fa8f46108113686332d2" category="paragraph">Zusätzlich werden 4 Frontend-IPs (FIPS) für die Migration bei Failover-Ereignissen konfiguriert. Diese Frontend-IPs sind im Load Balancer aktiv.</block>
   <block id="19820ca81f74a74546add18da6b58fd8" category="list-text">NodeA Daten-IP (NFS/CIFS)</block>
@@ -4535,4 +4510,65 @@
   <block id="8a0f5ea3246704da60c7b1c7557519a1" category="list-text">Aktivieren Sie das Kontrollkästchen * Ich habe die Netzwerkverbindung verifiziert...*.</block>
   <block id="b6416a070eae245c22afedda3deac1ef" category="list-text">*Vorkonfigurierte Pakete*: Wählen Sie eines der Pakete aus, um ein Cloud Volumes ONTAP-System schnell bereitzustellen, oder klicken Sie auf *Konfiguration ändern*.</block>
   <block id="1e8446e8033270b9f2f812d81dfc0ddc" category="paragraph">Hilfe zur Auswahl einer Festplattengröße finden Sie unter <block ref="e1b3c31cb34daed9344cfbb51e1e4263" category="inline-link-macro-rx"></block>.</block>
+  <block id="6ac4e08b1d7c56a9609b4b262b83b42c" category="summary">IAM-Rollen mit den erforderlichen Berechtigungen müssen an jeden Cloud Volumes ONTAP-Knoten angeschlossen sein. Das gleiche gilt für den HA Mediator. Es ist am einfachsten, BlueXP die IAM-Rollen für Sie erstellen zu lassen, aber Sie können Ihre eigenen Rollen verwenden.</block>
+  <block id="f385f3aca90d403df78c03cbdf7eaa8c" category="paragraph">Diese Aufgabe ist optional. Wenn Sie eine Cloud Volumes ONTAP-Arbeitsumgebung erstellen, können Sie mit BlueXP standardmäßig die IAM-Rollen für Sie erstellen. Wenn Sie in den Sicherheitsrichtlinien Ihres Unternehmens die IAM-Rollen selbst erstellen müssen, befolgen Sie die folgenden Schritte.</block>
+  <block id="d71fbed442a9a9cb1c9e9907fd8563e0" category="list-text">IAM-Richtlinien erstellen, die die folgenden Berechtigungen enthalten:</block>
+  <block id="5a5214fb40dd557d5d3934ffa3d72686" category="list-text">Basisrichtlinie für Cloud Volumes ONTAP-Nodes</block>
+  <block id="bf82e7bc6353b008da4cfeb0bcb78391" category="list-text">Backup-Richtlinie für Cloud Volumes ONTAP-Nodes</block>
+  <block id="3bb47c0121c625de06a957d95e1b8e7c" category="paragraph">Wenn Sie Cloud Backup für Ihre Cloud Volumes ONTAP Systeme verwenden möchten, muss die IAM-Rolle für die Nodes die unten dargestellte zweite Richtlinie enthalten.</block>
+  <block id="80fca5903d4623d5bd92d44dca6188ff" category="list-text">Erstellen Sie eine IAM-Rolle, und hängen Sie die von Ihnen erstellten Richtlinien an die Rolle an.</block>
+  <block id="f30b44d93ffa429590bd7907a3d0099c" category="paragraph">Sie sollten das folgende Ladeverhalten mit Cloud Volumes ONTAP 9.10.1 und höher verstehen:</block>
+  <block id="0514cef4c1e1a5949a3acc085ee50110" category="list-text">Ab ONTAP 9.10.1 KÖNNEN WORM Volumes und nicht-WORM-Volumes auf demselben Aggregat vorhanden sein.</block>
+  <block id="7ec6925d846a27916198adf7334fcae3" category="list-text">Wenn Sie WORM aktivieren, wenn Sie eine Cloud Volumes ONTAP-Arbeitsumgebung erstellen, ist für jedes in BlueXP erstellte Volume WORM aktiviert. Allerdings können Sie mit der ONTAP CLI oder mit System Manager Volumes erstellen, in denen WORM deaktiviert ist. Diese Volumes werden NICHT mit DER WORM-Rate berechnet.</block>
+  <block id="3101fb677e91832ce5fd2af7de4c1850" category="list-text">Wenn SIE WORM nicht aktivieren, wenn Sie eine Arbeitsumgebung erstellen, ist jedes mit BlueXP erstellte Volume WORM deaktiviert. FÜR diese Volumes werden die WORM-Rate nicht berechnet. ALLERDINGS können SIE MIT der ONTAP CLI oder mit System Manager WORM-fähige Volumes erstellen. Diese Volumes werden mit DER WORM-Rate berechnet.</block>
+  <block id="38aefad2ca205e663da97b7fdd932dcf" category="paragraph"><block ref="38aefad2ca205e663da97b7fdd932dcf" category="inline-link-rx"></block></block>
+  <block id="37ba276f010f4ea07f1196b487811443" category="paragraph">\https://*.api.bluexp.netapp.com</block>
+  <block id="e1095ff19466581c5274f67123c95036" category="paragraph">\https://api.bluexp.netapp.com</block>
+  <block id="9e434ddc2ad4b9de005368b77254223d" category="paragraph">\https://*.cloudmanager.cloud.netapp.com</block>
+  <block id="115781a0043a85f8707c5c99fd02dc75" category="paragraph">\https://cloudmanager.cloud.netapp.com</block>
+  <block id="7eea1027ea51763c57b7b5965f1ba900" category="admonition">Der Connector kontaktiert derzeit „cloudmanager.cloud.netapp.com", er beginnt jedoch mit der Kontaktaufnahme mit „api.bluexp.netapp.com" in einer kommenden Version.</block>
+  <block id="b9eeb00cda3e979e1efe9bef61f951fc" category="list-text">Azure HA Multi-Verfügbarkeitszone</block>
+  <block id="bf8536c9790d590866c905e06322f99d" category="list-text">Für Root-, Boot-, NVRAM-, Core- und Datenfestplatten verwendet Cloud Manager einen Festplattenverschlüsselungssatz, der das Management von Verschlüsselungsschlüsseln mit gemanagten Festplatten ermöglicht.</block>
+  <block id="0f8e1302b6dedb536c0490b7602b0b32" category="list-text">Ab ONTAP 9.10.1P3 verwendet BlueXP für NVRAM und die Core-Festplatte einen<block ref="c7a6854bb19ab523fbe585f89a860944" category="inline-link-rx"></block>, Die das Management von Schlüsseln mit verwalteten Festplatten ermöglicht. Bei niedrigeren Versionen wird der von Microsoft verwaltete Schlüssel anstelle des vom Kunden verwalteten Schlüssels verwendet.</block>
+  <block id="5aabc9069557be7e4aeff466605cbc75" category="list-text">Single Node</block>
+  <block id="41668006fb357f569acf8441fc16a00c" category="list-text">Wenn Sie Ihre Speicherkonten während ihrer Erstellung verschlüsseln möchten, müssen Sie in der CVO-Erstellungsanforderung die ID der Ressource erstellen und angeben. Dies gilt für alle Implementierungsarten. Wenn Sie es nicht bereitstellen, werden die Speicherkonten immer noch verschlüsselt, aber BlueXP erstellt zuerst die Speicherkonten mit von Microsoft administrierter Verschlüsselungsmethode und aktualisiert dann die Speicherkonten, um den vom Kunden verwalteten Schlüssel zu verwenden.</block>
+  <block id="d83f214fdb8074463fb047c3669d0f00" category="list-text">HA-Paare verwenden zwei Festplattenarten, die eine hohe Performance für I/O-intensive Workloads zu höheren Kosten bieten:</block>
+  <block id="de017bcc9ee62a910294463646126cd7" category="list-text">_Premium Seite Blobs_ mit einer maximalen Festplattengröße von 8 tib</block>
+  <block id="2e40430d8621fa0117dad7bd5bd6ce3d" category="list-text">_Gemanagte Festplatten_ mit einer maximalen Festplattengröße von 32 tib</block>
+  <block id="ec3e0203f4a9c74546691ee9a62623bb" category="summary">Cloud Volumes ONTAP unterstützt die Client-Protokolle iSCSI, NFS, SMB, NVMe-TCP und S3.</block>
+  <block id="ad18d9aa7c4c9bdbf86e39bd6dd5b727" category="section-title">NVMe-TCP</block>
+  <block id="23c4b82f7249c5985875e4b099d8089b" category="paragraph">NVMe-TCP wird für Cloud-Provider unterstützt, wenn Sie Cloud Volumes ONTAP Version 9.12.1 oder höher verwenden. BlueXP bietet keine Managementfunktionen für NVMe-TCP.</block>
+  <block id="a441b4ab4a68e599e4c2acbfa61f336e" category="inline-link">Konfigurieren Sie eine Storage-VM für NVMe</block>
+  <block id="fe193ad2a07694c14d87d881b687f80a" category="paragraph">Weitere Informationen zum Konfigurieren von NVMe über ONTAP finden Sie unter<block ref="098dbc2eb8745ab6d9f97f7915a11b1f" category="inline-link-rx"></block>.</block>
+  <block id="607cc86a46864bcd2f3a17351fea91fe" category="section-title">HA-Konfiguration mit einer einzelnen Verfügbarkeitszone und Seitenlobs</block>
+  <block id="28440751cbe2a16368822f02f298a2f4" category="section-title">HA-Konfiguration mit einer einzelnen Verfügbarkeitszone und gemeinsam genutzten gemanagten Festplatten</block>
+  <block id="293e907786c443731eb5950da1a59417" category="paragraph">Eine Cloud Volumes ONTAP HA-Konfiguration für eine einzelne Verfügbarkeitszone, die auf gemeinsam genutzten, verwalteten Festplatten ausgeführt wird, umfasst die folgenden Komponenten:</block>
+  <block id="2e110c7b4552098e0987a75a7014c130" category="inline-image-macro">Ein konzeptionelles Image, das einen Load Balancer für das Management des eingehenden Datenverkehrs von BlueXP und Clients, zwei Cloud Volumes ONTAP-Nodes in einem Verfügbarkeitsset, SSD-Festplatten für Boot-Daten und von LRS gemanagte Laufwerke für Kundendaten anzeigt.</block>
+  <block id="4b0787da3b25196e9ad45ff1da596770" category="paragraph"><block ref="4b0787da3b25196e9ad45ff1da596770" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d44b7a63bb6db6c3f374ad578d957149" category="inline-link-macro">Boot-, Root-, Partner-Root-, Core- und NVRAM-Daten</block>
+  <block id="bdb764a539084c79daf35d5d881ae82c" category="list-text">Kundendaten befinden sich auf lokal redundanten, von LRS (Storage) gemanagten Festplatten. Jeder Node hat Zugriff auf den Storage des anderen Nodes. Für ist auch zusätzlicher Speicher erforderlich <block ref="9f11431b4ce0e30551c89e37c48c22cd" category="inline-link-macro-rx"></block>.</block>
+  <block id="c69ac98b36cf0e598f3cae6b175a8eec" category="list-text">Storage-Konten werden für gemanagte, festplattenbasierte Implementierungen verwendet, um Diagnoseprotokolle und das Tiering an Blob-Storage zu verarbeiten.</block>
+  <block id="dba89da91170934734e847dcfe4ad5d0" category="section-title">Cloud Volumes ONTAP 9.12.1</block>
+  <block id="6cfcf66978702040453f6b0622a89aaa" category="paragraph">BlueXP kann jetzt Cloud Volumes ONTAP 9.12.1 implementieren und verwalten, was auch Unterstützung für neue Funktionen und zusätzliche Regionen von Cloud-Providern umfasst.<block ref="0d69949c9de36f8752d49be7f0ec9aed" category="inline-link-rx"></block></block>
+  <block id="2dd09f45720a8f94b29c4d048b61ff4e" category="section-title">15. November 2022</block>
+  <block id="cca494b1b1d22bc8b5c8a8ecd5367bf8" category="section-title">ONTAP S3 Lizenz in GCP</block>
+  <block id="44f72ae2127b89a470e082ae9f772acf" category="paragraph">Eine ONTAP S3 Lizenz ist jetzt auf neuen und vorhandenen Cloud Volumes ONTAP Systemen mit Version 9.12.1 oder höher in der Google Cloud Platform enthalten.</block>
+  <block id="50ffa0cb1ebb11ac1969ed98e7c94bf5" category="admonition">NIC3 gilt nur für HA-Implementierungen, die BLOB Storage auf Seite verwenden.</block>
+  <block id="baa56a5cbeb0b5811b307c481a824728" category="paragraph">Standardmäßig aktiviert BlueXP einen Azure Private Link für Verbindungen zwischen Blob-Storage-Konten auf der Cloud Volumes ONTAP- und Azure-Seite.</block>
+  <block id="b1abfb4998eb1782174483534fdf9805" category="paragraph">In den meisten Fällen ist nichts für Sie erforderlich – BlueXP managt den Azure Private Link für Sie. Aber wenn Sie Azure Private DNS verwenden, dann müssen Sie eine Konfigurationsdatei bearbeiten. Sie sollten auch eine Anforderung für den Connector-Standort in Azure kennen.</block>
+  <block id="d11ca650486deac7cf969ef1ae97b60e" category="inline-link-macro">ONTAP_Volume create_ man page</block>
+  <block id="93859a51c20050a8828b46a6420dc7c9" category="paragraph">Siehe <block ref="c8a7e79f678b1faddb103e58db2edb75" category="inline-link-macro-rx"></block> Weitere Informationen zu diesen Attributen.</block>
+  <block id="1bc2e57bef99a91ef2d8ab0cdb177768" category="list-text">Jede Festplatte ist standardmäßig in Azure verschlüsselt.</block>
+  <block id="b80fdfea42d505d96700af73261164a3" category="list-title">HA-Paare mit Seite Blob</block>
+  <block id="c30ce062be1c5d4265f67a2654690b8f" category="list-title">HA-Paare in mehreren Verfügbarkeitszonen</block>
+  <block id="ab3aec14eab62514bc5eb01d67673c8b" category="list-text">Zwei Blobs für 512 gib Premium Storage für das Root-Volume (eine pro Node)</block>
+  <block id="5a07b5de49d43760a69fb7c4fea757e9" category="inline-link-macro">Unterstützte Konfigurationen per Lizenz für HA-Paare</block>
+  <block id="cd583e1e771e181f6946426017c24214" category="paragraph">Diese Option ist nur für bestimmte VM-Typen verfügbar. Informationen darüber, welche VM-Typen unterstützt werden, finden Sie unter <block ref="8fcfcceaae61c16d8227b3fc42274af0" category="inline-link-macro-rx"></block>.</block>
+  <block id="de8cf25f68f35d1a6c91688973a7593e" category="list-text">*Sichere Kommunikation zu Storage &amp; WORM*: Wählen Sie, ob eine HTTPS-Verbindung zu Azure-Speicherkonten aktiviert und, falls gewünscht, den WORM-Speicher (Write Once, Read Many) aktiviert werden soll.</block>
+  <block id="c5cd01a62bc8f55375ac755c2a6a5f47" category="paragraph">Die HTTPS-Verbindung besteht aus einem Cloud Volumes ONTAP 9.7 HA-Paar zu Blob-Storage-Konten auf der Azure-Seite. Beachten Sie, dass die Aktivierung dieser Option sich auf die Schreib-Performance auswirken kann. Sie können die Einstellung nicht ändern, nachdem Sie die Arbeitsumgebung erstellt haben.</block>
+  <block id="ec2431c87ced0e5a9a4272c3f8829e8e" category="list-text">Cloud Volumes ONTAP 9.12.1 oder höher</block>
+  <block id="74f1397a88573593976f011270c5eabb" category="list-text">Cloud Volumes ONTAP 9.11.0 auf 9.11.1</block>
+  <block id="26107ad7eb2db3c2d4b832701061add4" category="list-text">Azure Festplattentyp mit Single-Node-Systemen</block>
+  <block id="7a91b2f49a589947c7854acf66d0f91a" category="list-text">Azure-Festplattentyp mit HA-Paaren</block>
+  <block id="a75a698e7d0ed400565763b148a6d0db" category="list-text">HA-Systeme verwenden Shared Managed Disks mit Premium-SSDs, die beide eine hohe Performance für I/O-intensive Workloads mit höheren Kosten bieten. HA-Implementierungen, die vor der Version 9.12.1 erstellt wurden, verwenden Premium-Blobs auf Seite.</block>
 </blocks>

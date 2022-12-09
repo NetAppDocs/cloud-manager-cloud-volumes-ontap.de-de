@@ -20,6 +20,12 @@ Die auf dieser Seite beschriebenen Verbesserungen beziehen sich nur auf BlueXP-F
 
 
 
+=== Cloud Volumes ONTAP 9.12.1
+
+BlueXP kann jetzt Cloud Volumes ONTAP 9.12.1 implementieren und verwalten, was auch Unterstützung für neue Funktionen und zusätzliche Regionen von Cloud-Providern umfasst.https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes["Erfahren Sie mehr über die neuen Funktionen in dieser Version von Cloud Volumes ONTAP"^]
+
+
+
 == Bis 4. Dezember 2022
 
 Die folgenden Änderungen wurden mit der Version 3.9.24 des Connectors eingeführt.
@@ -35,6 +41,20 @@ Im Rahmen der Cloud Volumes ONTAP-Erstellung können DIE Funktionen für WORM (W
 === Israel Region jetzt in Google Cloud unterstützt
 
 Die Region Israel wird nun in Google Cloud für Cloud Volumes ONTAP und der Connector für Cloud Volumes ONTAP 9.11.1 P3 und höher unterstützt.
+
+
+
+== 15. November 2022
+
+Die folgenden Änderungen wurden mit der Version 3.9.23 des Connectors eingeführt.
+
+
+
+=== ONTAP S3 Lizenz in GCP
+
+Eine ONTAP S3 Lizenz ist jetzt auf neuen und vorhandenen Cloud Volumes ONTAP Systemen mit Version 9.12.1 oder höher in der Google Cloud Platform enthalten.
+
+https://docs.netapp.com/us-en/ontap/object-storage-management/index.html["Lesen Sie, wie Sie S3-Objekt-Storage-Services in ONTAP konfigurieren und managen"^]
 
 
 

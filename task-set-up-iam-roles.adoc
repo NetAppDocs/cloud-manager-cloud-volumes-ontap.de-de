@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-set-up-iam-roles.html 
 keywords: iam role, mediator role, cloud volumes ontap role, policy, iam policy, permissions 
-summary: Jeder Cloud Volumes ONTAP-Knoten muss über eine angeschlossene IAM-Rolle verfügen, die die erforderlichen Berechtigungen bereitstellt. Das gleiche gilt für den HA Mediator. Es ist am einfachsten, BlueXP die IAM-Rollen für Sie erstellen zu lassen, aber Sie können Ihre eigenen Rollen verwenden. 
+summary: IAM-Rollen mit den erforderlichen Berechtigungen müssen an jeden Cloud Volumes ONTAP-Knoten angeschlossen sein. Das gleiche gilt für den HA Mediator. Es ist am einfachsten, BlueXP die IAM-Rollen für Sie erstellen zu lassen, aber Sie können Ihre eigenen Rollen verwenden. 
 ---
 = Einrichten von IAM-Rollen für Cloud Volumes ONTAP
 :hardbreaks:
@@ -14,18 +14,18 @@ summary: Jeder Cloud Volumes ONTAP-Knoten muss über eine angeschlossene IAM-Rol
 
 
 [role="lead"]
-An jeden Cloud Volumes ONTAP-Knoten muss eine IAM-Rolle mit den erforderlichen Berechtigungen angehängt werden. Das gleiche gilt für den HA Mediator. Es ist am einfachsten, BlueXP die IAM-Rollen für Sie erstellen zu lassen, aber Sie können Ihre eigenen Rollen verwenden.
+IAM-Rollen mit den erforderlichen Berechtigungen müssen an jeden Cloud Volumes ONTAP-Knoten angeschlossen sein. Das gleiche gilt für den HA Mediator. Es ist am einfachsten, BlueXP die IAM-Rollen für Sie erstellen zu lassen, aber Sie können Ihre eigenen Rollen verwenden.
 
-Diese Aufgabe ist optional. Wenn Sie eine Cloud Volumes ONTAP-Arbeitsumgebung erstellen, können Sie mit BlueXP standardmäßig die IAM-Rollen für Sie erstellen. Wenn Sie in den Sicherheitsrichtlinien Ihres Unternehmens die IAM-Rolle selbst erstellen müssen, befolgen Sie die folgenden Schritte.
+Diese Aufgabe ist optional. Wenn Sie eine Cloud Volumes ONTAP-Arbeitsumgebung erstellen, können Sie mit BlueXP standardmäßig die IAM-Rollen für Sie erstellen. Wenn Sie in den Sicherheitsrichtlinien Ihres Unternehmens die IAM-Rollen selbst erstellen müssen, befolgen Sie die folgenden Schritte.
 
 
 NOTE: In der AWS Commercial Cloud Services-Umgebung ist die Bereitstellung Ihrer eigenen IAM-Rolle erforderlich. link:task-getting-started-aws-c2s.html["Erfahren Sie, wie Cloud Volumes ONTAP in C2S eingesetzt wird"].
 
 .Schritte
 . Wechseln Sie zur AWS IAM-Konsole.
-. IAM-Richtlinie erstellen, die die folgenden Berechtigungen enthält:
+. IAM-Richtlinien erstellen, die die folgenden Berechtigungen enthalten:
 +
-** Cloud Volumes ONTAP-Knoten
+** Basisrichtlinie für Cloud Volumes ONTAP-Nodes
 +
 [role="tabbed-block"]
 ====
@@ -118,6 +118,122 @@ NOTE: In der AWS Commercial Cloud Services-Umgebung ist die Bereitstellung Ihrer
 ----
 --
 ====
+** Backup-Richtlinie für Cloud Volumes ONTAP-Nodes
++
+Wenn Sie Cloud Backup für Ihre Cloud Volumes ONTAP Systeme verwenden möchten, muss die IAM-Rolle für die Nodes die unten dargestellte zweite Richtlinie enthalten.
+
++
+[role="tabbed-block"]
+====
+.Standardregionen
+--
+[source, json]
+----
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "s3:ListBucket",
+                "s3:GetBucketLocation"
+            ],
+            "Resource": "arn:aws:s3:::netapp-backup*",
+            "Effect": "Allow"
+        },
+        {
+            "Action": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "s3:DeleteObject",
+                "s3:ListAllMyBuckets",
+                "s3:PutObjectTagging",
+                "s3:GetObjectTagging",
+                "s3:RestoreObject",
+                "s3:GetBucketObjectLockConfiguration",
+                "s3:GetObjectRetention",
+                "s3:PutBucketObjectLockConfiguration",
+                "s3:PutObjectRetention"
+            ],
+            "Resource": "arn:aws:s3:::netapp-backup*/*",
+            "Effect": "Allow"
+        }
+    ]
+}
+----
+--
+.GovCloud (USA) Regionen
+--
+[source, json]
+----
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "s3:ListBucket",
+                "s3:GetBucketLocation"
+            ],
+            "Resource": "arn:aws-us-gov:s3:::netapp-backup*",
+            "Effect": "Allow"
+        },
+        {
+            "Action": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "s3:DeleteObject",
+                "s3:ListAllMyBuckets",
+                "s3:PutObjectTagging",
+                "s3:GetObjectTagging",
+                "s3:RestoreObject",
+                "s3:GetBucketObjectLockConfiguration",
+                "s3:GetObjectRetention",
+                "s3:PutBucketObjectLockConfiguration",
+                "s3:PutObjectRetention"
+            ],
+            "Resource": "arn:aws-us-gov:s3:::netapp-backup*/*",
+            "Effect": "Allow"
+        }
+    ]
+}
+----
+--
+.C2S-Umgebung
+--
+[source, json]
+----
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "s3:ListBucket",
+                "s3:GetBucketLocation"
+            ],
+            "Resource": "arn:aws-iso:s3:::netapp-backup*",
+            "Effect": "Allow"
+        },
+        {
+            "Action": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "s3:DeleteObject",
+                "s3:ListAllMyBuckets",
+                "s3:PutObjectTagging",
+                "s3:GetObjectTagging",
+                "s3:RestoreObject",
+                "s3:GetBucketObjectLockConfiguration",
+                "s3:GetObjectRetention",
+                "s3:PutBucketObjectLockConfiguration",
+                "s3:PutObjectRetention"
+            ],
+            "Resource": "arn:aws-iso:s3:::netapp-backup*/*",
+            "Effect": "Allow"
+        }
+    ]
+}
+----
+--
+====
 ** Ha Mediator
 +
 [source, json]
@@ -143,7 +259,7 @@ NOTE: In der AWS Commercial Cloud Services-Umgebung ist die Bereitstellung Ihrer
 ----
 
 
-. Erstellen Sie eine IAM-Rolle, und hängen Sie die im vorherigen Schritt erstellte Richtlinie an die Rolle an.
+. Erstellen Sie eine IAM-Rolle, und hängen Sie die von Ihnen erstellten Richtlinien an die Rolle an.
 
 
 .Ergebnis

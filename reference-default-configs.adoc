@@ -127,7 +127,7 @@ NOTE: Der Kontoadministrator kann diesen Wert auf der Seite Einstellungen änder
 | UNIX-Berechtigungen (nur NFS) | 777 
 |===
 +
-Informationen zu diesen Attributen finden Sie auf der Seite „_Volume create_ man“.
+Siehe link:https://docs.netapp.com/us-en/ontap-cli-9121/volume-create.html["ONTAP_Volume create_ man page"] Weitere Informationen zu diesen Attributen.
 
 
 
@@ -180,19 +180,29 @@ Wenn die für Cloud Volumes ONTAP ausgewählte virtuelle Maschine Ultra SSDs unt
 
 * Eine 1024 gib Standard-Festplatte zum Speichern der Kerne
 * Ein Azure Snapshot für jedes Boot- und Root-Laufwerk
-* Boot- und Root-Festplatten sind standardmäßig verschlüsselt.
+* Jede Festplatte ist standardmäßig in Azure verschlüsselt.
 
 
 
 
 === Azure (HA-Paar)
 
+.HA-Paare mit Seite Blob
 * Zwei 10 gib Premium-SSD-Festplatten für das Boot-Volume (eine pro Node)
 * Zwei Blobs für 140 gib Premium Storage für das Root-Volume (eine pro Node)
 * Zwei 1024 gib Standard-HDD-Festplatten für das Speichern von Cores (eine pro Node)
 * Zwei 512 gib Premium-SSD-Festplatten für NVRAM (eine pro Node)
 * Ein Azure Snapshot für jedes Boot- und Root-Laufwerk
-* Boot- und Root-Festplatten sind standardmäßig verschlüsselt.
+* Jede Festplatte ist standardmäßig in Azure verschlüsselt.
+
+
+.HA-Paare in mehreren Verfügbarkeitszonen
+* Zwei 10 gib Premium-SSD-Festplatten für das Boot-Volume (eine pro Node)
+* Zwei Blobs für 512 gib Premium Storage für das Root-Volume (eine pro Node)
+* Zwei 1024 gib Standard-HDD-Festplatten für das Speichern von Cores (eine pro Node)
+* Zwei 512 gib Premium-SSD-Festplatten für NVRAM (eine pro Node)
+* Ein Azure Snapshot für jedes Boot- und Root-Laufwerk
+* Jede Festplatte ist standardmäßig in Azure verschlüsselt.
 
 
 endif::azure[]
