@@ -16,6 +16,7 @@ summary: Mit BlueXP können Sie sich die Kosten für die Ausführung von Cloud V
 [role="lead"]
 Mit BlueXP können Sie sich die Ressourcenkosten anzeigen lassen, die für die Ausführung von Cloud Volumes ONTAP in AWS anfallen. Außerdem erfahren Sie, wie viel Geld Sie durch den Einsatz von NetApp Funktionen zur Senkung der Storage-Kosten gespart haben.
 
+.Über diese Aufgabe
 BlueXP aktualisiert die Kosten, wenn Sie die Seite aktualisieren. Die endgültigen Kostendetails finden Sie in AWS.
 
 .Schritt

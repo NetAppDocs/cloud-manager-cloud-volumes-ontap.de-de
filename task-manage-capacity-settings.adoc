@@ -18,6 +18,7 @@ Jeder Connector hat Einstellungen, die bestimmen, wie er die Aggregatskapazität
 
 Diese Einstellungen betreffen alle Cloud Volumes ONTAP-Systeme, die von einem Connector verwaltet werden. Wenn Sie einen anderen Konnektor haben, kann er anders konfiguriert werden.
 
+.Erforderliche Berechtigungen
 Kontoadministratorrechte sind erforderlich, um Verbindungseinstellungen zu ändern.
 
 .Schritte

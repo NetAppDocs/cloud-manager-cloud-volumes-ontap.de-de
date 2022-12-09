@@ -33,6 +33,7 @@ Neue Aggregate haben standardmäßig NAE aktiviert, nachdem Sie einen externen S
 
 Cloud Volumes ONTAP unterstützt kein Onboard-Verschlüsselungsmanagement.
 
+.Was Sie benötigen
 Ihr Cloud Volumes ONTAP System sollte beim NetApp Support registriert sein. Auf jedem Cloud Volumes ONTAP System, das beim NetApp Support registriert ist, wird automatisch eine Lizenz für NetApp Volume Encryption installiert.
 
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html["Hinzufügen von Konten für die NetApp Support Site zu BlueXP"^]

@@ -49,7 +49,7 @@ Azure HA, eine einzelne Verfügbarkeitszone::
 
 
 --
-Single Node::
+Single Node oder HA-Paare in mehreren Zonen::
 +
 --
 * Alle Azure-Storage-Konten für Cloud Volumes ONTAP werden über einen vom Kunden gemanagten Schlüssel verschlüsselt. ^1^
@@ -82,7 +82,7 @@ Beachten Sie die folgenden Anforderungen für den Schlüsselspeicher:
 +
 *** *Soft-delete* (diese Option ist standardmäßig aktiviert, muss aber nicht_ deaktiviert sein)
 *** *Schutz löschen*
-*** *Azure Disk Encryption für Volume Encryption*
+*** *Azure Festplattenverschlüsselung für Volume Encryption* (für Single Node-Systeme oder HA-Paare in mehreren Zonen)
 
 
 
@@ -104,6 +104,7 @@ Beachten Sie die folgenden Anforderungen für den Schlüssel:
 
 Nachdem Sie den Schlüsselspeicher erstellt und einen Verschlüsselungsschlüssel generiert haben, können Sie ein neues Cloud Volumes ONTAP-System erstellen, das für die Verwendung des Schlüssels konfiguriert ist. Diese Schritte werden von der BlueXP API unterstützt.
 
+.Erforderliche Berechtigungen
 Wenn Sie einen vom Kunden verwalteten Schlüssel mit einem Cloud Volumes ONTAP-System mit einem einzelnen Knoten verwenden möchten, stellen Sie sicher, dass der BlueXP-Connector über die folgenden Berechtigungen verfügt:
 
 [source, json]
@@ -119,7 +120,7 @@ Wenn Sie einen vom Kunden verwalteten Schlüssel mit einem Cloud Volumes ONTAP-S
 https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-azure.html["Zeigen Sie die aktuelle Liste der Berechtigungen an"^]
 
 
-NOTE: Die ersten drei Berechtigungen sind für HA-Paare nicht erforderlich.
+NOTE: Für HA-Paare in einer einzelnen Zone sind keine Berechtigungen erforderlich.
 
 .Schritte
 . Nutzen Sie den folgenden BlueXP API-Aufruf, um die Liste der Schlüsselvaults in Ihrem Azure-Abonnement zu erhalten.
@@ -192,4 +193,5 @@ https://docs.netapp.com/us-en/cloud-manager-automation/cm/api_ref_resources.html
 
 
 
+.Ergebnis
 Sie verfügen über ein neues Cloud Volumes ONTAP System, das so konfiguriert ist, dass Sie Ihren vom Kunden gemanagten Schlüssel zur Datenverschlüsselung nutzen können.

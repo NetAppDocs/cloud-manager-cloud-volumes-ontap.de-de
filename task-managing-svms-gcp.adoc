@@ -105,6 +105,7 @@ Sie müssen die BlueXP API verwenden, um eine Speicher-VM auf einem Cloud Volume
 
 Beachten Sie, dass BlueXP die erforderlichen IP-Adressen in Google Cloud zuweist und die Storage VM mit einer Daten-LIF für SMB/NFS-Zugriff und einer iSCSI LIF für ausgehende SMB-Kommunikation erstellt.
 
+.Erforderliche Google Cloud Berechtigungen
 Ab Version 3.9.19 erfordert der Connector folgende Berechtigungen zum Erstellen und Managen von Storage VMs für Cloud Volumes ONTAP HA-Paare:
 
 [source, yaml]

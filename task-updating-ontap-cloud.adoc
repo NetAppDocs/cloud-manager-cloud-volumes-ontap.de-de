@@ -137,10 +137,10 @@ BlueXP aktualisiert die Mediator-Instanz auch bei Bedarf während des Cloud Volu
 
 Bevor Sie ein Upgrade durchführen, müssen Sie überprüfen, ob die Systeme bereit sind und alle erforderlichen Konfigurationsänderungen vornehmen.
 
-*  for downtime
-*  that automatic giveback is still enabled
-*  SnapMirror transfers
-*  that aggregates are online
+* <<Planung von Ausfallzeiten>>
+* <<Überprüfen Sie, ob das automatische Giveback weiterhin aktiviert ist>>
+* <<Unterbrechen Sie die SnapMirror Übertragung>>
+* <<Vergewissern Sie sich, dass die Aggregate online sind>>
 
 
 
@@ -168,6 +168,7 @@ Wenn ein Cloud Volumes ONTAP System über aktive SnapMirror Beziehungen verfügt
 
 NOTE: Obwohl Cloud Backup zur Erstellung von Backup-Dateien (so genannte SnapMirror Cloud) eine Implementierung von SnapMirror nutzt, müssen Backups bei einem Upgrade des Systems nicht ausgesetzt werden.
 
+.Über diese Aufgabe
 In diesen Schritten wird die Verwendung von System Manager für Version 9.3 und höher beschrieben.
 
 .Schritte
@@ -189,6 +190,7 @@ NOTE: Der Computer, von dem aus Sie auf BlueXP zugreifen, muss über eine Netzwe
 
 Aggregate für Cloud Volumes ONTAP muss online sein, bevor Sie die Software aktualisieren. Aggregate sollten in den meisten Konfigurationen online sein. Wenn dies nicht der Fall ist, sollten Sie sie jedoch online stellen.
 
+.Über diese Aufgabe
 In diesen Schritten wird die Verwendung von System Manager für Version 9.3 und höher beschrieben.
 
 .Schritte
@@ -209,9 +211,9 @@ image:screenshot_aggr_state.gif["Screenshot: Zeigt das Feld Status an, wenn Sie 
 
 == Upgrade von Cloud Volumes ONTAP
 
-BlueXP benachrichtigt Sie, wenn eine neue Version zur Aktualisierung verfügbar ist. Sie können den Upgrade-Prozess über diese Benachrichtigung starten. Weitere Informationen finden Sie unter  from BlueXP notifications.
+BlueXP benachrichtigt Sie, wenn eine neue Version zur Aktualisierung verfügbar ist. Sie können den Upgrade-Prozess über diese Benachrichtigung starten. Weitere Informationen finden Sie unter <<Upgrade von BlueXP-Benachrichtigungen>>.
 
-Eine andere Möglichkeit, Software-Upgrades mithilfe eines Images auf einer externen URL durchzuführen. Diese Option ist hilfreich, wenn BlueXP nicht auf den S3 Bucket zugreifen kann, um die Software zu aktualisieren oder wenn Sie mit einem Patch ausgestattet wurden. Weitere Informationen finden Sie unter  from an image available at a URL.
+Eine andere Möglichkeit, Software-Upgrades mithilfe eines Images auf einer externen URL durchzuführen. Diese Option ist hilfreich, wenn BlueXP nicht auf den S3 Bucket zugreifen kann, um die Software zu aktualisieren oder wenn Sie mit einem Patch ausgestattet wurden. Weitere Informationen finden Sie unter <<Upgrade von einem Image, das über eine URL verfügbar ist>>.
 
 
 
@@ -223,6 +225,7 @@ image:screenshot_cot_upgrade.gif["Screenshot: Zeigt die Benachrichtigung über d
 
 Sie können den Upgrade-Prozess von dieser Benachrichtigung aus starten, die den Prozess automatisiert, indem Sie das Software-Image aus einem S3-Bucket beziehen, das Image installieren und das System dann neu starten.
 
+.Bevor Sie beginnen
 BlueXP-Vorgänge wie die Erstellung von Volumes oder Aggregaten dürfen auf dem Cloud Volumes ONTAP-System nicht ausgeführt werden.
 
 .Schritte
@@ -240,8 +243,10 @@ image:screenshot_cot_upgrade.gif["Screenshot: Zeigt die Benachrichtigung über d
 . Lesen Sie auf der Seite Prüfen und genehmigen die wichtigen Hinweise, wählen Sie *Ich verstehe...* und klicken Sie dann auf *Go*.
 
 
+.Ergebnis
 BlueXP startet das Software-Upgrade. Nach Abschluss der Softwareaktualisierung können Sie in der Arbeitsumgebung Aktionen ausführen.
 
+.Nachdem Sie fertig sind
 Wenn Sie SnapMirror Transfers ausgesetzt haben, setzen Sie die Transfers mit System Manager fort.
 
 
@@ -292,8 +297,10 @@ Wenn Sie das Software-Image auf den Connector in dem oben gezeigten Pfad kopiert
 . Klicken Sie zur Bestätigung auf *Weiter*.
 
 
+.Ergebnis
 BlueXP startet das Software-Update. Nach Abschluss der Softwareaktualisierung können Sie in der Arbeitsumgebung Aktionen ausführen.
 
+.Nachdem Sie fertig sind
 Wenn Sie SnapMirror Transfers ausgesetzt haben, setzen Sie die Transfers mit System Manager fort.
 
 ifdef::gcp[]

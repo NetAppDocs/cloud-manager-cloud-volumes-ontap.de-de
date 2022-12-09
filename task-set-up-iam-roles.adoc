@@ -146,6 +146,7 @@ NOTE: In der AWS Commercial Cloud Services-Umgebung ist die Bereitstellung Ihrer
 . Erstellen Sie eine IAM-Rolle, und hängen Sie die im vorherigen Schritt erstellte Richtlinie an die Rolle an.
 
 
+.Ergebnis
 Sie können jetzt IAM-Rollen auswählen, wenn Sie eine neue Cloud Volumes ONTAP-Arbeitsumgebung erstellen.
 
 .Weitere Informationen

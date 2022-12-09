@@ -106,7 +106,7 @@ Wenn Sie ein Volume erstellen, das gp3- oder io1-Festplatten verwendet, erstellt
 Dieses Szenario ist zwar unwahrscheinlich, aber in zwei Fällen ist dies möglich:
 
 ** Sie haben die Funktion Elastic Volumes explizit deaktiviert, wenn Sie ein Aggregat aus der API erstellen.
-** Sie haben über die Benutzeroberfläche ein neues Cloud Volumes ONTAP System erstellt. In diesem Fall ist die Elastic Volumes Funktion auf dem anfänglichen Aggregat deaktiviert. Prüfen  Unten für weitere Informationen
+** Sie haben über die Benutzeroberfläche ein neues Cloud Volumes ONTAP System erstellt. In diesem Fall ist die Elastic Volumes Funktion auf dem anfänglichen Aggregat deaktiviert. Prüfen <<Einschränkungen>> Unten für weitere Informationen
 
 
 ====
@@ -146,7 +146,7 @@ link:task-deploying-otc-aws.html["Erfahren Sie, wie Sie ein Cloud Volumes ONTAP 
 
 * Erstellen Sie ein neues Volume auf einem Aggregat mit aktivierten Elastic Volumes
 +
-Wenn Sie ein Volume erstellen, das gp3- oder io1-Festplatten verwendet, erstellt BlueXP das Volume automatisch auf einem Aggregat, in dem elastische Volumes aktiviert sind. Weitere Informationen finden Sie unter  happens when you create a volume.
+Wenn Sie ein Volume erstellen, das gp3- oder io1-Festplatten verwendet, erstellt BlueXP das Volume automatisch auf einem Aggregat, in dem elastische Volumes aktiviert sind. Weitere Informationen finden Sie unter <<Was passiert, wenn Sie ein Volume erstellen>>.
 
 +
 link:task-create-volumes.html["Lesen Sie, wie Sie Volumes erstellen"].

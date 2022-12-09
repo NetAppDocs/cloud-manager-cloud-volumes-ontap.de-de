@@ -41,6 +41,7 @@ image:screenshot-keystone-overview.png["Ein Screenshot mit einer Liste der Keyst
 
 
 
+.Was kommt als Nächstes?
 Verknüpfen Sie die Abonnements, die Sie mit Cloud Volumes ONTAP verwenden möchten.
 
 
@@ -58,6 +59,7 @@ image:screenshot-keystone-link.png["Ein Screenshot, der die Link-Option für ein
 
 
 
+.Ergebnis
 Das Abonnement ist nun mit Ihrem BlueXP-Konto verknüpft und kann bei der Erstellung einer Cloud Volumes ONTAP-Arbeitsumgebung ausgewählt werden.
 
 
@@ -77,6 +79,7 @@ image:screenshot-keystone-request.png["Ein Screenshot, in dem die Möglichkeit b
 . Scrollen Sie nach unten, geben Sie weitere Details für die Anfrage ein und klicken Sie dann auf *Absenden*.
 
 
+.Ergebnis
 Ihre Anfrage erstellt ein Ticket im NetApp System zur Verarbeitung.
 
 
@@ -91,4 +94,5 @@ Wenn Sie kein Keystone Flex Abonnement mehr für neue Cloud Volumes ONTAP-System
 . Klicken Sie für das Abonnement, das Sie aufheben möchten, auf image:icon-action.png["Ein Symbol, das drei seitliche Punkte ist"] Und wählen Sie *Link aufheben*.
 
 
+.Ergebnis
 Das Abonnement wird von Ihrem BlueXP-Konto getrennt und kann bei der Erstellung einer Cloud Volumes ONTAP-Arbeitsumgebung nicht mehr ausgewählt werden.

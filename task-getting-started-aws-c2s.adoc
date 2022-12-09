@@ -375,7 +375,7 @@ Beachten Sie beim Konfigurieren der Instanz Folgendes:
 
 Sie können Cloud Volumes ONTAP-Instanzen in der AWS Commercial Cloud Services-Umgebung starten, indem Sie neue Arbeitsumgebungen in BlueXP erstellen.
 
-.Was Sie und#8217;ll benötigen
+.Was Sie benötigen
 * Wenn Sie eine Lizenz erworben haben, müssen Sie über die Lizenzdatei verfügen, die Sie von NetApp erhalten haben. Die Lizenzdatei ist eine NLF-Datei im JSON-Format.
 * Um die schlüsselbasierte SSH-Authentifizierung für den HA Mediator zu ermöglichen, ist ein Schlüsselpaar erforderlich.
 
@@ -418,6 +418,7 @@ NOTE: Wenn Sie später eine andere Größe benötigen, können Sie die Option Er
 
 
 
+.Ergebnis
 BlueXP startet die Cloud Volumes ONTAP-Instanz. Sie können den Fortschritt in der Timeline verfolgen.
 
 

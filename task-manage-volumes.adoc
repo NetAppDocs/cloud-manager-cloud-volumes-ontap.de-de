@@ -180,6 +180,7 @@ endif::gcp[]
 . Klicken Sie Auf *Speichern*.
 
 
+.Ergebnis
 Cloud Volumes ONTAP aktualisiert den CIFS-Server mit den Änderungen.
 
 
@@ -210,11 +211,11 @@ In BlueXP wird möglicherweise eine Meldung „Aktion erforderlich“ angezeigt,
 TIP: BlueXP zeigt diese „Aktion erforderlich“-Meldungen an, wenn ein Aggregat 90 % der verwendeten Kapazität erreicht hat. Wenn Daten-Tiering aktiviert ist, werden die Meldungen angezeigt, wenn ein Aggregat eine zu 80 % genutzte Kapazität erreicht hat. Standardmäßig werden 10 % freier Speicherplatz für das Daten-Tiering reserviert. link:task-tiering.html#changing-the-free-space-ratio-for-data-tiering["Erfahren Sie mehr über das freie Speicherplatzverhältnis für Daten-Tiering"].
 
 .Schritte
-.  how to correct capacity issues,Identifizieren, wie das Problem behoben werden kann.
+. <<Erkennen der Behebung von Kapazitätsproblemen,Identifizieren, wie das Problem behoben werden kann>>.
 . Verschieben Sie Volumes basierend auf Ihrer Analyse, um Kapazitätsprobleme zu vermeiden:
 +
-**  volumes to another system to avoid capacity issues,Volumes werden in ein anderes System verschoben.
-**  volumes to another aggregate to avoid capacity issues,Verschieben Sie Volumes zu einem anderen Aggregat auf demselben System.
+** <<Verschieben Sie Volumes in ein anderes System, um Kapazitätsprobleme zu vermeiden,Volumes werden in ein anderes System verschoben>>.
+** <<Verschieben Sie Volumes in ein anderes Aggregat, um Kapazitätsprobleme zu vermeiden,Verschieben Sie Volumes zu einem anderen Aggregat auf demselben System>>.
 
 
 
@@ -269,6 +270,7 @@ Weitere Informationen finden Sie unter link:task-manage-volumes.html#moving-volu
 
 Sie können ein oder mehrere Volumes in ein anderes Cloud Volumes ONTAP System verschieben, um Kapazitätsprobleme zu vermeiden. Dies kann erforderlich sein, wenn das System die Festplattengrenze erreicht hat.
 
+.Über diese Aufgabe
 Sie können die folgenden Schritte in dieser Aufgabe ausführen, um die folgende Meldung "Aktion erforderlich" zu korrigieren:
 
  Moving a volume is necessary to avoid capacity issues; however, BlueXP cannot perform this action for you because the system has reached the disk limit.
@@ -298,6 +300,7 @@ Weitere Informationen finden Sie unter link:task-manage-volumes.html#manage-volu
 
 Sie können ein oder mehrere Volumes in ein anderes Aggregat verschieben, um Kapazitätsprobleme zu vermeiden.
 
+.Über diese Aufgabe
 Sie können die folgenden Schritte in dieser Aufgabe ausführen, um die folgende Meldung "Aktion erforderlich" zu korrigieren:
 
  Moving two or more volumes is necessary to avoid capacity issues; however, BlueXP cannot perform this action for you.

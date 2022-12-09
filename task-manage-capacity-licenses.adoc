@@ -30,7 +30,7 @@ Nach dem Kauf einer Lizenz bei Ihrem NetApp Vertriebsmitarbeiter sendet NetApp I
 
 In der Zwischenzeit fragt BlueXP automatisch den NetApp Lizenzservice ab, um Informationen zu den Lizenzen zu erhalten, die mit Ihrem NetApp Support Site Konto verknüpft sind. Wenn keine Fehler auftreten, fügt BlueXP die Lizenzen automatisch dem Digital Wallet hinzu.
 
-Wenn BlueXP die Lizenz nicht hinzufügen kann, müssen Sie sie manuell zum Digital Wallet selbst hinzufügen. Wenn der Connector z. B. an einem Standort installiert ist, der keinen Internetzugang hat, müssen Sie die Lizenzen selbst hinzufügen.  purchased licenses to your account,Erfahren Sie, wie Sie Ihrem Konto erworbene Lizenzen hinzufügen.
+Wenn BlueXP die Lizenz nicht hinzufügen kann, müssen Sie sie manuell zum Digital Wallet selbst hinzufügen. Wenn der Connector z. B. an einem Standort installiert ist, der keinen Internetzugang hat, müssen Sie die Lizenzen selbst hinzufügen. <<Fügen Sie gekaufte Lizenzen zu Ihrem Konto hinzu,Erfahren Sie, wie Sie Ihrem Konto erworbene Lizenzen hinzufügen>>.
 
 
 
@@ -77,7 +77,7 @@ image:screenshot-digital-wallet-packages.png["Ein Screenshot, der die verbraucht
 
 Wenn Ihre erworbenen Lizenzen auf der digitalen Geldbörse nicht angezeigt werden, müssen Sie die Lizenzen zu BlueXP hinzufügen, damit die Kapazität für Cloud Volumes ONTAP verfügbar ist.
 
-.Was Sie und#8217;ll benötigen
+.Was Sie benötigen
 * Sie müssen BlueXP die Seriennummer der Lizenz oder der Lizenzdatei angeben.
 * Wenn Sie die Seriennummer eingeben möchten, müssen Sie zunächst eingeben https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html["Fügen Sie Ihr Konto für die NetApp Support Website zu BlueXP hinzu"^]. Hierbei handelt es sich um das Konto für die NetApp Support Site, das befugt ist, auf die Seriennummer zuzugreifen.
 
@@ -100,6 +100,7 @@ Wenn Sie zusätzliche Kapazität erworben oder die Laufzeit Ihrer Lizenz verlän
 
 Wenn Sie BlueXP jedoch an einem Standort bereitgestellt haben, der keinen Internetzugang hat, müssen Sie die Lizenz in BlueXP manuell aktualisieren.
 
+.Was Sie benötigen
 Die Lizenzdatei (oder _Files_ wenn Sie ein HA-Paar haben).
 
 .Schritte
@@ -117,10 +118,12 @@ Sie können die Abrechnungsmethode für ein Cloud Volumes ONTAP System ändern, 
 
 ifdef::azure[]
 
+.Einschränkung
 Das Ändern in oder von der Edge Cache Lizenz wird nicht unterstützt.
 
 endif::azure[]
 
+.Wichtiger Hinweis
 Wenn Sie über ein privates Angebot oder einen Vertrag von Ihrem Cloud-Provider-Markt verfügen, wird eine Änderung auf eine Abrechnungsmethode, die nicht im Vertrag enthalten ist, zu einer Abrechnung für BYOL (bei dem Kauf einer Lizenz von NetApp) oder PAYGO führen.
 
 .Schritte
@@ -136,6 +139,7 @@ image:screenshot-digital-wallet-charging-method.png["Ein Screenshot des Dialogfe
 . Klicken Sie Auf *Lademethode Ändern*.
 
 
+.Ergebnis
 BlueXP ändert die Lademethode des Cloud Volumes ONTAP-Systems.
 
 Möglicherweise werden Sie auch feststellen, dass das Digital Wallet die verbrauchte Kapazität für jeden Pakettyp aktualisiert, um die soeben vorgenommene Änderung zu berücksichtigen.

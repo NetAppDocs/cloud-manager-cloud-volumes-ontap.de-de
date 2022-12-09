@@ -46,16 +46,77 @@ Wenn Sie von BlueXP darüber informiert werden, dass AutoSupport-Meldungen nicht
 
 === IP-Adressen
 
-BlueXP weist Cloud Volumes ONTAP in Azure die folgende Anzahl von IP-Adressen zu:
+BlueXP weist Cloud Volumes ONTAP in Azure automatisch die erforderliche Anzahl privater IP-Adressen zu. Sie müssen sicherstellen, dass Ihr Netzwerk über genügend private IP-Adressen verfügt.
 
-* Single Node: 5 IP-Adressen
-* HA-Paar: 16 IP-Adressen
+Die Anzahl der LIFs, die Cloud Manager für Cloud Volumes ONTAP zuweist, hängt davon ab, ob Sie ein einzelnes Node-System oder ein HA-Paar implementieren. Ein LIF ist eine IP-Adresse, die einem physischen Port zugewiesen ist. Für Managementtools wie SnapCenter ist eine SVM-Management-LIF erforderlich.
 
+
+NOTE: Ein iSCSI LIF bietet Client-Zugriff über das iSCSI-Protokoll und wird vom System für andere wichtige Netzwerk-Workflows verwendet. Diese LIFs sind erforderlich und sollten nicht gelöscht werden.
+
+
+
+==== IP-Adressen für ein Single Node-System
+
+BlueXP weist 5 oder 6 IP-Adressen einem System mit einem Knoten zu:
+
+* Cluster-Management-IP
+* Node-Management-IP
+* Intercluster IP für SnapMirror
+* NFS/CIFS-IP
+* ISCSI-IP
++
+
+NOTE: Die iSCSI-IP ermöglicht den Client-Zugriff über das iSCSI-Protokoll. Es wird vom System auch für andere wichtige Netzwerk-Workflows verwendet. Dieses LIF ist erforderlich und sollte nicht gelöscht werden.
+
+* SVM-Management (optional – nicht standardmäßig konfiguriert)
+
+
+
+
+==== IP-Adressen für HA-Paare
+
+BlueXP weist während der Bereitstellung 4 NICs (pro Node) IP-Adressen zu.
 
 Beachten Sie, dass BlueXP in Azure eine SVM Management-LIF auf HA-Paaren erstellt, nicht jedoch auf Systemen mit einzelnen Nodes.
 
+*NIC0*
 
-TIP: Ein LIF ist eine IP-Adresse, die einem physischen Port zugewiesen ist. Für Managementtools wie SnapCenter ist eine SVM-Management-LIF erforderlich.
+* Node-Management-IP
+* Intercluster-IP
+* ISCSI-IP
++
+
+NOTE: Die iSCSI-IP ermöglicht den Client-Zugriff über das iSCSI-Protokoll. Es wird vom System auch für andere wichtige Netzwerk-Workflows verwendet. Dieses LIF ist erforderlich und sollte nicht gelöscht werden.
+
+
+
+*NIC1*
+
+* Cluster-Netzwerk-IP
+
+
+*NIC2*
+
+* Cluster Interconnect IP (HA-IC)
+
+
+*NIC3*
+
+* PageBLOB NIC-IP (Festplattenzugriff)
+
+
+
+NOTE: NIC3 gilt nur für HA-Implementierungen mit BLOB-Systemen auf Seite.
+
+Die oben genannten IP-Adressen migrieren nicht bei Failover-Ereignissen.
+
+Zusätzlich werden 4 Frontend-IPs (FIPS) für die Migration bei Failover-Ereignissen konfiguriert. Diese Frontend-IPs sind im Load Balancer aktiv.
+
+* Cluster-Management-IP
+* NodeA Daten-IP (NFS/CIFS)
+* NodeB-Daten-IP (NFS/CIFS)
+* SVM-Management-IP
+
 
 
 

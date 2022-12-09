@@ -31,4 +31,5 @@ Informationen zum Abschließen des Verzuvöllig finden Sie unter link:https://le
 . Suchen Sie in den Informationen für die Arbeitsumgebung nach der neuen Ressourcengruppe.
 
 
+.Ergebnis
 Die Arbeitsumgebung und ihre Ressourcen (VMs, Festplatten, Speicherkonten, Netzwerkschnittstellen, Snapshots) befinden sich in der neuen Ressourcengruppe.

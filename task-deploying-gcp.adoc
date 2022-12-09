@@ -254,6 +254,7 @@ Weitere Informationen finden Sie unter link:task-planning-your-config-gcp.html#c
 
 
 
+.Ergebnis
 BlueXP implementiert das Cloud Volumes ONTAP-System. Sie können den Fortschritt in der Timeline verfolgen.
 
 Wenn Sie Probleme bei der Implementierung des Cloud Volumes ONTAP Systems haben, lesen Sie die Fehlermeldung. Sie können auch die Arbeitsumgebung auswählen und auf *Umgebung neu erstellen* klicken.
@@ -466,6 +467,7 @@ Weitere Informationen finden Sie unter link:task-planning-your-config-gcp.html#c
 
 
 
+.Ergebnis
 BlueXP implementiert das Cloud Volumes ONTAP-System. Sie können den Fortschritt in der Timeline verfolgen.
 
 Wenn Sie Probleme bei der Implementierung des Cloud Volumes ONTAP Systems haben, lesen Sie die Fehlermeldung. Sie können auch die Arbeitsumgebung auswählen und auf *Umgebung neu erstellen* klicken.

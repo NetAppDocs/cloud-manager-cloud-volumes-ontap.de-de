@@ -57,6 +57,7 @@ image:screenshot_shutdown.gif["Screenshot: Zeigt einen Zeitplan zum Herunterfahr
 . Klicken Sie Auf *Speichern*.
 
 
+.Ergebnis
 BlueXP speichert den Zeitplan. Das Uhrensymbol ändert sich, um anzuzeigen, dass ein Zeitplan festgelegt wurde: image:screenshot_shutdown_icon_scheduled.gif["Screenshot: Zeigt das Symbol für das automatische Herunterfahren an, nachdem ein Zeitplan definiert wurde."]
 
 
@@ -68,6 +69,7 @@ Stoppen von Cloud Volumes ONTAP erspart Ihnen das Ansteigen von Computing-Kosten
 
 NOTE: Zur Senkung der Kosten löscht BlueXP in regelmäßigen Abständen ältere Snapshots von Root- und Boot-Festplatten. Nur die beiden letzten Snapshots werden sowohl für die Root- als auch für Boot Disks beibehalten.
 
+.Über diese Aufgabe
 Wenn Sie ein HA-Paar anhalten, werden beide Nodes von BlueXP heruntergefahren.
 
 .Schritte

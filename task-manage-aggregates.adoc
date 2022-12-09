@@ -19,8 +19,10 @@ Managen Sie Aggregate selbst, indem Sie Festplatten hinzufügen, Informationen �
 
 CAUTION: Alle Festplatten und Aggregate müssen direkt aus BlueXP erstellt und gelöscht werden. Sie sollten diese Aktionen nicht über ein anderes Management-Tool ausführen. Dies kann sich auf die Systemstabilität auswirken, die Fähigkeit zum Hinzufügen von Festplatten in der Zukunft beeinträchtigen und möglicherweise Kosten für redundante Cloud-Provider verursachen.
 
+.Bevor Sie beginnen
 Wenn Sie ein Aggregat löschen möchten, müssen Sie zunächst die Volumes im Aggregat gelöscht haben.
 
+.Über diese Aufgabe
 Wenn einem Aggregat nicht mehr genügend Platz vorhanden ist, können Sie Volumes mit System Manager zu einem anderen Aggregat verschieben.
 
 .Schritte

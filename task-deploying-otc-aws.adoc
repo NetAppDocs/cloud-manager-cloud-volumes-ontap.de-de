@@ -49,6 +49,7 @@ Weitere Informationen finden Sie unter link:reference-networking-aws.html["Netzw
 
 Wenn Sie Cloud Volumes ONTAP in AWS starten möchten, müssen Sie eine neue Arbeitsumgebung in BlueXP schaffen
 
+.Über diese Aufgabe
 Unmittelbar nach der Erstellung der Arbeitsumgebung startet BlueXP eine Testinstanz in der angegebenen VPC, um die Konnektivität zu überprüfen. Wenn der Vorgang erfolgreich war, beendet BlueXP die Instanz sofort und beginnt dann mit der Bereitstellung des Cloud Volumes ONTAP-Systems. Wenn BlueXP die Verbindung nicht überprüfen kann, schlägt die Erstellung der Arbeitsumgebung fehl. Die Testinstanz ist entweder t2.nano (für Standard-VPC-Mandantenfähigkeit) oder m3.medium (für dedizierte VPC-Mandantenfähigkeit).
 
 .Schritte
@@ -255,6 +256,7 @@ Weitere Informationen finden Sie unter link:task-planning-your-config.html#choos
 
 
 
+.Ergebnis
 BlueXP startet die Cloud Volumes ONTAP-Instanz. Sie können den Fortschritt in der Timeline verfolgen.
 
 Wenn beim Starten der Cloud Volumes ONTAP Instanz Probleme auftreten, lesen Sie die Fehlermeldung. Sie können auch die Arbeitsumgebung auswählen und auf Umgebung neu erstellen klicken.
@@ -275,14 +277,16 @@ Mithilfe von Quotas können Sie den Speicherplatz und die Anzahl der von einem B
 
 Wenn Sie ein Cloud Volumes ONTAP HA-Paar in AWS starten möchten, müssen Sie eine HA-Arbeitsumgebung in BlueXP erstellen.
 
+.Einschränkung
 Derzeit werden HA-Paare nicht mit Ausposten von AWS unterstützt.
 
+.Über diese Aufgabe
 Unmittelbar nach der Erstellung der Arbeitsumgebung startet BlueXP eine Testinstanz in der angegebenen VPC, um die Konnektivität zu überprüfen. Wenn der Vorgang erfolgreich war, beendet BlueXP die Instanz sofort und beginnt dann mit der Bereitstellung des Cloud Volumes ONTAP-Systems. Wenn BlueXP die Verbindung nicht überprüfen kann, schlägt die Erstellung der Arbeitsumgebung fehl. Die Testinstanz ist entweder t2.nano (für Standard-VPC-Mandantenfähigkeit) oder m3.medium (für dedizierte VPC-Mandantenfähigkeit).
 
 .Schritte
 . Wählen Sie im linken Navigationsmenü die Option *Speicherung > Leinwand*.
 . Klicken Sie auf der Seite Arbeitsfläche auf *Arbeitsumgebung hinzufügen* und folgen Sie den Anweisungen.
-. *Wählen Sie einen Standort*: Wählen Sie *Amazon Web Services* und *Cloud Volumes ONTAP Single Node*.
+. *Wählen Sie einen Standort*: Wählen Sie *Amazon Web Services* und *Cloud Volumes ONTAP HA*.
 . *Details und Anmeldeinformationen*: Optional können Sie die AWS-Anmeldeinformationen und das Abonnement ändern, einen Namen der Arbeitsumgebung eingeben, bei Bedarf Tags hinzufügen und dann ein Passwort eingeben.
 +
 Einige der Felder auf dieser Seite sind selbsterklärend. In der folgenden Tabelle werden Felder beschrieben, für die Sie möglicherweise Hilfe benötigen:
@@ -492,6 +496,7 @@ Weitere Informationen finden Sie unter link:task-planning-your-config.html#choos
 
 
 
+.Ergebnis
 BlueXP startet das Cloud Volumes ONTAP HA-Paar. Sie können den Fortschritt in der Timeline verfolgen.
 
 Wenn beim Starten des HA-Paars Probleme auftreten, überprüfen Sie die Fehlermeldung. Sie können auch die Arbeitsumgebung auswählen und auf Umgebung neu erstellen klicken.

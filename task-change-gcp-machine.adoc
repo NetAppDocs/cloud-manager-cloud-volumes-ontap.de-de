@@ -49,4 +49,5 @@ TIP: Diese Option steht auch zur Verfügung, indem Sie die Arbeitsumgebung aufru
 . Wählen Sie einen Maschinentyp aus, aktivieren Sie das Kontrollkästchen, um zu bestätigen, dass Sie die Auswirkungen der Änderung verstehen, und klicken Sie dann auf *OK*.
 
 
+.Ergebnis
 Cloud Volumes ONTAP wird mit der neuen Konfiguration neu gestartet.

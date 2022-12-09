@@ -67,6 +67,7 @@ Wenn Sie die Lizenzdatei noch nicht haben, lesen Sie den Abschnitt weiter unten.
 . Klicken Sie Auf *Lizenz Hinzufügen*.
 
 
+.Ergebnis
 BlueXP fügt die Lizenz zum Digital Wallet hinzu. Die Lizenz wird erst dann als nicht zugewiesen identifiziert, wenn Sie sie einem neuen Cloud Volumes ONTAP-System zuordnen. Danach wechselt die Lizenz auf die Registerkarte *BYOL* im Digital Wallet.
 
 
@@ -96,6 +97,7 @@ image:screenshot-exchange-license.png["Ein Screenshot der Option Exchange Licens
 . Lesen Sie die gesetzliche Einwilligung und klicken Sie auf *Zustimmen*.
 
 
+.Ergebnis
 BlueXP konvertiert die nicht zugewiesene Lizenz in den von Ihnen ausgewählten Dienst. Sie können die neue Lizenz auf der Registerkarte *Datendienste Lizenzen* anzeigen.
 
 
@@ -133,6 +135,7 @@ Wenn BlueXP nicht über die sichere Internetverbindung auf die Lizenzdatei zugre
 . Klicken Sie Auf *Lizenz Aktualisieren*.
 
 
+.Ergebnis
 BlueXP aktualisiert die Lizenz auf dem Cloud Volumes ONTAP-System.
 
 
@@ -208,6 +211,7 @@ Wenn Sie eine Eval-Lizenz in einen Byol konvertieren, startet BlueXP das Cloud V
 . Klicken Sie Auf *Lizenz Konvertieren*.
 
 
+.Ergebnis
 BlueXP startet den Konvertierungsprozess. Cloud Volumes ONTAP wird im Rahmen dieses Prozesses automatisch neu gestartet. Wenn es gesichert ist, werden die Lizenzinformationen die neue Lizenz enthalten.
 
 

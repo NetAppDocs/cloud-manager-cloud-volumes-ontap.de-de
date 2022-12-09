@@ -18,10 +18,10 @@ Falls Sie nach dem Start des Cloud Volumes ONTAP-Systems mehr Speicherplatz ben�
 
 BlueXP bietet verschiedene Möglichkeiten zur Erstellung eines neuen Volumes:
 
-* Geben Sie Details für ein neues Volume an, und BlueXP kann die zugrunde liegenden Datenaggregate für Sie verarbeiten.  a volume,Weitere Informationen ..
-* Erstellen Sie ein Volume auf einem Datenaggregat Ihrer Wahl.  a volume,Weitere Informationen ..
-* Erstellen Sie ein Volume aus einer Vorlage, um das Volume gemäß den Workload-Anforderungen bestimmter Applikationen, wie z. B. Datenbanken oder Streaming-Services, zu optimieren.  a volume from a template,Weitere Informationen ..
-* Erstellung eines Volumes auf dem zweiten Node in einer HA-Konfiguration  a volume on the second node in an HA configuration,Weitere Informationen ..
+* Geben Sie Details für ein neues Volume an, und BlueXP kann die zugrunde liegenden Datenaggregate für Sie verarbeiten. <<Erstellen eines Volumes,Weitere Informationen .>>.
+* Erstellen Sie ein Volume auf einem Datenaggregat Ihrer Wahl. <<Erstellen eines Volumes,Weitere Informationen .>>.
+* Erstellen Sie ein Volume aus einer Vorlage, um das Volume gemäß den Workload-Anforderungen bestimmter Applikationen, wie z. B. Datenbanken oder Streaming-Services, zu optimieren. <<Erstellen Sie ein Volume anhand einer Vorlage,Weitere Informationen .>>.
+* Erstellung eines Volumes auf dem zweiten Node in einer HA-Konfiguration <<Erstellung eines Volumes auf dem zweiten Node in einer HA-Konfiguration,Weitere Informationen .>>.
 
 
 
@@ -30,7 +30,7 @@ BlueXP bietet verschiedene Möglichkeiten zur Erstellung eines neuen Volumes:
 
 Ein paar Anmerkungen zur Volume-Bereitstellung:
 
-* Wenn Sie ein iSCSI-Volume erstellen, erstellt BlueXP automatisch eine LUN für Sie. Wir haben es einfach gemacht, indem wir nur eine LUN pro Volumen erstellen, so gibt es keine Verwaltung beteiligt. Nachdem Sie das Volume erstellt haben,  a LUN to a host,Verwenden Sie den IQN, um von den Hosts eine Verbindung zur LUN herzustellen.
+* Wenn Sie ein iSCSI-Volume erstellen, erstellt BlueXP automatisch eine LUN für Sie. Wir haben es einfach gemacht, indem wir nur eine LUN pro Volumen erstellen, so gibt es keine Verwaltung beteiligt. Nachdem Sie das Volume erstellt haben, <<Verbinden Sie eine LUN mit einem Host,Verwenden Sie den IQN, um von den Hosts eine Verbindung zur LUN herzustellen>>.
 * Sie können weitere LUNs aus System Manager oder der CLI erstellen.
 
 
@@ -214,6 +214,7 @@ Komprimierung:: Reduziert die physische Kapazität, die zum Speichern von Daten 
 . *Review*: Überprüfen Sie die Details über die Lautstärke und klicken Sie dann auf *Hinzufügen*.
 
 
+.Ergebnis
 BlueXP erstellt das Volume auf dem Cloud Volumes ONTAP System.
 
 
@@ -249,7 +250,7 @@ image:screenshot_define_cvo_vol_from_template.png["Ein Screenshot mit einer leer
 NOTE: Klicken Sie auf das Kontrollkästchen *schreibgeschützte Parameter anzeigen*, um alle Felder anzuzeigen, die von der Vorlage gesperrt wurden, wenn Sie die Werte für diese Parameter anzeigen möchten. Standardmäßig werden diese vordefinierten Felder ausgeblendet. Es werden nur die Felder angezeigt, die Sie ausfüllen müssen.
 
 . Im Bereich _context_ wird die Arbeitsumgebung mit dem Namen der Arbeitsumgebung ausgefüllt, mit der Sie begonnen haben. Sie müssen die *Speicher-VM* auswählen, wo das Volume erstellt wird.
-. Fügen Sie Werte für alle Parameter hinzu, die nicht hartcodiert sind. Siehe  a volume,Erstellen eines Volumes Sie finden Details zu allen Parametern, die Sie zur Implementierung eines Cloud Volumes ONTAP Volume abschließen müssen.
+. Fügen Sie Werte für alle Parameter hinzu, die nicht hartcodiert sind. Siehe <<create a volume,Erstellen eines Volumes>> Sie finden Details zu allen Parametern, die Sie zur Implementierung eines Cloud Volumes ONTAP Volume abschließen müssen.
 . Wenn Sie keine weiteren Aktionen definieren müssen (z. B. Cloud-Backup konfigurieren), klicken Sie auf *Vorlage ausführen*.
 +
 Wenn es andere Aktionen gibt, klicken Sie im linken Fensterbereich auf die Aktion, um die erforderlichen Parameter anzuzeigen.
@@ -263,6 +264,7 @@ Wenn zum Beispiel die Aktion Cloud Backup aktivieren erfordert, dass Sie eine Ba
 . Klicken Sie Auf *Ausführungsvorlage*.
 
 
+.Ergebnis
 Cloud Volumes ONTAP stellt das Volume bereit und zeigt eine Seite an, sodass der Fortschritt angezeigt wird.
 
 image:screenshot_template_creating_resource_cvo.png["Ein Screenshot zeigt den Fortschritt der Erstellung Ihres neuen Volumes aus der Vorlage."]
@@ -285,6 +287,7 @@ Standardmäßig erstellt BlueXP Volumes auf dem ersten Knoten einer HA-Konfigura
 . Geben Sie Details für den neuen Volume ein und klicken Sie dann auf *Erstellen*.
 
 
+.Ergebnis
 BlueXP erstellt das Volume auf dem zweiten Knoten im HA-Paar.
 
 ifdef::aws[]

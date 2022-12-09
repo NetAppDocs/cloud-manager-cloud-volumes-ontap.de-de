@@ -161,8 +161,8 @@ Firewall-Regeln:: Sie müssen keine Firewall-Regeln erstellen, weil BlueXP das f
 --
 Beachten Sie, dass für eine HA-Konfiguration zwei Gruppen von Firewall-Regeln erforderlich sind:
 
-* Ein Regelsatz für HA-Komponenten in VPC-0. Diese Regeln ermöglichen den Datenzugriff auf Cloud Volumes ONTAP.  rules for Cloud Volumes ONTAP,Weitere Informationen ..
-* Weiterer Regelsatz für HA-Komponenten in VPC-1, VPC-2 und VPC-3. Diese Regeln sind für die Kommunikation zwischen den HA-Komponenten ein- und ausgehender Anruf offen.  rules for Cloud Volumes ONTAP,Weitere Informationen ..
+* Ein Regelsatz für HA-Komponenten in VPC-0. Diese Regeln ermöglichen den Datenzugriff auf Cloud Volumes ONTAP. <<Firewall-Regeln für Cloud Volumes ONTAP,Weitere Informationen .>>.
+* Weiterer Regelsatz für HA-Komponenten in VPC-1, VPC-2 und VPC-3. Diese Regeln sind für die Kommunikation zwischen den HA-Komponenten ein- und ausgehender Anruf offen. <<Firewall-Regeln für Cloud Volumes ONTAP,Weitere Informationen .>>.
 
 
 --
@@ -461,7 +461,7 @@ NOTE: Die Quelle ist die Schnittstelle (IP-Adresse) auf dem Cloud Volumes ONTAP 
 
 == Firewall-Regeln für VPC-1, VPC-2 und VPC-3
 
-In GCP wird eine HA-Konfiguration über vier VPCs hinweg bereitgestellt. Die für die HA-Konfiguration in VPC-0 erforderlichen Firewall-Regeln sind  rules for Cloud Volumes ONTAP,O. g. für Cloud Volumes ONTAP.
+In GCP wird eine HA-Konfiguration über vier VPCs hinweg bereitgestellt. Die für die HA-Konfiguration in VPC-0 erforderlichen Firewall-Regeln sind <<Firewall-Regeln für Cloud Volumes ONTAP,O. g. für Cloud Volumes ONTAP>>.
 
 Gleichzeitig ermöglichen die vordefinierten Firewall-Regeln, die BlueXP für Instanzen in VPC-1, VPC-2 und VPC-3 erstellt, die Ingress-Kommunikation über _all_ Protokolle und Ports. Diese Regeln ermöglichen die Kommunikation zwischen HA-Nodes.
 

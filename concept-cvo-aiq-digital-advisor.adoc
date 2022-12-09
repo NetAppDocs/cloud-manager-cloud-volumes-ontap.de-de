@@ -60,6 +60,6 @@ NOTE: Seit dem 3. Dezember 2021 nutzt NetApp eine neue Methode zur Registrierung
 
 
 
-== Was kommt als Nächstes
+== Wie es weiter geht
 
 Siehe https://docs.netapp.com/us-en/active-iq/index.html["Active IQ Digital Advisor Dokumentation"] Entsprechende Details.

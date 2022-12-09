@@ -16,16 +16,19 @@ summary: Erste Schritte mit Cloud Volumes ONTAP für AWS
 [role="lead"]
 Erste Schritte mit Cloud Volumes ONTAP in AWS
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"] Einen Konnektor erstellen
 [role="quick-margin-para"]
 Wenn Sie keine haben https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["Stecker"^] Dennoch muss ein Kontoadministrator einen erstellen. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html["Erfahren Sie, wie Sie in AWS einen Connector erstellen können"^].
 
 [role="quick-margin-para"]
 Wenn Sie Ihre erste Cloud Volumes ONTAP-Arbeitsumgebung erstellen, werden Sie von BlueXP (früher Cloud Manager) aufgefordert, einen Connector bereitzustellen, falls noch nicht vorhanden ist.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"] Planen Sie Ihre Konfiguration
 [role="quick-margin-para"]
 BlueXP bietet vorkonfigurierte Pakete, die Ihren Workload-Anforderungen entsprechen, oder Sie können eine eigene Konfiguration erstellen. Wenn Sie sich für eine eigene Konfiguration entscheiden, sollten Sie sich mit den verfügbaren Optionen vertraut machen. link:task-planning-your-config.html["Weitere Informationen ."].
 
-.<span class=„image“><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png"[] alt=„drei“></span> Einrichten des Netzwerks
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"] Richten Sie Ihr Netzwerk ein
+[role="quick-margin-list"]
 . Stellen Sie sicher, dass Ihre VPC und Subnetze die Konnektivität zwischen dem Connector und Cloud Volumes ONTAP unterstützen.
 . Aktivieren Sie den Outbound-Internetzugang über die Ziel-VPC, damit der Connector und der Cloud Volumes ONTAP mehrere Endpunkte kontaktieren können.
 +
@@ -40,9 +43,11 @@ Ein VPC-Endpunkt ist erforderlich, wenn Sie kalte Daten von Cloud Volumes ONTAP 
 [role="quick-margin-para"]
 link:reference-networking-aws.html["Erfahren Sie mehr über Netzwerkanforderungen"].
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"] AWS KMS einrichten
 [role="quick-margin-para"]
 Wenn Sie Amazon Verschlüsselung mit Cloud Volumes ONTAP verwenden möchten, müssen Sie sicherstellen, dass ein aktiver Kundenstammschlüssel (CMK) vorhanden ist. Außerdem müssen Sie die Schlüsselrichtlinie für jedes CMK ändern, indem Sie die IAM-Rolle hinzufügen, die dem Connector Berechtigungen als_Key-Benutzer_ bereitstellt. link:task-setting-up-kms.html["Weitere Informationen ."].
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Fünf"] Starten Sie Cloud Volumes ONTAP mit BlueXP
 [role="quick-margin-para"]
 Klicken Sie auf *Arbeitsumgebung hinzufügen*, wählen Sie den Systemtyp aus, den Sie bereitstellen möchten, und führen Sie die Schritte im Assistenten aus. link:task-deploying-otc-aws.html["Lesen Sie Schritt-für-Schritt-Anleitungen"].
 

@@ -58,7 +58,7 @@ Bietet alle Cloud Volumes ONTAP-Funktionen kostenlos von NetApp an (Gebühren f�
 * Sie können bis zu 10 Cloud Volumes ONTAP Systeme mit Freemium-Angebot pro NetApp Konto bei jedem Cloud-Provider nutzen.
 * Wenn die bereitgestellte Kapazität für ein Cloud Volumes ONTAP-System 500 gib überschreitet, konvertiert BlueXP das System in das Essentials-Paket.
 +
-Sobald ein System in das Essentials-Paket konvertiert wird, wird das verwendet  about charging,Mindestgebühr Gilt.
+Sobald ein System in das Essentials-Paket konvertiert wird, wird das verwendet <<Hinweise zum Laden,Mindestgebühr>> Gilt.
 
 +
 Alle anderen Systeme mit einer bereitgestellten Kapazität von weniger als 500 gib bleiben auf Freemium (sofern sie mit dem Freemium-Angebot bereitgestellt wurden).

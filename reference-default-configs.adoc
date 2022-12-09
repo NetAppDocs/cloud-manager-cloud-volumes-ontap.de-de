@@ -220,6 +220,7 @@ ifdef::gcp[]
 * Zwei persistente SSD-Festplatte mit 500 gib für NVRAM
 * Zwei persistente 315 gib Standard-Festplatte zum Speichern von Cores
 * Eine persistente 10 gib-Standardfestplatte für Mediator-Daten
+* Eine persistente 10 gib Standard-Festplatte für den Mediator: Boot-Daten
 * Snapshots für Boot- und Root-Daten
 * Boot- und Root-Festplatten sind standardmäßig verschlüsselt.
 

@@ -20,7 +20,11 @@ Ein HA-Paar von Cloud Volumes ONTAP bietet Zuverlässigkeit der Enterprise-Klass
 
 == HA-Komponenten
 
-Eine Cloud Volumes ONTAP HA-Konfiguration in Azure umfasst die folgenden Komponenten:
+
+
+=== HA-Seite Blob-Konfiguration
+
+Eine Cloud Volumes ONTAP HA-Page Blob-Konfiguration in Azure umfasst die folgenden Komponenten:
 
 image:diagram_ha_azure.png["Ein Konzept-Image, das einen Load Balancer für das Management von eingehenden Datenverkehr von BlueXP und Clients, zwei Cloud Volumes ONTAP-Nodes in einem Verfügbarkeitsset, SSD-Festplatten für Boot-Daten und Page Blobs für Kundendaten zeigt."]
 
@@ -39,6 +43,29 @@ https://docs.microsoft.com/en-us/azure/storage/common/storage-scalability-target
 
 * Für das Daten-Tiering zu Azure Blob Storage ist ein Storage-Konto erforderlich.
 * Ab Cloud Volumes ONTAP 9.7 sind die Storage-Konten, die BlueXP für HA-Paare erstellt, allgemeine v2 Storage-Konten.
+* Sie können bei der Erstellung einer Arbeitsumgebung eine HTTPS-Verbindung von einem Cloud Volumes ONTAP 9.7 HA-Paar zu Azure Storage-Konten aktivieren. Beachten Sie, dass die Aktivierung dieser Option sich auf die Schreib-Performance auswirken kann. Sie können die Einstellung nicht ändern, nachdem Sie die Arbeitsumgebung erstellt haben.
+
+
+--
+
+
+
+
+=== KONFIGURATION der verschiedenen Verfügbarkeitszonen
+
+Eine Cloud Volumes ONTAP HA Konfiguration mit mehreren Verfügbarkeitszonen in Azure umfasst die folgenden Komponenten:
+
+image:diagram_ha_azure_maz.png["Ein Konzept-Image, das einen Load Balancer für das Management von eingehenden Datenverkehr von BlueXP und Clients, zwei Cloud Volumes ONTAP-Nodes in zwei Verfügbarkeitszonen, SSD-Festplatten für Boot-Daten und gemanagte Festplatten für Kundendaten anzeigt."]
+
+Beachten Sie Folgendes zu den Azure Komponenten, die BlueXP für Sie implementiert:
+
+Azure Standard Load Balancer:: Der Load Balancer managt den eingehenden Datenverkehr zum Cloud Volumes ONTAP HA-Paar.
+Verfügbarkeitszonen:: Zwei Cloud Volumes ONTAP-Nodes werden in verschiedenen Verfügbarkeitszonen bereitgestellt. Verfügbarkeitszonen stellen sicher, dass sich die Nodes in unterschiedlichen Fehlerdomänen befinden. https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy["Weitere Informationen zur Azure Storage-Redundanz finden Sie in der Azure Dokumentation"^].
+Festplatten:: Kundendaten befinden sich auf zonenredundanten Storage-Laufwerken (ZRS), die von gemanagt werden. Jeder Node hat Zugriff auf den Storage des anderen Nodes. Für ist auch zusätzlicher Speicher erforderlich link:reference-default-configs.html#boot-and-root-data-for-cloud-volumes-ontap["Boot-, Root-, Partner-Root- und Kerndaten"].
+Konten mit Storage-Systemen::
++
+--
+* Für verwaltete Festplatten ist ein Speicherkonto erforderlich. Storage-Konten, die BlueXP für HA-Paare erstellt, sind allgemeine v2 Storage-Konten.
 * Sie können bei der Erstellung einer Arbeitsumgebung eine HTTPS-Verbindung von einem Cloud Volumes ONTAP 9.7 HA-Paar zu Azure Storage-Konten aktivieren. Beachten Sie, dass die Aktivierung dieser Option sich auf die Schreib-Performance auswirken kann. Sie können die Einstellung nicht ändern, nachdem Sie die Arbeitsumgebung erstellt haben.
 
 

@@ -16,19 +16,22 @@ summary: Erste Schritte mit Cloud Volumes ONTAP für GCP
 [role="lead"]
 Erste Schritte mit Cloud Volumes ONTAP für GCP
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"] Einen Konnektor erstellen
 [role="quick-margin-para"]
 Wenn Sie keine haben https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["Stecker"^] Dennoch muss ein Kontoadministrator einen erstellen. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html["Connector in GCP erstellen"^].
 
 [role="quick-margin-para"]
 Wenn Sie Ihre erste Cloud Volumes ONTAP-Arbeitsumgebung erstellen, werden Sie von BlueXP (früher Cloud Manager) aufgefordert, einen Connector bereitzustellen, falls noch nicht vorhanden ist.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"] Planen Sie Ihre Konfiguration
 [role="quick-margin-para"]
 BlueXP bietet vorkonfigurierte Pakete, die Ihren Workload-Anforderungen entsprechen, oder Sie können eine eigene Konfiguration erstellen. Wenn Sie sich für eine eigene Konfiguration entscheiden, sollten Sie sich mit den verfügbaren Optionen vertraut machen.
 
 [role="quick-margin-para"]
 link:task-planning-your-config-gcp.html["Erfahren Sie mehr über die Planung der Konfiguration"].
 
-.<span class=„image“><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png"[] alt=„drei“></span> Einrichten des Netzwerks
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"] Richten Sie Ihr Netzwerk ein
+[role="quick-margin-list"]
 . Stellen Sie sicher, dass Ihre VPC und Subnetze die Konnektivität zwischen dem Connector und Cloud Volumes ONTAP unterstützen.
 . Wenn Sie Daten-Tiering aktivieren möchten, https://cloud.google.com/vpc/docs/configure-private-google-access["Konfigurieren Sie das Cloud Volumes ONTAP-Subnetz für privaten Google-Zugriff"^].
 . Wenn Sie ein HA-Paar implementieren, stellen Sie sicher, dass Sie über vier VPCs verfügen, die jeweils über ein eigenes Subnetz verfügen.
@@ -42,6 +45,7 @@ Dieser Schritt ist wichtig, da der Connector Cloud Volumes ONTAP nicht ohne Outb
 [role="quick-margin-para"]
 link:reference-networking-gcp.html["Erfahren Sie mehr über Netzwerkanforderungen"].
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"] Erstellen eines Servicekontos
 [role="quick-margin-para"]
 Für Cloud Volumes ONTAP ist ein Google Cloud-Servicekonto aus zwei Gründen erforderlich. Die erste lautet, wenn Sie aktivieren link:concept-data-tiering.html["Daten-Tiering"] Tiering selten genutzter Daten auf kostengünstigen Objekt-Storage in Google Cloud. Die zweite lautet, wenn Sie den aktivieren https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-backup-to-cloud.html["Cloud-Backup-Service"^] Um Volumes auf kostengünstigen Objekt-Storage zu sichern.
 
@@ -51,9 +55,11 @@ Sie können ein Service-Konto einrichten und für beide Zwecke verwenden. Das Se
 [role="quick-margin-para"]
 link:task-creating-gcp-service-account.html["Lesen Sie Schritt-für-Schritt-Anleitungen"].
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Fünf"] Aktivieren Sie Google Cloud-APIs
 [role="quick-margin-para"]
 https://cloud.google.com/apis/docs/getting-started#enabling_apis["Aktivieren Sie die folgenden Google Cloud APIs in Ihrem Projekt"^]. Diese APIs sind für die Implementierung des Connectors und der Cloud Volumes ONTAP erforderlich.
 
+[role="quick-margin-list"]
 * Cloud Deployment Manager V2-API
 * Cloud-ProtokollierungsAPI
 * Cloud Resource Manager API
@@ -61,6 +67,7 @@ https://cloud.google.com/apis/docs/getting-started#enabling_apis["Aktivieren Sie
 * IAM-API (Identitäts- und Zugriffsmanagement
 
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Sechs"] Starten Sie Cloud Volumes ONTAP mit BlueXP
 [role="quick-margin-para"]
 Klicken Sie auf *Arbeitsumgebung hinzufügen*, wählen Sie den Systemtyp aus, den Sie bereitstellen möchten, und führen Sie die Schritte im Assistenten aus. link:task-deploying-gcp.html["Lesen Sie Schritt-für-Schritt-Anleitungen"].
 

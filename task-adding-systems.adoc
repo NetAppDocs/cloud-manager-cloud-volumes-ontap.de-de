@@ -16,6 +16,7 @@ summary: Sie können vorhandene Cloud Volumes ONTAP-Systeme entdecken und zu Blu
 [role="lead"]
 Sie können vorhandene Cloud Volumes ONTAP-Systeme entdecken und zu BlueXP hinzufügen. Dies können Sie tun, wenn Sie ein neues BlueXP System implementiert haben.
 
+.Bevor Sie beginnen
 Sie müssen das Kennwort für das Cloud Volumes ONTAP Admin-Benutzerkonto kennen.
 
 .Schritte
@@ -36,4 +37,5 @@ endif::aws[]
 . Geben Sie auf der Seite Anmeldeinformationen das Kennwort für den Cloud Volumes ONTAP-Admin-Benutzer ein, und klicken Sie dann auf *Los*.
 
 
+.Ergebnis
 BlueXP fügt die Cloud Volumes ONTAP-Instanzen zum Arbeitsbereich hinzu.
