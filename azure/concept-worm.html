@@ -1784,7 +1784,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-17 07:57:49 +0000">11/17/2022</time>
+    <time datetime="2022-12-09 18:59:16 +0000">12/09/2022</time>
     
   
 
@@ -1819,7 +1819,23 @@
 <p>Die Abrechnung FÜR WORM-Speicher erfolgt stündlich, entsprechend der insgesamt bereitgestellten Kapazität von WORM-Volumes.</p>
 </div>
 <div class="paragraph">
-<p><a href="https://cloud.netapp.com/pricing" target="_blank" rel="noopener">"Informieren Sie sich über die Preisgestaltung für WORM Storage"</a>.</p>
+<p>Sie sollten das folgende Ladeverhalten mit Cloud Volumes ONTAP 9.10.1 und höher verstehen:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Ab ONTAP 9.10.1 KÖNNEN WORM Volumes und nicht-WORM-Volumes auf demselben Aggregat vorhanden sein.</p>
+</li>
+<li>
+<p>Wenn Sie WORM aktivieren, wenn Sie eine Cloud Volumes ONTAP-Arbeitsumgebung erstellen, ist für jedes in BlueXP erstellte Volume WORM aktiviert. Allerdings können Sie mit der ONTAP CLI oder mit System Manager Volumes erstellen, in denen WORM deaktiviert ist. Diese Volumes werden NICHT mit DER WORM-Rate berechnet.</p>
+</li>
+<li>
+<p>Wenn SIE WORM nicht aktivieren, wenn Sie eine Arbeitsumgebung erstellen, ist jedes mit BlueXP erstellte Volume WORM deaktiviert. FÜR diese Volumes werden die WORM-Rate nicht berechnet. ALLERDINGS können SIE MIT der ONTAP CLI oder mit System Manager WORM-fähige Volumes erstellen. Diese Volumes werden mit DER WORM-Rate berechnet.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><a href="https://cloud.netapp.com/pricing" target="_blank" rel="noopener">"Informieren Sie sich über die Preisgestaltung für WORM Storage"</a></p>
 </div>
 </div>
 </div>

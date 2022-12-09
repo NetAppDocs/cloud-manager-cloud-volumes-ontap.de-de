@@ -1784,7 +1784,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-12-09 17:44:16 +0000">12/09/2022</time>
+    <time datetime="2022-12-09 18:59:16 +0000">12/09/2022</time>
     
   
 
@@ -1971,7 +1971,7 @@ Die iSCSI-IP ermöglicht den Client-Zugriff über das iSCSI-Protokoll. Es wird v
 <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Anmerkung">
 </td>
 <td class="content">
-NIC3 gilt nur für HA-Implementierungen mit BLOB-Systemen auf Seite.
+NIC3 gilt nur für HA-Implementierungen, die BLOB Storage auf Seite verwenden.
 </td>
 </tr>
 </table>
@@ -2003,10 +2003,10 @@ NIC3 gilt nur für HA-Implementierungen mit BLOB-Systemen auf Seite.
 <div class="sect2">
 <h3 id="sichere-verbindung-zu-azure-services">Sichere Verbindung zu Azure Services</h3>
 <div class="paragraph">
-<p>Standardmäßig aktiviert BlueXP einen Azure Private Link für Verbindungen zwischen Cloud Volumes ONTAP- und Azure-Speicherkonten.</p>
+<p>Standardmäßig aktiviert BlueXP einen Azure Private Link für Verbindungen zwischen Blob-Storage-Konten auf der Cloud Volumes ONTAP- und Azure-Seite.</p>
 </div>
 <div class="paragraph">
-<p>In den meisten Fällen müssen Sie nichts tun – ​BlueXP managt den Azure Private Link für Sie. Aber wenn Sie Azure Private DNS verwenden, dann müssen Sie eine Konfigurationsdatei bearbeiten. Sie sollten auch eine Anforderung für den Connector-Standort in Azure kennen.</p>
+<p>In den meisten Fällen ist nichts für Sie erforderlich – BlueXP managt den Azure Private Link für Sie. Aber wenn Sie Azure Private DNS verwenden, dann müssen Sie eine Konfigurationsdatei bearbeiten. Sie sollten auch eine Anforderung für den Connector-Standort in Azure kennen.</p>
 </div>
 <div class="paragraph">
 <p>Sie können die Private Link-Verbindung auch deaktivieren, wenn dies von Ihren geschäftlichen Anforderungen erforderlich ist. Wenn Sie den Link deaktivieren, konfiguriert BlueXP stattdessen Cloud Volumes ONTAP für die Verwendung eines Service-Endpunkts.</p>
@@ -2699,8 +2699,33 @@ Wenn Ihr Netzwerk für die gesamte Kommunikation mit dem Internet einen Proxyser
 <td class="tableblock halign-left valign-top"><p class="tableblock">Um Lizenzinformationen zu erhalten und AutoSupport Meldungen an den NetApp Support zu senden.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">https://*.cloudmanager.cloud.netapp.com https://cloudmanager.cloud.netapp.com</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Um SaaS-Funktionen und -Services in BlueXP zur Verfügung zu stellen.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>https://*.api.bluexp.netapp.com</p>
+</div>
+<div class="paragraph">
+<p>https://api.bluexp.netapp.com</p>
+</div>
+<div class="paragraph">
+<p>https://*.cloudmanager.cloud.netapp.com</p>
+</div>
+<div class="paragraph">
+<p>https://cloudmanager.cloud.netapp.com</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Um SaaS-Funktionen und -Services in BlueXP zur Verfügung zu stellen.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Anmerkung">
+</td>
+<td class="content">
+Der Connector kontaktiert derzeit „cloudmanager.cloud.netapp.com", er beginnt jedoch mit der Kontaktaufnahme mit „api.bluexp.netapp.com" in einer kommenden Version.
+</td>
+</tr>
+</table>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">https://cloudmanagerinfraprod.azurecr.io https://*.blob.core.windows.net</p></td>

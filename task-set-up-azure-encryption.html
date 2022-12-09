@@ -2027,7 +2027,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-12-09 17:44:16 +0000">12/09/2022</time>
+    <time datetime="2022-12-09 18:59:16 +0000">12/09/2022</time>
     
   
 
@@ -2076,6 +2076,26 @@
 </div>
 <div class="dlist">
 <dl>
+<dt class="hdlist1">Azure HA Multi-Verfügbarkeitszone</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Alle Azure-Storage-Konten für Cloud Volumes ONTAP werden mit einem vom Kunden gemanagten Schlüssel verschlüsselt.<sup>1</sup></p>
+</li>
+<li>
+<p>Für Root-, Boot-, NVRAM-, Core- und Datenfestplatten verwendet Cloud Manager einen Festplattenverschlüsselungssatz, der das Management von Verschlüsselungsschlüsseln mit gemanagten Festplatten ermöglicht.</p>
+</li>
+<li>
+<p>Neue Festplatten verwenden ebenfalls denselben Festplattenverschlüsselungssatz.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</dd>
 <dt class="hdlist1">Azure HA, eine einzelne Verfügbarkeitszone</dt>
 <dd>
 <div class="openblock">
@@ -2096,7 +2116,7 @@
 </div>
 </div>
 </dd>
-<dt class="hdlist1">Single Node oder HA-Paare in mehreren Zonen</dt>
+<dt class="hdlist1">Single Node</dt>
 <dd>
 <div class="openblock">
 <div class="content">
@@ -2125,7 +2145,7 @@
 <div class="title">Fußnote</div>
 <ol class="arabic">
 <li>
-<p>Wenn Sie Ihre Speicherkonten während ihrer Erstellung verschlüsseln möchten, müssen Sie in der Cloud Volumes ONTAP-Erstellungsanforderung die ID der Ressource erstellen und angeben. Dies gilt für alle Implementierungsarten. Wenn Sie dies nicht bereitstellen, werden die Speicherkonten weiterhin verschlüsselt, BlueXP erstellt jedoch zuerst die Speicherkonten mit von Microsoft administrierter Verschlüsselungsmethode und aktualisiert dann die Speicherkonten, um den vom Kunden verwalteten Schlüssel zu verwenden.</p>
+<p>Wenn Sie Ihre Speicherkonten während ihrer Erstellung verschlüsseln möchten, müssen Sie in der CVO-Erstellungsanforderung die ID der Ressource erstellen und angeben. Dies gilt für alle Implementierungsarten. Wenn Sie es nicht bereitstellen, werden die Speicherkonten immer noch verschlüsselt, aber BlueXP erstellt zuerst die Speicherkonten mit von Microsoft administrierter Verschlüsselungsmethode und aktualisiert dann die Speicherkonten, um den vom Kunden verwalteten Schlüssel zu verwenden.</p>
 </li>
 </ol>
 </div>

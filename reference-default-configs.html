@@ -2027,7 +2027,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-12-09 17:44:16 +0000">12/09/2022</time>
+    <time datetime="2022-12-09 18:59:16 +0000">12/09/2022</time>
     
   
 
@@ -2207,7 +2207,7 @@ Der Kontoadministrator kann diesen Wert auf der Seite Einstellungen ändern.
 </table>
 <div class="paragraph">
 <p>+<br>
-Informationen zu diesen Attributen finden Sie auf der Seite „<em>Volume create</em> man“.</p>
+Siehe <a href="https://docs.netapp.com/us-en/ontap-cli-9121/volume-create.html">"ONTAP_Volume create_ man page"</a> Weitere Informationen zu diesen Attributen.</p>
 </div>
 </li>
 </ul>
@@ -2294,7 +2294,7 @@ In AWS befindet sich NVRAM auf der Boot-Festplatte.
 <p>Ein Azure Snapshot für jedes Boot- und Root-Laufwerk</p>
 </li>
 <li>
-<p>Boot- und Root-Festplatten sind standardmäßig verschlüsselt.</p>
+<p>Jede Festplatte ist standardmäßig in Azure verschlüsselt.</p>
 </li>
 </ul>
 </div>
@@ -2302,6 +2302,7 @@ In AWS befindet sich NVRAM auf der Boot-Festplatte.
 <div class="sect2">
 <h3 id="azure-ha-paar">Azure (HA-Paar)</h3>
 <div class="ulist">
+<div class="title">HA-Paare mit Seite Blob</div>
 <ul>
 <li>
 <p>Zwei 10 gib Premium-SSD-Festplatten für das Boot-Volume (eine pro Node)</p>
@@ -2319,7 +2320,30 @@ In AWS befindet sich NVRAM auf der Boot-Festplatte.
 <p>Ein Azure Snapshot für jedes Boot- und Root-Laufwerk</p>
 </li>
 <li>
-<p>Boot- und Root-Festplatten sind standardmäßig verschlüsselt.</p>
+<p>Jede Festplatte ist standardmäßig in Azure verschlüsselt.</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">HA-Paare in mehreren Verfügbarkeitszonen</div>
+<ul>
+<li>
+<p>Zwei 10 gib Premium-SSD-Festplatten für das Boot-Volume (eine pro Node)</p>
+</li>
+<li>
+<p>Zwei Blobs für 512 gib Premium Storage für das Root-Volume (eine pro Node)</p>
+</li>
+<li>
+<p>Zwei 1024 gib Standard-HDD-Festplatten für das Speichern von Cores (eine pro Node)</p>
+</li>
+<li>
+<p>Zwei 512 gib Premium-SSD-Festplatten für NVRAM (eine pro Node)</p>
+</li>
+<li>
+<p>Ein Azure Snapshot für jedes Boot- und Root-Laufwerk</p>
+</li>
+<li>
+<p>Jede Festplatte ist standardmäßig in Azure verschlüsselt.</p>
 </li>
 </ul>
 </div>

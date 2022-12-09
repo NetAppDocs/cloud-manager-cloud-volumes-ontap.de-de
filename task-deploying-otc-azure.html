@@ -2027,7 +2027,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-12-09 17:44:16 +0000">12/09/2022</time>
+    <time datetime="2022-12-09 18:59:16 +0000">12/09/2022</time>
     
   
 
@@ -2203,10 +2203,6 @@ Your browser does not support the video tag.
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Verfügbarkeitszone</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Bei Single-Node-Systemen können Sie die Verfügbarkeitszone auswählen, in der Sie Cloud Volumes ONTAP implementieren möchten. Wenn Sie keine AZ auswählen, wählt BlueXP eine für Sie aus.</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Ressourcengruppe</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Erstellen Sie eine neue Ressourcengruppe für Cloud Volumes ONTAP, oder verwenden Sie eine vorhandene Ressourcengruppe. Als Best Practice empfiehlt es sich, eine neue, dedizierte Ressourcengruppe für Cloud Volumes ONTAP zu verwenden. Es ist zwar möglich, Cloud Volumes ONTAP in einer vorhandenen, gemeinsam genutzten Ressourcengruppe bereitzustellen, jedoch wird dies aufgrund des Risikos eines Datenverlusts nicht empfohlen. Weitere Informationen finden Sie in der oben stehenden Warnung.</p>
@@ -2313,21 +2309,12 @@ Wenn für die ausgewählte Version eine neuere Version von Release Candidate, Ge
 </div>
 </li>
 <li>
-<p><strong>Schreibgeschwindigkeit &amp; WURM</strong> (nur Systeme mit einem Knoten): Wählen Sie <strong>normale</strong> oder <strong>hohe</strong> Schreibgeschwindigkeit und aktivieren Sie ggf. den WORM-Speicher (Write Once, Read Many).</p>
+<p><strong>Schreibgeschwindigkeit &amp; WURM</strong>: Wählen Sie <strong>Normal</strong> oder <strong>hohe</strong> Schreibgeschwindigkeit, und aktivieren Sie auf Wunsch den Schreib-Speicher, den WORM-Speicher.</p>
 <div class="paragraph">
 <p><a href="concept-write-speed.html">"Erfahren Sie mehr über Schreibgeschwindigkeit"</a>.</p>
 </div>
 <div class="paragraph">
 <p>WORM kann nicht aktiviert werden, wenn Daten-Tiering aktiviert wurde.</p>
-</div>
-<div class="paragraph">
-<p><a href="concept-worm.html">"Erfahren Sie mehr über WORM Storage"</a>.</p>
-</div>
-</li>
-<li>
-<p><strong>Secure Communication to Storage &amp; WORM</strong> (nur HA): Wählen Sie, ob eine HTTPS-Verbindung zu Azure-Speicherkonten aktiviert und ggf. WORM-Speicher (Write Once, Read Many) aktiviert werden soll.</p>
-<div class="paragraph">
-<p>Die HTTPS-Verbindung besteht aus einem Cloud Volumes ONTAP 9.7 HA-Paar zu Azure Storage-Konten. Beachten Sie, dass die Aktivierung dieser Option sich auf die Schreib-Performance auswirken kann. Sie können die Einstellung nicht ändern, nachdem Sie die Arbeitsumgebung erstellt haben.</p>
 </div>
 <div class="paragraph">
 <p><a href="concept-worm.html">"Erfahren Sie mehr über WORM Storage"</a>.</p>
@@ -2605,10 +2592,6 @@ Your browser does not support the video tag.
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Verfügbarkeitszone</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Bei Single-Node-Systemen können Sie die Verfügbarkeitszone auswählen, in der Sie Cloud Volumes ONTAP implementieren möchten. Wenn Sie keine AZ auswählen, wählt BlueXP eine für Sie aus.</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Ressourcengruppe</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Erstellen Sie eine neue Ressourcengruppe für Cloud Volumes ONTAP, oder verwenden Sie eine vorhandene Ressourcengruppe. Als Best Practice empfiehlt es sich, eine neue, dedizierte Ressourcengruppe für Cloud Volumes ONTAP zu verwenden. Es ist zwar möglich, Cloud Volumes ONTAP in einer vorhandenen, gemeinsam genutzten Ressourcengruppe bereitzustellen, jedoch wird dies aufgrund des Risikos eines Datenverlusts nicht empfohlen. Weitere Informationen finden Sie in der oben stehenden Warnung.</p>
@@ -2697,9 +2680,6 @@ Wenn für die ausgewählte Version eine neuere Version von Release Candidate, Ge
 <div class="ulist">
 <ul>
 <li>
-<p>Der Festplattentyp ist für das anfängliche Volume. Sie können einen anderen Festplattentyp für nachfolgende Volumes auswählen.</p>
-</li>
-<li>
 <p>Die Festplattengröße ist für alle Festplatten im ursprünglichen Aggregat und für alle zusätzlichen Aggregate bestimmt, die BlueXP erzeugt, wenn Sie die einfache Bereitstellungsoption verwenden. Mithilfe der erweiterten Zuweisungsoption können Sie Aggregate erstellen, die eine andere Festplattengröße verwenden.</p>
 <div class="paragraph">
 <p>Hilfe zur Auswahl einer Festplattengröße finden Sie unter <a href="task-planning-your-config-azure.html#sizing-your-system-in-azure">"Dimensionierung Ihres Systems in Azure"</a>.</p>
@@ -2718,9 +2698,12 @@ Wenn für die ausgewählte Version eine neuere Version von Release Candidate, Ge
 </div>
 </li>
 <li>
-<p><strong>Schreibgeschwindigkeit &amp; WURM</strong> (nur Systeme mit einem Knoten): Wählen Sie <strong>normale</strong> oder <strong>hohe</strong> Schreibgeschwindigkeit und aktivieren Sie ggf. den WORM-Speicher (Write Once, Read Many).</p>
+<p><strong>Schreibgeschwindigkeit &amp; WURM</strong>: Wählen Sie <strong>Normal</strong> oder <strong>hohe</strong> Schreibgeschwindigkeit, und aktivieren Sie auf Wunsch den Schreib-Speicher, den WORM-Speicher.</p>
 <div class="paragraph">
 <p><a href="concept-write-speed.html">"Erfahren Sie mehr über Schreibgeschwindigkeit"</a>.</p>
+</div>
+<div class="paragraph">
+<p>Diese Option ist nur für bestimmte VM-Typen verfügbar. Informationen darüber, welche VM-Typen unterstützt werden, finden Sie unter <a href="https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html#ha-pairs">"Unterstützte Konfigurationen per Lizenz für HA-Paare"</a>.</p>
 </div>
 <div class="paragraph">
 <p>WORM kann nicht aktiviert werden, wenn Daten-Tiering aktiviert wurde.</p>
@@ -2730,9 +2713,9 @@ Wenn für die ausgewählte Version eine neuere Version von Release Candidate, Ge
 </div>
 </li>
 <li>
-<p><strong>Secure Communication to Storage &amp; WORM</strong> (nur HA): Wählen Sie, ob eine HTTPS-Verbindung zu Azure-Speicherkonten aktiviert und ggf. WORM-Speicher (Write Once, Read Many) aktiviert werden soll.</p>
+<p><strong>Sichere Kommunikation zu Storage &amp; WORM</strong>: Wählen Sie, ob eine HTTPS-Verbindung zu Azure-Speicherkonten aktiviert und, falls gewünscht, den WORM-Speicher (Write Once, Read Many) aktiviert werden soll.</p>
 <div class="paragraph">
-<p>Die HTTPS-Verbindung besteht aus einem Cloud Volumes ONTAP 9.7 HA-Paar zu Azure Storage-Konten. Beachten Sie, dass die Aktivierung dieser Option sich auf die Schreib-Performance auswirken kann. Sie können die Einstellung nicht ändern, nachdem Sie die Arbeitsumgebung erstellt haben.</p>
+<p>Die HTTPS-Verbindung besteht aus einem Cloud Volumes ONTAP 9.7 HA-Paar zu Blob-Storage-Konten auf der Azure-Seite. Beachten Sie, dass die Aktivierung dieser Option sich auf die Schreib-Performance auswirken kann. Sie können die Einstellung nicht ändern, nachdem Sie die Arbeitsumgebung erstellt haben.</p>
 </div>
 <div class="paragraph">
 <p><a href="concept-worm.html">"Erfahren Sie mehr über WORM Storage"</a>.</p>

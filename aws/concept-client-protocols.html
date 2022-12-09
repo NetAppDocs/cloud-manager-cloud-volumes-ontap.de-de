@@ -9,14 +9,14 @@
   <meta property="og:title" content="Client-Protokolle | NetApp Documentation" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/de-de/cloud-manager-cloud-volumes-ontap/concept-client-protocols.html" />
-	<meta property="og:description" content="Cloud Volumes ONTAP unterstützt iSCSI-, NFS-, SMB- und S3-Client-Protokolle." />
+	<meta property="og:description" content="Cloud Volumes ONTAP unterstützt die Client-Protokolle iSCSI, NFS, SMB, NVMe-TCP und S3." />
   <meta property="og:image" content="https://docs.netapp.com/de-de/cloud-manager-cloud-volumes-ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Cloud Volumes ONTAP unterstützt iSCSI-, NFS-, SMB- und S3-Client-Protokolle.">
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Cloud Volumes ONTAP unterstützt die Client-Protokolle iSCSI, NFS, SMB, NVMe-TCP und S3.">
   <meta name="keywords" content=" client protocols, client version, smb version, nfs version, protocol versions, s3, smb, nfs, iscsi, cifs"><!-- Icons -->
   <link rel="icon" href="/de-de/cloud-manager-cloud-volumes-ontap/images/favicon.ico" type="image/x-icon">
 
@@ -1814,7 +1814,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-17 07:57:49 +0000">11/17/2022</time>
+    <time datetime="2022-12-09 18:59:16 +0000">12/09/2022</time>
     
   
 
@@ -1827,7 +1827,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>Cloud Volumes ONTAP unterstützt iSCSI-, NFS-, SMB- und S3-Client-Protokolle.</p>
+<p>Cloud Volumes ONTAP unterstützt die Client-Protokolle iSCSI, NFS, SMB, NVMe-TCP und S3.</p>
 </div>
 </div>
 </div>
@@ -1855,6 +1855,17 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>SMB ist das herkömmliche File-Zugriffsprotokoll für Windows-Systeme. Die Clients können über die Protokolle SMB 2.0, SMB 2.1, SMB 3.0 und SMB 3.1.1 auf Dateien in ONTAP Volumes zugreifen. Wie bei NFS werden auch hier verschiedene Berechtigungsstile unterstützt.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="nvme-tcp">NVMe-TCP</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>NVMe-TCP wird für Cloud-Provider unterstützt, wenn Sie Cloud Volumes ONTAP Version 9.12.1 oder höher verwenden. BlueXP bietet keine Managementfunktionen für NVMe-TCP.</p>
+</div>
+<div class="paragraph">
+<p>Weitere Informationen zum Konfigurieren von NVMe über ONTAP finden Sie unter <a href="https://docs.netapp.com/us-en/ontap/san-admin/configure-svm-nvme-task.html" target="_blank" rel="noopener">"Konfigurieren Sie eine Storage-VM für NVMe"</a>.</p>
 </div>
 </div>
 </div>

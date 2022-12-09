@@ -2027,7 +2027,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-17 07:57:49 +0000">11/17/2022</time>
+    <time datetime="2022-12-09 18:59:16 +0000">12/09/2022</time>
     
   
 
@@ -2118,13 +2118,13 @@
 </div>
 </div>
 </dd>
-<dt class="hdlist1">Azure-Festplattentyp</dt>
+<dt class="hdlist1">Azure Festplattentyp mit Single-Node-Systemen</dt>
 <dd>
 <p>Wenn Sie Volumes für Cloud Volumes ONTAP erstellen, müssen Sie den zugrunde liegenden Cloud-Storage auswählen, den Cloud Volumes ONTAP als Festplatte verwendet.</p>
 <div class="openblock">
 <div class="content">
 <div class="paragraph">
-<p>HA-Systeme verwenden Premium-Blobs auf Seite. In der Zwischenzeit können Systeme mit einem Node zwei Typen von Azure Managed Disks nutzen:</p>
+<p>Systeme mit einem Node können drei Typen von Azure Managed Disks verwenden:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -2136,14 +2136,18 @@
 </li>
 <li>
 <p><em>Standard HDD Managed Disks</em> sind eine gute Wahl, wenn Sie keine hohen IOPS benötigen und Ihre Kosten senken möchten.</p>
-<div class="paragraph">
-<p>Weitere Details zu den Anwendungsfällen für diese Festplatten finden Sie unter <a href="https://docs.microsoft.com/en-us/azure/virtual-machines/disks-types" target="_blank" rel="noopener">"Microsoft Azure-Dokumentation: Welche Festplattentypen sind in Azure verfügbar?"</a>.</p>
-</div>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>Weitere Details zu den Anwendungsfällen für diese Festplatten finden Sie unter <a href="https://docs.microsoft.com/en-us/azure/virtual-machines/disks-types" target="_blank" rel="noopener">"Microsoft Azure-Dokumentation: Welche Festplattentypen sind in Azure verfügbar?"</a>.</p>
 </div>
 </div>
+</div>
+</dd>
+<dt class="hdlist1">Azure-Festplattentyp mit HA-Paaren</dt>
+<dd>
+<p>HA-Systeme verwenden Shared Managed Disks mit Premium-SSDs, die beide eine hohe Performance für I/O-intensive Workloads mit höheren Kosten bieten. HA-Implementierungen, die vor der Version 9.12.1 erstellt wurden, verwenden Premium-Blobs auf Seite.</p>
 </dd>
 <dt class="hdlist1">Festplattengröße Azure</dt>
 <dd>
