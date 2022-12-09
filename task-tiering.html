@@ -2027,7 +2027,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-17 07:57:49 +0000">11/17/2022</time>
+    <time datetime="2022-12-09 17:44:16 +0000">12/09/2022</time>
     
   
 
@@ -2046,28 +2046,32 @@
 <p>Um Daten-Tiering einzurichten, müssen Sie die folgenden Schritte ausführen:</p>
 </div>
 <div class="paragraph quick-margin-para">
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png" alt="Eins"></span> Wählen Sie eine unterstützte Konfiguration aus</div>
 <p>Die meisten Konfigurationen werden unterstützt. Wenn Sie ein Cloud Volumes ONTAP System mit der aktuellsten Version haben, sollten Sie gut zu gehen. <a href="task-tiering.html#configurations-that-support-data-tiering">"Weitere Informationen ."</a>.</p>
 </div>
 <div class="ulist quick-margin-list">
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png" alt="Zwei"></span> Stellen Sie die Konnektivität zwischen Cloud Volumes ONTAP und Objekt-Storage sicher</div>
 <ul>
 <li>
-<p>Für AWS ist ein VPC Endpunkt zu S3 erforderlich.  to tier cold data to AWS S3,Weitere Informationen ..</p>
+<p>Für AWS ist ein VPC Endpunkt zu S3 erforderlich. <a href="#anforderungen-für-das-tiering-selten-genutzter-daten-in-aws-s3">Weitere Informationen .</a>.</p>
 </li>
 <li>
-<p>Bei Azure müssen Sie nichts Unternehmen, solange BlueXP über die erforderlichen Berechtigungen verfügt.  to tier cold data to Azure Blob storage,Weitere Informationen ..</p>
+<p>Bei Azure müssen Sie nichts Unternehmen, solange BlueXP über die erforderlichen Berechtigungen verfügt. <a href="#tiering-selten-genutzter-daten-auf-azure-blob-storage">Weitere Informationen .</a>.</p>
 </li>
 <li>
-<p>Für Google Cloud müssen Sie das Subnetz für privaten Google Access konfigurieren und ein Servicekonto einrichten.  to tier cold data to a Google Cloud Storage bucket,Weitere Informationen ..</p>
+<p>Für Google Cloud müssen Sie das Subnetz für privaten Google Access konfigurieren und ein Servicekonto einrichten. <a href="#anforderungen-für-das-tiering-selten-genutzter-daten-in-einen-google-cloud-storage-bucket">Weitere Informationen .</a>.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph quick-margin-para">
-<p>Daten-Tiering muss auf einem Aggregat aktiviert sein, um Daten-Tiering auf einem Volume zu ermöglichen. Die Anforderungen für neue Volumes und vorhandene Volumes sollten Sie kennen.  that tiering is enabled on aggregates,Weitere Informationen ..</p>
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png" alt="Drittens"></span> Stellen Sie sicher, dass Sie über ein Aggregat mit aktiviertem Tiering verfügen</div>
+<p>Daten-Tiering muss auf einem Aggregat aktiviert sein, um Daten-Tiering auf einem Volume zu ermöglichen. Die Anforderungen für neue Volumes und vorhandene Volumes sollten Sie kennen. <a href="#Gewährleistung">dass das Tiering auf Aggregaten aktiviert ist,Weitere Informationen .</a>.</p>
 </div>
 <div class="paragraph quick-margin-para">
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png" alt="Vier"></span> Wählen Sie eine Tiering-Richtlinie beim Erstellen, Ändern oder Replizieren eines Volume</div>
 <p>BlueXP fordert Sie auf, beim Erstellen, Ändern oder Replizieren eines Volumes eine Tiering-Richtlinie auszuwählen.</p>
 </div>
-<div class="ulist">
+<div class="ulist quick-margin-list">
 <ul>
 <li>
 <p><a href="task-tiering.html#tiering-data-from-read-write-volumes">"Tiering von Daten auf Lese-/Schreib-Volumes"</a></p>
@@ -2096,7 +2100,7 @@
 <li>
 <p>Sie müssen das Daten-Tiering auf Systemebene nicht aktivieren.</p>
 <div class="paragraph">
-<p>BlueXP erstellt bei der Systemerstellung einen Objektspeicher für „kalte“ Daten.  data tiering after implementing the requirements,Solange es keine Verbindungs- oder Berechtigungsprobleme gibt. Danach müssen Sie nur noch Daten-Tiering auf den Volumes aktivieren (und in einigen Fällen,  that tiering is enabled on aggregates,Auf Aggregaten).</p>
+<p>BlueXP erstellt bei der Systemerstellung einen Objektspeicher für „kalte“ Daten. <a href="#aktivieren-des-daten-tiering-nach-der-implementierung-der-anforderungen">Solange es keine Verbindungs- oder Berechtigungsprobleme gibt</a>. Danach müssen Sie nur noch Daten-Tiering auf den Volumes aktivieren (und in einigen Fällen, <a href="#Gewährleistung">dass das Tiering auf Aggregaten aktiviert ist,Auf Aggregaten</a>).</p>
 </div>
 </li>
 </ul>
@@ -2259,7 +2263,7 @@ Bei der Verwendung von durchsatzoptimierten HDDs (st1) wird kein Tiering von Dat
 <div class="title">Schritte</div>
 <ol class="arabic">
 <li>
-<p>,Stellen Sie sicher, dass Sie alle Anforderungen erfüllt haben.</p>
+<p><a href="#anforderungen">Stellen Sie sicher, dass Sie alle Anforderungen erfüllt haben</a>.</p>
 </li>
 <li>
 <p>Wählen Sie im linken Navigationsmenü die Option <strong>Speicherung &gt; Leinwand</strong>.</p>
@@ -2276,7 +2280,7 @@ Bei der Verwendung von durchsatzoptimierten HDDs (st1) wird kein Tiering von Dat
 <p>Diese Option wird nur angezeigt, wenn das Daten-Tiering nicht aktiviert werden konnte, wenn BlueXP das System erstellt hat.</p>
 </div>
 <div class="paragraph">
-<p>In Google Cloud muss ein Servicekonto an Cloud Volumes ONTAP angehängt werden, bevor diese Option angezeigt wird. ,Stellen Sie sicher, dass Sie alle Anforderungen erfüllt haben.</p>
+<p>In Google Cloud muss ein Servicekonto an Cloud Volumes ONTAP angehängt werden, bevor diese Option angezeigt wird. <a href="#anforderungen">Stellen Sie sicher, dass Sie alle Anforderungen erfüllt haben</a>.</p>
 </div>
 </li>
 <li>
@@ -2341,6 +2345,7 @@ Bei der Verwendung von durchsatzoptimierten HDDs (st1) wird kein Tiering von Dat
 </ol>
 </div>
 <div class="paragraph">
+<div class="title">Was kommt als Nächstes?</div>
 <p>Sie können jetzt Daten-Tiering auf neuen und vorhandenen Volumes aktivieren, wie im nächsten Abschnitt erläutert.</p>
 </div>
 </div>

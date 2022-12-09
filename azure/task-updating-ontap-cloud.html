@@ -1784,7 +1784,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-17 07:57:49 +0000">11/17/2022</time>
+    <time datetime="2022-12-09 17:44:16 +0000">12/09/2022</time>
     
   
 
@@ -1978,16 +1978,16 @@ Ein System, das nicht für den Support registriert ist, erhält weiterhin die Be
 <div class="ulist">
 <ul>
 <li>
-<p>for downtime</p>
+<p><a href="#planung-von-ausfallzeiten">Planung von Ausfallzeiten</a></p>
 </li>
 <li>
-<p>that automatic giveback is still enabled</p>
+<p><a href="#Überprüfen Sie">ob das automatische Giveback weiterhin aktiviert ist</a></p>
 </li>
 <li>
-<p>SnapMirror transfers</p>
+<p><a href="#unterbrechen-sie-die-snapmirror-übertragung">Unterbrechen Sie die SnapMirror Übertragung</a></p>
 </li>
 <li>
-<p>that aggregates are online</p>
+<p><a href="#Vergewissern Sie sich">dass die Aggregate online sind</a></p>
 </li>
 </ul>
 </div>
@@ -2027,6 +2027,7 @@ Obwohl Cloud Backup zur Erstellung von Backup-Dateien (so genannte SnapMirror Cl
 </table>
 </div>
 <div class="paragraph">
+<div class="title">Über diese Aufgabe</div>
 <p>In diesen Schritten wird die Verwendung von System Manager für Version 9.3 und höher beschrieben.</p>
 </div>
 <div class="olist arabic">
@@ -2065,6 +2066,7 @@ Der Computer, von dem aus Sie auf BlueXP zugreifen, muss über eine Netzwerkverb
 <p>Aggregate für Cloud Volumes ONTAP muss online sein, bevor Sie die Software aktualisieren. Aggregate sollten in den meisten Konfigurationen online sein. Wenn dies nicht der Fall ist, sollten Sie sie jedoch online stellen.</p>
 </div>
 <div class="paragraph">
+<div class="title">Über diese Aufgabe</div>
 <p>In diesen Schritten wird die Verwendung von System Manager für Version 9.3 und höher beschrieben.</p>
 </div>
 <div class="olist arabic">
@@ -2101,10 +2103,10 @@ Der Computer, von dem aus Sie auf BlueXP zugreifen, muss über eine Netzwerkverb
 <h2 id="upgrade-von-cloud-volumes-ontap">Upgrade von Cloud Volumes ONTAP</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>BlueXP benachrichtigt Sie, wenn eine neue Version zur Aktualisierung verfügbar ist. Sie können den Upgrade-Prozess über diese Benachrichtigung starten. Weitere Informationen finden Sie unter  from BlueXP notifications.</p>
+<p>BlueXP benachrichtigt Sie, wenn eine neue Version zur Aktualisierung verfügbar ist. Sie können den Upgrade-Prozess über diese Benachrichtigung starten. Weitere Informationen finden Sie unter <a href="#upgrade-von-bluexp-benachrichtigungen">Upgrade von BlueXP-Benachrichtigungen</a>.</p>
 </div>
 <div class="paragraph">
-<p>Eine andere Möglichkeit, Software-Upgrades mithilfe eines Images auf einer externen URL durchzuführen. Diese Option ist hilfreich, wenn BlueXP nicht auf den S3 Bucket zugreifen kann, um die Software zu aktualisieren oder wenn Sie mit einem Patch ausgestattet wurden. Weitere Informationen finden Sie unter  from an image available at a URL.</p>
+<p>Eine andere Möglichkeit, Software-Upgrades mithilfe eines Images auf einer externen URL durchzuführen. Diese Option ist hilfreich, wenn BlueXP nicht auf den S3 Bucket zugreifen kann, um die Software zu aktualisieren oder wenn Sie mit einem Patch ausgestattet wurden. Weitere Informationen finden Sie unter <a href="#Upgrade von einem Image">das über eine URL verfügbar ist</a>.</p>
 </div>
 <div class="sect2">
 <h3 id="upgrade-von-bluexp-benachrichtigungen">Upgrade von BlueXP-Benachrichtigungen</h3>
@@ -2118,6 +2120,7 @@ Der Computer, von dem aus Sie auf BlueXP zugreifen, muss über eine Netzwerkverb
 <p>Sie können den Upgrade-Prozess von dieser Benachrichtigung aus starten, die den Prozess automatisiert, indem Sie das Software-Image aus einem S3-Bucket beziehen, das Image installieren und das System dann neu starten.</p>
 </div>
 <div class="paragraph">
+<div class="title">Bevor Sie beginnen</div>
 <p>BlueXP-Vorgänge wie die Erstellung von Volumes oder Aggregaten dürfen auf dem Cloud Volumes ONTAP-System nicht ausgeführt werden.</p>
 </div>
 <div class="olist arabic">
@@ -2150,9 +2153,11 @@ Der Computer, von dem aus Sie auf BlueXP zugreifen, muss über eine Netzwerkverb
 </ol>
 </div>
 <div class="paragraph">
+<div class="title">Ergebnis</div>
 <p>BlueXP startet das Software-Upgrade. Nach Abschluss der Softwareaktualisierung können Sie in der Arbeitsumgebung Aktionen ausführen.</p>
 </div>
 <div class="paragraph">
+<div class="title">Nachdem Sie fertig sind</div>
 <p>Wenn Sie SnapMirror Transfers ausgesetzt haben, setzen Sie die Transfers mit System Manager fort.</p>
 </div>
 </div>
@@ -2239,9 +2244,11 @@ Die vordefinierte Cloud Volumes ONTAP-Sicherheitsgruppe erlaubt standardmäßig 
 </ol>
 </div>
 <div class="paragraph">
+<div class="title">Ergebnis</div>
 <p>BlueXP startet das Software-Update. Nach Abschluss der Softwareaktualisierung können Sie in der Arbeitsumgebung Aktionen ausführen.</p>
 </div>
 <div class="paragraph">
+<div class="title">Nachdem Sie fertig sind</div>
 <p>Wenn Sie SnapMirror Transfers ausgesetzt haben, setzen Sie die Transfers mit System Manager fort.</p>
 </div>
 </div>

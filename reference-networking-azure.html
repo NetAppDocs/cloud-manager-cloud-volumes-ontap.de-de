@@ -2027,7 +2027,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-17 07:57:49 +0000">11/17/2022</time>
+    <time datetime="2022-12-09 17:44:16 +0000">12/09/2022</time>
     
   
 
@@ -2084,32 +2084,163 @@
 <div class="sect2">
 <h3 id="ip-adressen">IP-Adressen</h3>
 <div class="paragraph">
-<p>BlueXP weist Cloud Volumes ONTAP in Azure die folgende Anzahl von IP-Adressen zu:</p>
+<p>BlueXP weist Cloud Volumes ONTAP in Azure automatisch die erforderliche Anzahl privater IP-Adressen zu. Sie müssen sicherstellen, dass Ihr Netzwerk über genügend private IP-Adressen verfügt.</p>
+</div>
+<div class="paragraph">
+<p>Die Anzahl der LIFs, die Cloud Manager für Cloud Volumes ONTAP zuweist, hängt davon ab, ob Sie ein einzelnes Node-System oder ein HA-Paar implementieren. Ein LIF ist eine IP-Adresse, die einem physischen Port zugewiesen ist. Für Managementtools wie SnapCenter ist eine SVM-Management-LIF erforderlich.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Anmerkung">
+</td>
+<td class="content">
+Ein iSCSI LIF bietet Client-Zugriff über das iSCSI-Protokoll und wird vom System für andere wichtige Netzwerk-Workflows verwendet. Diese LIFs sind erforderlich und sollten nicht gelöscht werden.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="ip-adressen-für-ein-single-node-system">IP-Adressen für ein Single Node-System</h4>
+<div class="paragraph">
+<p>BlueXP weist 5 oder 6 IP-Adressen einem System mit einem Knoten zu:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Single Node: 5 IP-Adressen</p>
+<p>Cluster-Management-IP</p>
 </li>
 <li>
-<p>HA-Paar: 16 IP-Adressen</p>
+<p>Node-Management-IP</p>
+</li>
+<li>
+<p>Intercluster IP für SnapMirror</p>
+</li>
+<li>
+<p>NFS/CIFS-IP</p>
+</li>
+<li>
+<p>ISCSI-IP</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Anmerkung">
+</td>
+<td class="content">
+Die iSCSI-IP ermöglicht den Client-Zugriff über das iSCSI-Protokoll. Es wird vom System auch für andere wichtige Netzwerk-Workflows verwendet. Dieses LIF ist erforderlich und sollte nicht gelöscht werden.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>SVM-Management (optional – nicht standardmäßig konfiguriert)</p>
 </li>
 </ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="ip-adressen-für-ha-paare">IP-Adressen für HA-Paare</h4>
+<div class="paragraph">
+<p>BlueXP weist während der Bereitstellung 4 NICs (pro Node) IP-Adressen zu.</p>
 </div>
 <div class="paragraph">
 <p>Beachten Sie, dass BlueXP in Azure eine SVM Management-LIF auf HA-Paaren erstellt, nicht jedoch auf Systemen mit einzelnen Nodes.</p>
 </div>
-<div class="admonitionblock tip">
+<div class="paragraph">
+<p><strong>NIC0</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Node-Management-IP</p>
+</li>
+<li>
+<p>Intercluster-IP</p>
+</li>
+<li>
+<p>ISCSI-IP</p>
+<div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
-<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/tip.svg" alt="Hinweis">
+<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Anmerkung">
 </td>
 <td class="content">
-Ein LIF ist eine IP-Adresse, die einem physischen Port zugewiesen ist. Für Managementtools wie SnapCenter ist eine SVM-Management-LIF erforderlich.
+Die iSCSI-IP ermöglicht den Client-Zugriff über das iSCSI-Protokoll. Es wird vom System auch für andere wichtige Netzwerk-Workflows verwendet. Dieses LIF ist erforderlich und sollte nicht gelöscht werden.
 </td>
 </tr>
 </table>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>NIC1</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Cluster-Netzwerk-IP</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>NIC2</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Cluster Interconnect IP (HA-IC)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>NIC3</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>PageBLOB NIC-IP (Festplattenzugriff)</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Anmerkung">
+</td>
+<td class="content">
+NIC3 gilt nur für HA-Implementierungen mit BLOB-Systemen auf Seite.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Die oben genannten IP-Adressen migrieren nicht bei Failover-Ereignissen.</p>
+</div>
+<div class="paragraph">
+<p>Zusätzlich werden 4 Frontend-IPs (FIPS) für die Migration bei Failover-Ereignissen konfiguriert. Diese Frontend-IPs sind im Load Balancer aktiv.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Cluster-Management-IP</p>
+</li>
+<li>
+<p>NodeA Daten-IP (NFS/CIFS)</p>
+</li>
+<li>
+<p>NodeB-Daten-IP (NFS/CIFS)</p>
+</li>
+<li>
+<p>SVM-Management-IP</p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect2">

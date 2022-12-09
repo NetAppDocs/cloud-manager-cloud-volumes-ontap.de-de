@@ -2027,7 +2027,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-17 07:57:49 +0000">11/17/2022</time>
+    <time datetime="2022-12-09 17:44:16 +0000">12/09/2022</time>
     
   
 
@@ -2096,7 +2096,7 @@
 </div>
 </div>
 </dd>
-<dt class="hdlist1">Single Node</dt>
+<dt class="hdlist1">Single Node oder HA-Paare in mehreren Zonen</dt>
 <dd>
 <div class="openblock">
 <div class="content">
@@ -2162,7 +2162,7 @@
 <p><strong>Schutz löschen</strong></p>
 </li>
 <li>
-<p><strong>Azure Disk Encryption für Volume Encryption</strong></p>
+<p><strong>Azure Festplattenverschlüsselung für Volume Encryption</strong> (für Single Node-Systeme oder HA-Paare in mehreren Zonen)</p>
 </li>
 </ul>
 </div>
@@ -2197,6 +2197,7 @@
 <p>Nachdem Sie den Schlüsselspeicher erstellt und einen Verschlüsselungsschlüssel generiert haben, können Sie ein neues Cloud Volumes ONTAP-System erstellen, das für die Verwendung des Schlüssels konfiguriert ist. Diese Schritte werden von der BlueXP API unterstützt.</p>
 </div>
 <div class="paragraph">
+<div class="title">Erforderliche Berechtigungen</div>
 <p>Wenn Sie einen vom Kunden verwalteten Schlüssel mit einem Cloud Volumes ONTAP-System mit einem einzelnen Knoten verwenden möchten, stellen Sie sicher, dass der BlueXP-Connector über die folgenden Berechtigungen verfügt:</p>
 </div>
 <div class="listingblock">
@@ -2220,7 +2221,7 @@
 <img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Anmerkung">
 </td>
 <td class="content">
-Die ersten drei Berechtigungen sind für HA-Paare nicht erforderlich.
+Für HA-Paare in einer einzelnen Zone sind keine Berechtigungen erforderlich.
 </td>
 </tr>
 </table>
@@ -2311,6 +2312,7 @@ Die ersten drei Berechtigungen sind für HA-Paare nicht erforderlich.
 </ol>
 </div>
 <div class="paragraph">
+<div class="title">Ergebnis</div>
 <p>Sie verfügen über ein neues Cloud Volumes ONTAP System, das so konfiguriert ist, dass Sie Ihren vom Kunden gemanagten Schlüssel zur Datenverschlüsselung nutzen können.</p>
 </div>
 </div>

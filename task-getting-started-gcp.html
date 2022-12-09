@@ -2027,7 +2027,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-17 07:57:49 +0000">11/17/2022</time>
+    <time datetime="2022-12-09 17:44:16 +0000">12/09/2022</time>
     
   
 
@@ -2041,19 +2041,21 @@
 <p>Erste Schritte mit Cloud Volumes ONTAP für GCP</p>
 </div>
 <div class="paragraph quick-margin-para">
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png" alt="Eins"></span> Einen Konnektor erstellen</div>
 <p>Wenn Sie keine haben <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html" target="_blank" rel="noopener">"Stecker"</a> Dennoch muss ein Kontoadministrator einen erstellen. <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html" target="_blank" rel="noopener">"Connector in GCP erstellen"</a>.</p>
 </div>
 <div class="paragraph quick-margin-para">
 <p>Wenn Sie Ihre erste Cloud Volumes ONTAP-Arbeitsumgebung erstellen, werden Sie von BlueXP (früher Cloud Manager) aufgefordert, einen Connector bereitzustellen, falls noch nicht vorhanden ist.</p>
 </div>
 <div class="paragraph quick-margin-para">
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png" alt="Zwei"></span> Planen Sie Ihre Konfiguration</div>
 <p>BlueXP bietet vorkonfigurierte Pakete, die Ihren Workload-Anforderungen entsprechen, oder Sie können eine eigene Konfiguration erstellen. Wenn Sie sich für eine eigene Konfiguration entscheiden, sollten Sie sich mit den verfügbaren Optionen vertraut machen.</p>
 </div>
 <div class="paragraph quick-margin-para">
 <p><a href="task-planning-your-config-gcp.html">"Erfahren Sie mehr über die Planung der Konfiguration"</a>.</p>
 </div>
-<div class="olist arabic">
-<div class="title">&lt;span class=„image“&gt;&lt;img src="<a href="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png"" class="bare">https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png"</a> alt=„drei“&gt;&lt;/span&gt; Einrichten des Netzwerks</div>
+<div class="olist arabic quick-margin-list">
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png" alt="Drittens"></span> Richten Sie Ihr Netzwerk ein</div>
 <ol class="arabic">
 <li>
 <p>Stellen Sie sicher, dass Ihre VPC und Subnetze die Konnektivität zwischen dem Connector und Cloud Volumes ONTAP unterstützen.</p>
@@ -2079,6 +2081,7 @@
 <p><a href="reference-networking-gcp.html">"Erfahren Sie mehr über Netzwerkanforderungen"</a>.</p>
 </div>
 <div class="paragraph quick-margin-para">
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png" alt="Vier"></span> Erstellen eines Servicekontos</div>
 <p>Für Cloud Volumes ONTAP ist ein Google Cloud-Servicekonto aus zwei Gründen erforderlich. Die erste lautet, wenn Sie aktivieren <a href="concept-data-tiering.html">"Daten-Tiering"</a> Tiering selten genutzter Daten auf kostengünstigen Objekt-Storage in Google Cloud. Die zweite lautet, wenn Sie den aktivieren <a href="https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-backup-to-cloud.html" target="_blank" rel="noopener">"Cloud-Backup-Service"</a> Um Volumes auf kostengünstigen Objekt-Storage zu sichern.</p>
 </div>
 <div class="paragraph quick-margin-para">
@@ -2088,9 +2091,10 @@
 <p><a href="task-creating-gcp-service-account.html">"Lesen Sie Schritt-für-Schritt-Anleitungen"</a>.</p>
 </div>
 <div class="paragraph quick-margin-para">
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png" alt="Fünf"></span> Aktivieren Sie Google Cloud-APIs</div>
 <p><a href="https://cloud.google.com/apis/docs/getting-started#enabling_apis" target="_blank" rel="noopener">"Aktivieren Sie die folgenden Google Cloud APIs in Ihrem Projekt"</a>. Diese APIs sind für die Implementierung des Connectors und der Cloud Volumes ONTAP erforderlich.</p>
 </div>
-<div class="ulist">
+<div class="ulist quick-margin-list">
 <ul>
 <li>
 <p>Cloud Deployment Manager V2-API</p>
@@ -2110,6 +2114,7 @@
 </ul>
 </div>
 <div class="paragraph quick-margin-para">
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png" alt="Sechs"></span> Starten Sie Cloud Volumes ONTAP mit BlueXP</div>
 <p>Klicken Sie auf <strong>Arbeitsumgebung hinzufügen</strong>, wählen Sie den Systemtyp aus, den Sie bereitstellen möchten, und führen Sie die Schritte im Assistenten aus. <a href="task-deploying-gcp.html">"Lesen Sie Schritt-für-Schritt-Anleitungen"</a>.</p>
 </div>
 <div class="ulist">

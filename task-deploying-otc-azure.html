@@ -2027,7 +2027,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-17 07:57:49 +0000">11/17/2022</time>
+    <time datetime="2022-12-09 17:44:16 +0000">12/09/2022</time>
     
   
 
@@ -2037,10 +2037,13 @@
 
 </p>
 
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph lead">
 <p>Sie können ein Single-Node-System oder ein HA-Paar in Azure starten, indem Sie eine Cloud Volumes ONTAP-Arbeitsumgebung in BlueXP erstellen.</p>
 </div>
 <div class="paragraph">
+<div class="title">Was Sie benötigen</div>
 <p>Um eine Arbeitsumgebung zu schaffen, benötigen Sie Folgendes.</p>
 </div>
 <div id="licensing" class="ulist">
@@ -2073,6 +2076,7 @@
 </ul>
 </div>
 <div class="paragraph">
+<div class="title">Über diese Aufgabe</div>
 <p>Wenn BlueXP in Azure ein Cloud Volumes ONTAP-System erstellt, werden mehrere Azure-Objekte erstellt, z. B. eine Ressourcengruppe, Netzwerkschnittstellen und Speicherkonten. Sie können eine Zusammenfassung der Ressourcen am Ende des Assistenten überprüfen.</p>
 </div>
 <div class="admonitionblock warning">
@@ -2093,6 +2097,14 @@
 </tr>
 </table>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="starten-eines-cloud-volumes-ontap-systems-mit-einem-node-in-azure">Starten eines Cloud Volumes ONTAP Systems mit einem Node in Azure</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Wenn Sie ein Cloud Volumes ONTAP-System mit einem Node in Azure starten möchten, müssen Sie in BlueXP eine Arbeitsumgebung mit einem einzelnen Knoten erstellen.</p>
+</div>
 <div class="olist arabic">
 <div class="title">Schritte</div>
 <ol class="arabic">
@@ -2103,7 +2115,7 @@
 <p><a id="Subscribe"></a>Klicken Sie auf der Bildschirmseite auf <strong>Arbeitsumgebung hinzufügen</strong> und folgen Sie den Anweisungen.</p>
 </li>
 <li>
-<p><strong>Wählen Sie einen Standort</strong>: Wählen Sie <strong>Microsoft Azure</strong> und <strong>Cloud Volumes ONTAP Single Node</strong> oder <strong>Cloud Volumes ONTAP High Availability</strong>.</p>
+<p><strong>Wählen Sie einen Standort</strong>: Wählen Sie <strong>Microsoft Azure</strong> und <strong>Cloud Volumes ONTAP Single Node</strong>.</p>
 </li>
 <li>
 <p>Wenn Sie dazu aufgefordert werden, <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-azure.html" target="_blank" rel="noopener">"Einen Konnektor erstellen"</a>.</p>
@@ -2198,9 +2210,6 @@ Your browser does not support the video tag.
 <td class="tableblock halign-left valign-top"><p class="tableblock">Ressourcengruppe</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Erstellen Sie eine neue Ressourcengruppe für Cloud Volumes ONTAP, oder verwenden Sie eine vorhandene Ressourcengruppe. Als Best Practice empfiehlt es sich, eine neue, dedizierte Ressourcengruppe für Cloud Volumes ONTAP zu verwenden. Es ist zwar möglich, Cloud Volumes ONTAP in einer vorhandenen, gemeinsam genutzten Ressourcengruppe bereitzustellen, jedoch wird dies aufgrund des Risikos eines Datenverlusts nicht empfohlen. Weitere Informationen finden Sie in der oben stehenden Warnung.</p>
-</div>
-<div class="paragraph">
-<p>Sie müssen für jedes Cloud Volumes ONTAP HA-Paar, das Sie in Azure implementieren, eine dedizierte Ressourcengruppe verwenden. Es wird nur ein HA-Paar in einer Ressourcengruppe unterstützt. Bei BlueXP treten Verbindungsprobleme auf, wenn Sie versuchen, ein zweites Cloud Volumes ONTAP HA-Paar in einer Azure Ressourcengruppe bereitzustellen.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -2450,6 +2459,7 @@ Wenn für die ausgewählte Version eine neuere Version von Release Candidate, Ge
 </ol>
 </div>
 <div class="paragraph">
+<div class="title">Ergebnis</div>
 <p>BlueXP implementiert das Cloud Volumes ONTAP-System. Sie können den Fortschritt in der Timeline verfolgen.</p>
 </div>
 <div class="paragraph">
@@ -2471,6 +2481,419 @@ Wenn für die ausgewählte Version eine neuere Version von Release Candidate, Ge
 </div>
 </li>
 </ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="starten-eines-cloud-volumes-ontap-ha-paars-in-azure">Starten eines Cloud Volumes ONTAP HA-Paars in Azure</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Wenn Sie ein Cloud Volumes ONTAP HA-Paar in Azure starten möchten, müssen Sie eine HA-Arbeitsumgebung in BlueXP erstellen.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Schritte</div>
+<ol class="arabic">
+<li>
+<p>Wählen Sie im linken Navigationsmenü die Option <strong>Speicherung &gt; Leinwand</strong>.</p>
+</li>
+<li>
+<p><a id="Subscribe"></a>Klicken Sie auf der Bildschirmseite auf <strong>Arbeitsumgebung hinzufügen</strong> und folgen Sie den Anweisungen.</p>
+</li>
+<li>
+<p>Wenn Sie dazu aufgefordert werden, <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-azure.html" target="_blank" rel="noopener">"Einen Konnektor erstellen"</a>.</p>
+</li>
+<li>
+<p><strong>Details und Anmeldeinformationen</strong>: Optional können Sie die Azure-Anmeldedaten und das Abonnement ändern, einen Clusternamen angeben, bei Bedarf Tags hinzufügen und dann Anmeldedaten angeben.</p>
+<div class="paragraph">
+<p>In der folgenden Tabelle werden Felder beschrieben, für die Sie möglicherweise Hilfe benötigen:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Feld</th>
+<th class="tableblock halign-left valign-top">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name der Arbeitsumgebung</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BlueXP verwendet den Namen der Arbeitsumgebung, um sowohl das Cloud Volumes ONTAP-System als auch die virtuelle Azure-Maschine zu benennen. Der Name wird auch als Präfix für die vordefinierte Sicherheitsgruppe verwendet, wenn Sie diese Option auswählen.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tags Für Ressourcengruppen</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tags sind Metadaten für Ihre Azure Ressourcen. Wenn Sie in dieses Feld Tags eingeben, fügt BlueXP diese der Ressourcengruppe hinzu, die dem Cloud Volumes ONTAP-System zugeordnet ist. Sie können bis zu vier Tags aus der Benutzeroberfläche hinzufügen, wenn Sie eine Arbeitsumgebung erstellen. Nach der Erstellung können Sie weitere hinzufügen. Beachten Sie, dass die API Sie beim Erstellen einer Arbeitsumgebung nicht auf vier Tags beschränkt. Informationen zu Tags finden Sie unter <a href="https://azure.microsoft.com/documentation/articles/resource-group-using-tags/" target="_blank" rel="noopener">"Microsoft Azure-Dokumentation: Verwenden von Tags zur Organisation Ihrer Azure-Ressourcen"</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Benutzername und Passwort</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dies sind die Anmeldeinformationen für das Cloud Volumes ONTAP Cluster-Administratorkonto. Sie können diese Anmeldedaten für die Verbindung mit Cloud Volumes ONTAP über System Manager oder dessen CLI verwenden. Behalten Sie den Standardbenutzernamen „<em>admin</em>“ bei, oder ändern Sie ihn in einen benutzerdefinierten Benutzernamen.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="Video"></a>Anmeldeinformationen bearbeiten</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sie können verschiedene Azure Zugangsdaten und ein anderes Azure Abonnement für dieses Cloud Volumes ONTAP System wählen. Sie müssen ein Azure Marketplace Abonnement mit dem ausgewählten Azure Abonnement verknüpfen, um ein Pay-as-you-go Cloud Volumes ONTAP System zu implementieren. <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-azure-accounts.html" target="_blank" rel="noopener">"Hier erfahren Sie, wie Sie Anmeldedaten hinzufügen"</a>.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Im folgenden Video wird gezeigt, wie Sie ein Marketplace-Abonnement zu einem Azure-Abonnement verknüpfen:</p>
+</div>
+<div class="videoblock">
+<div class="content">
+<video src="./media/video_subscribing_azure.mp4" width="848" height="480" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Dienste</strong>: Lassen Sie die Dienste aktiviert oder deaktivieren Sie die einzelnen Dienste, die Sie nicht mit Cloud Volumes ONTAP verwenden möchten.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-data-sense/concept-cloud-compliance.html" target="_blank" rel="noopener">"Erfahren Sie mehr über Cloud Data Sense"</a></p>
+</li>
+<li>
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-backup-to-cloud.html" target="_blank" rel="noopener">"Weitere Informationen zu Cloud Backup"</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>* HA-Bereitstellungsmodelle*:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Wählen Sie <strong>Single Availability Zone</strong> oder <strong>Multiple Availability Zone</strong> aus.</p>
+</li>
+<li>
+<p><strong>Lage und Konnektivität</strong> (Single AZ) und <strong>Region und Konnektivität</strong> (mehrere AZS)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Wählen Sie für eine einzelne AZ eine Region, eine Vnet und ein Subnetz aus.</p>
+</li>
+<li>
+<p>Wählen Sie für mehrere AZS eine Region, vnet, Subnetz, Zone für Node 1 und Zone für Node 2 aus.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Aktivieren Sie das Kontrollkästchen * Ich habe die Netzwerkverbindung verifiziert&#8230;&#8203;*.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><strong>Konnektivität</strong>: Wählen Sie eine neue oder bestehende Ressourcengruppe und wählen Sie dann aus, ob Sie die vordefinierte Sicherheitsgruppe verwenden oder Ihre eigene verwenden möchten.</p>
+<div class="paragraph">
+<p>In der folgenden Tabelle werden Felder beschrieben, für die Sie möglicherweise Hilfe benötigen:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Feld</th>
+<th class="tableblock halign-left valign-top">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Verfügbarkeitszone</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bei Single-Node-Systemen können Sie die Verfügbarkeitszone auswählen, in der Sie Cloud Volumes ONTAP implementieren möchten. Wenn Sie keine AZ auswählen, wählt BlueXP eine für Sie aus.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ressourcengruppe</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Erstellen Sie eine neue Ressourcengruppe für Cloud Volumes ONTAP, oder verwenden Sie eine vorhandene Ressourcengruppe. Als Best Practice empfiehlt es sich, eine neue, dedizierte Ressourcengruppe für Cloud Volumes ONTAP zu verwenden. Es ist zwar möglich, Cloud Volumes ONTAP in einer vorhandenen, gemeinsam genutzten Ressourcengruppe bereitzustellen, jedoch wird dies aufgrund des Risikos eines Datenverlusts nicht empfohlen. Weitere Informationen finden Sie in der oben stehenden Warnung.</p>
+</div>
+<div class="paragraph">
+<p>Sie müssen für jedes Cloud Volumes ONTAP HA-Paar, das Sie in Azure implementieren, eine dedizierte Ressourcengruppe verwenden. Es wird nur ein HA-Paar in einer Ressourcengruppe unterstützt. Bei BlueXP treten Verbindungsprobleme auf, wenn Sie versuchen, ein zweites Cloud Volumes ONTAP HA-Paar in einer Azure Ressourcengruppe bereitzustellen.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/tip.svg" alt="Hinweis">
+</td>
+<td class="content">
+Wenn im Azure Konto, das Sie verwenden, der angezeigt wird <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-azure.html" target="_blank" rel="noopener">"Erforderliche Berechtigungen"</a>, BlueXP entfernt Cloud Volumes ONTAP-Ressourcen aus einer Ressourcengruppe, bei Ausfall oder Löschung der Bereitstellung.
+</td>
+</tr>
+</table>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sicherheitsgruppe wurde generiert</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Wenn Sie BlueXP die Sicherheitsgruppe für Sie generieren lassen, müssen Sie festlegen, wie Sie den Datenverkehr zulassen:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Wenn Sie <strong>Selected vnet Only</strong> wählen, ist die Quelle für eingehenden Datenverkehr der Subnetz-Bereich des ausgewählten vnet und der Subnetz-Bereich des vnet, in dem sich der Connector befindet. Dies ist die empfohlene Option.</p>
+</li>
+<li>
+<p>Wenn Sie <strong>Alle VNets</strong> wählen, ist die Quelle für eingehenden Datenverkehr der IP-Bereich 0.0.0.0/0.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Verwenden Sie vorhandene</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wenn Sie eine vorhandene Sicherheitsgruppe auswählen, muss diese die Cloud Volumes ONTAP-Anforderungen erfüllen. <a href="reference-networking-azure.html#security-group-rules-for-cloud-volumes-ontap">"Zeigen Sie die Standardsicherheitsgruppe an"</a>.</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><strong>Charging Methods and NSS Account</strong>: Geben Sie an, welche Ladungsoption Sie mit diesem System verwenden möchten, und geben Sie dann ein NetApp Support Site Konto an.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="concept-licensing.html">"Informieren Sie sich über Lizenzoptionen für Cloud Volumes ONTAP"</a>.</p>
+</li>
+<li>
+<p><a href="task-set-up-licensing-azure.html">"Erfahren Sie, wie Sie eine Lizenzierung einrichten"</a>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Vorkonfigurierte Pakete</strong>: Wählen Sie eines der Pakete aus, um ein Cloud Volumes ONTAP-System schnell bereitzustellen, oder klicken Sie auf <strong>Konfiguration ändern</strong>.</p>
+<div class="paragraph">
+<p>Wenn Sie eines der Pakete auswählen, müssen Sie nur ein Volume angeben und dann die Konfiguration prüfen und genehmigen.</p>
+</div>
+</li>
+<li>
+<p><strong>Lizenzierung</strong>: Ändern Sie die Cloud Volumes ONTAP-Version nach Bedarf und wählen Sie einen virtuellen Maschinentyp.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Anmerkung">
+</td>
+<td class="content">
+Wenn für die ausgewählte Version eine neuere Version von Release Candidate, General Availability oder Patch Release verfügbar ist, aktualisiert BlueXP das System auf diese Version, wenn die Arbeitsumgebung erstellt wird. Das Update erfolgt beispielsweise, wenn Sie Cloud Volumes ONTAP 9.10.1 und 9.10.1 P4 auswählen. Das Update erfolgt nicht von einem Release zum anderen, z. B. von 9.6 bis 9.7.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p><strong>Vom Azure Marketplace abonnieren</strong>: Folgen Sie den Schritten, wenn BlueXP programmatische Bereitstellungen von Cloud Volumes ONTAP nicht aktivieren kann.</p>
+</li>
+<li>
+<p><strong>Zugrunde liegende Storage-Ressourcen</strong>: Wählen Sie die Einstellungen für das anfängliche Aggregat: Einen Festplattentyp, eine Größe für jede Festplatte und ob Daten-Tiering zu Blob-Storage aktiviert werden soll.</p>
+<div class="paragraph">
+<p>Beachten Sie Folgendes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Der Festplattentyp ist für das anfängliche Volume. Sie können einen anderen Festplattentyp für nachfolgende Volumes auswählen.</p>
+</li>
+<li>
+<p>Die Festplattengröße ist für alle Festplatten im ursprünglichen Aggregat und für alle zusätzlichen Aggregate bestimmt, die BlueXP erzeugt, wenn Sie die einfache Bereitstellungsoption verwenden. Mithilfe der erweiterten Zuweisungsoption können Sie Aggregate erstellen, die eine andere Festplattengröße verwenden.</p>
+<div class="paragraph">
+<p>Hilfe zur Auswahl einer Festplattengröße finden Sie unter <a href="task-planning-your-config-azure.html#sizing-your-system-in-azure">"Dimensionierung Ihres Systems in Azure"</a>.</p>
+</div>
+</li>
+<li>
+<p>Sie können eine bestimmte Volume-Tiering-Richtlinie auswählen, wenn Sie ein Volume erstellen oder bearbeiten.</p>
+</li>
+<li>
+<p>Wenn Sie das Daten-Tiering deaktivieren, können Sie es bei nachfolgenden Aggregaten aktivieren.</p>
+<div class="paragraph">
+<p><a href="concept-data-tiering.html">"Weitere Informationen zum Daten-Tiering"</a>.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Schreibgeschwindigkeit &amp; WURM</strong> (nur Systeme mit einem Knoten): Wählen Sie <strong>normale</strong> oder <strong>hohe</strong> Schreibgeschwindigkeit und aktivieren Sie ggf. den WORM-Speicher (Write Once, Read Many).</p>
+<div class="paragraph">
+<p><a href="concept-write-speed.html">"Erfahren Sie mehr über Schreibgeschwindigkeit"</a>.</p>
+</div>
+<div class="paragraph">
+<p>WORM kann nicht aktiviert werden, wenn Daten-Tiering aktiviert wurde.</p>
+</div>
+<div class="paragraph">
+<p><a href="concept-worm.html">"Erfahren Sie mehr über WORM Storage"</a>.</p>
+</div>
+</li>
+<li>
+<p><strong>Secure Communication to Storage &amp; WORM</strong> (nur HA): Wählen Sie, ob eine HTTPS-Verbindung zu Azure-Speicherkonten aktiviert und ggf. WORM-Speicher (Write Once, Read Many) aktiviert werden soll.</p>
+<div class="paragraph">
+<p>Die HTTPS-Verbindung besteht aus einem Cloud Volumes ONTAP 9.7 HA-Paar zu Azure Storage-Konten. Beachten Sie, dass die Aktivierung dieser Option sich auf die Schreib-Performance auswirken kann. Sie können die Einstellung nicht ändern, nachdem Sie die Arbeitsumgebung erstellt haben.</p>
+</div>
+<div class="paragraph">
+<p><a href="concept-worm.html">"Erfahren Sie mehr über WORM Storage"</a>.</p>
+</div>
+<div class="paragraph">
+<p>WORM kann nicht aktiviert werden, wenn Daten-Tiering aktiviert wurde.</p>
+</div>
+<div class="paragraph">
+<p><a href="concept-worm.html">"Erfahren Sie mehr über WORM Storage"</a>.</p>
+</div>
+</li>
+<li>
+<p><strong>Create Volume</strong>: Geben Sie Details für den neuen Datenträger ein oder klicken Sie auf <strong>Skip</strong>.</p>
+<div class="paragraph">
+<p><a href="concept-client-protocols.html">"Hier erhalten Sie Informationen zu den unterstützten Client-Protokollen und -Versionen"</a>.</p>
+</div>
+<div class="paragraph">
+<p>Einige der Felder auf dieser Seite sind selbsterklärend. In der folgenden Tabelle werden Felder beschrieben, für die Sie möglicherweise Hilfe benötigen:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Feld</th>
+<th class="tableblock halign-left valign-top">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Größe</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Die maximale Größe, die Sie eingeben können, hängt weitgehend davon ab, ob Sie Thin Provisioning aktivieren, wodurch Sie ein Volume erstellen können, das größer ist als der derzeit verfügbare physische Storage.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zugriffskontrolle (nur für NFS)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Eine Exportrichtlinie definiert die Clients im Subnetz, die auf das Volume zugreifen können. Standardmäßig gibt BlueXP einen Wert ein, der Zugriff auf alle Instanzen im Subnetz bietet.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Berechtigungen und Benutzer/Gruppen (nur für CIFS)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mit diesen Feldern können Sie die Zugriffsebene auf eine Freigabe für Benutzer und Gruppen steuern (auch Zugriffssteuerungslisten oder ACLs genannt). Sie können lokale oder domänenbasierte Windows-Benutzer oder -Gruppen oder UNIX-Benutzer oder -Gruppen angeben. Wenn Sie einen Domain-Windows-Benutzernamen angeben, müssen Sie die Domäne des Benutzers mit dem Format Domain\Benutzername einschließen.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Snapshot-Richtlinie</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Eine Snapshot Kopierrichtlinie gibt die Häufigkeit und Anzahl der automatisch erstellten NetApp Snapshot Kopien an. Bei einer NetApp Snapshot Kopie handelt es sich um ein zeitpunktgenaues Filesystem Image, das keine Performance-Einbußen aufweist und minimalen Storage erfordert. Sie können die Standardrichtlinie oder keine auswählen. Sie können keine für transiente Daten auswählen, z. B. tempdb für Microsoft SQL Server.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Erweiterte Optionen (nur für NFS)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wählen Sie eine NFS-Version für das Volume: Entweder NFSv3 oder NFSv4.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Initiatorgruppe und IQN (nur für iSCSI)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ISCSI-Storage-Ziele werden LUNs (logische Einheiten) genannt und Hosts als Standard-Block-Geräte präsentiert. Initiatorgruppen sind Tabellen mit iSCSI-Host-Node-Namen und steuern, welche Initiatoren Zugriff auf welche LUNs haben. ISCSI-Ziele werden über standardmäßige Ethernet-Netzwerkadapter (NICs), TCP Offload Engine (TOE) Karten mit Software-Initiatoren, konvergierte Netzwerkadapter (CNAs) oder dedizierte Host Bust Adapter (HBAs) mit dem Netzwerk verbunden und durch iSCSI Qualified Names (IQNs) identifiziert. Wenn Sie ein iSCSI-Volume erstellen, erstellt BlueXP automatisch eine LUN für Sie. Wir haben es einfach gemacht, indem wir nur eine LUN pro Volumen erstellen, so gibt es keine Verwaltung beteiligt. Nachdem Sie das Volume erstellt haben, <a href="task-connect-lun.html">"Verwenden Sie den IQN, um von den Hosts eine Verbindung zur LUN herzustellen"</a>.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Die folgende Abbildung zeigt die für das CIFS-Protokoll ausgefüllte Volume-Seite:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_cot_vol.gif" alt="Screenshot: Zeigt die Seite Volume, die für eine Cloud Volumes ONTAP Instanz ausgefüllt wurde."></span></p>
+</div>
+</li>
+<li>
+<p><strong>CIFS Setup</strong>: Wenn Sie das CIFS-Protokoll wählen, richten Sie einen CIFS-Server ein.</p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Feld</th>
+<th class="tableblock halign-left valign-top">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primäre und sekundäre DNS-IP-Adresse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Die IP-Adressen der DNS-Server, die die Namensauflösung für den CIFS-Server bereitstellen. Die aufgeführten DNS-Server müssen die Servicestandortdatensätze (SRV) enthalten, die zum Auffinden der Active Directory LDAP-Server und Domänencontroller für die Domain, der der CIFS-Server beitreten wird, erforderlich sind.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Active Directory-Domäne, der Sie beitreten möchten</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Der FQDN der Active Directory (AD)-Domain, der der CIFS-Server beitreten soll.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Anmeldeinformationen, die zur Aufnahme in die Domäne autorisiert sind</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Der Name und das Kennwort eines Windows-Kontos mit ausreichenden Berechtigungen zum Hinzufügen von Computern zur angegebenen Organisationseinheit (OU) innerhalb der AD-Domäne.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CIFS-Server-BIOS-Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ein CIFS-Servername, der in der AD-Domain eindeutig ist.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Organisationseinheit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Die Organisationseinheit innerhalb der AD-Domain, die dem CIFS-Server zugeordnet werden soll. Der Standardwert lautet CN=Computers. Um Azure AD-Domänendienste als AD-Server für Cloud Volumes ONTAP zu konfigurieren, müssen Sie in diesem Feld <strong>OU=AADDC-Computer</strong> oder <strong>OU=AADDC-Benutzer</strong> eingeben.https://docs.microsoft.com/en-us/azure/active-directory-domain-services/create-ou["Azure-Dokumentation: Erstellen Sie eine Organisationseinheit (Organisationseinheit, OU) in einer von Azure AD-Domänendiensten gemanagten Domäne"^]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DNS-Domäne</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Die DNS-Domain für die Cloud Volumes ONTAP Storage Virtual Machine (SVM). In den meisten Fällen entspricht die Domäne der AD-Domäne.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NTP-Server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wählen Sie <strong>Active Directory-Domäne verwenden</strong> aus, um einen NTP-Server mit Active Directory-DNS zu konfigurieren. Wenn Sie einen NTP-Server mit einer anderen Adresse konfigurieren müssen, sollten Sie die API verwenden. Siehe <a href="https://docs.netapp.com/us-en/cloud-manager-automation/index.html" target="_blank" rel="noopener">"BlueXP Automation Dokumentation"</a> Entsprechende Details. Beachten Sie, dass Sie einen NTP-Server nur beim Erstellen eines CIFS-Servers konfigurieren können. Er ist nicht konfigurierbar, nachdem Sie den CIFS-Server erstellt haben.</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><strong>Nutzungsprofil, Festplattentyp und Tiering-Richtlinie</strong>: Wählen Sie aus, ob Sie Funktionen für die Storage-Effizienz aktivieren und gegebenenfalls die Volume Tiering-Richtlinie ändern möchten.</p>
+<div class="paragraph">
+<p>Weitere Informationen finden Sie unter <a href="task-planning-your-config-azure.html#choosing-a-volume-usage-profile">"Allgemeines zu Volume-Nutzungsprofilen"</a> Und <a href="concept-data-tiering.html">"Data Tiering - Übersicht"</a>.</p>
+</div>
+</li>
+<li>
+<p><strong>Überprüfen &amp; Genehmigen</strong>: Überprüfen und bestätigen Sie Ihre Auswahl.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Überprüfen Sie die Details zur Konfiguration.</p>
+</li>
+<li>
+<p>Klicken Sie auf <strong>Weitere Informationen</strong>, um weitere Informationen zum Support und den Azure-Ressourcen zu erhalten, die BlueXP kaufen wird.</p>
+</li>
+<li>
+<p>Aktivieren Sie die Kontrollkästchen <strong>Ich verstehe&#8230;&#8203;</strong>.</p>
+</li>
+<li>
+<p>Klicken Sie Auf <strong>Go</strong>.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<div class="title">Ergebnis</div>
+<p>BlueXP implementiert das Cloud Volumes ONTAP-System. Sie können den Fortschritt in der Timeline verfolgen.</p>
+</div>
+<div class="paragraph">
+<p>Wenn Sie Probleme bei der Implementierung des Cloud Volumes ONTAP Systems haben, lesen Sie die Fehlermeldung. Sie können auch die Arbeitsumgebung auswählen und auf <strong>Umgebung neu erstellen</strong> klicken.</p>
+</div>
+<div class="paragraph">
+<p>Weitere Hilfe finden Sie unter <a href="https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/guideme-tab" target="_blank" rel="noopener">"NetApp Cloud Volumes ONTAP Support"</a>.</p>
+</div>
+<div class="ulist">
+<div class="title">Nachdem Sie fertig sind</div>
+<ul>
+<li>
+<p>Wenn Sie eine CIFS-Freigabe bereitgestellt haben, erteilen Sie Benutzern oder Gruppen Berechtigungen für die Dateien und Ordner, und überprüfen Sie, ob diese Benutzer auf die Freigabe zugreifen und eine Datei erstellen können.</p>
+</li>
+<li>
+<p>Wenn Sie Kontingente auf Volumes anwenden möchten, verwenden Sie System Manager oder die CLI.</p>
+<div class="paragraph">
+<p>Mithilfe von Quotas können Sie den Speicherplatz und die Anzahl der von einem Benutzer, einer Gruppe oder qtree verwendeten Dateien einschränken oder nachverfolgen.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
 </div>
 
     </article>
