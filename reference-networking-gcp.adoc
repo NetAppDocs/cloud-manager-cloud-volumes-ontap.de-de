@@ -184,18 +184,15 @@ Anweisungen finden Sie unter https://cloud.google.com/vpn/docs/concepts/overview
 
 == Anforderungen an den Steckverbinder
 
-Richten Sie Ihr Netzwerk ein, damit der Connector Ressourcen und Prozesse in Ihrer Public Cloud-Umgebung managen kann. Der wichtigste Schritt besteht darin, ausgehenden Internetzugriff auf verschiedene Endpunkte zu gewährleisten.
-
-
-TIP: Wenn Ihr Netzwerk für die gesamte Kommunikation mit dem Internet einen Proxyserver verwendet, können Sie den Proxyserver über die Seite Einstellungen angeben. Siehe https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-configuring-proxy.html["Konfigurieren des Connectors für die Verwendung eines Proxy-Servers"^].
+Richten Sie Ihr Netzwerk ein, damit der Connector Ressourcen und Prozesse innerhalb Ihrer Public Cloud-Umgebung managen kann. Abgesehen von einem virtuellen Netzwerk und einem Subnetz für den Connector müssen Sie sicherstellen, dass die folgenden Anforderungen erfüllt sind.
 
 
 
 === Verbindung zu Zielnetzwerken
 
-Für einen Konnektor ist eine Netzwerkverbindung zu den VPCs erforderlich, in denen Sie Cloud Volumes ONTAP bereitstellen möchten. Bei der Implementierung eines HA-Paars benötigt der Connector nur eine Verbindung zu VPC-0.
+Ein Connector erfordert eine Netzwerkverbindung zu der Art der Arbeitsumgebung, die Sie erstellen, und den Diensten, die Sie aktivieren möchten.
 
-Wenn Sie Cloud Volumes ONTAP in einer vom Connector getrennten VPC implementieren möchten, müssen Sie VPC-Netzwerk-Peering einrichten. https://cloud.google.com/vpc/docs/vpc-peering["Erfahren Sie mehr über VPC Network Peering"^]
+Wenn Sie beispielsweise einen Konnektor in Ihrem Unternehmensnetzwerk installieren, müssen Sie eine VPN-Verbindung zum virtuellen Netzwerk einrichten, in dem Sie Cloud Volumes ONTAP starten.
 
 
 
@@ -229,6 +226,29 @@ NOTE: Der Connector kontaktiert derzeit „cloudmanager.cloud.netapp.com", er be
 
 | \https://cloudmanagerinfraprod.azurecr.io \https://*.blob.core.windows.net | Aktualisierung des Connectors und seiner Docker Komponenten. 
 |===
+
+
+=== Proxy-Server
+
+Wenn Ihr Unternehmen einen HTTP-Proxy für den gesamten ausgehenden Internet-Datenverkehr benötigt, informieren Sie sich über Ihren HTTP-Proxy:
+
+* IP-Adresse
+* Anmeldedaten
+* HTTPS-Zertifikat
+
+
+
+
+=== Sicherheitsgruppe
+
+Es gibt keinen eingehenden Datenverkehr zum Konnektor, es sei denn, Sie initiieren ihn oder wenn der Connector als Proxy für AutoSupport-Nachrichten verwendet wird. HTTP und HTTPS bieten den Zugriff auf https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html#the-local-user-interface["Lokale Benutzeroberfläche"], Die Sie in seltenen Fällen verwenden. SSH ist nur erforderlich, wenn Sie eine Verbindung zum Host zur Fehlerbehebung herstellen müssen.
+
+
+
+=== Einschränkung der IP-Adresse
+
+Es besteht ein möglicher Konflikt mit IP-Adressen im Bereich 172. https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-limitations.html["Erfahren Sie mehr über diese Einschränkung"].
+
 
 
 == Firewall-Regeln für Cloud Volumes ONTAP

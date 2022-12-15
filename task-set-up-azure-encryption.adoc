@@ -44,7 +44,7 @@ Azure HA Multi-Verfügbarkeitszone::
 +
 --
 * Alle Azure-Storage-Konten für Cloud Volumes ONTAP werden mit einem vom Kunden gemanagten Schlüssel verschlüsselt.^1^
-* Für Root-, Boot-, NVRAM-, Core- und Datenfestplatten verwendet Cloud Manager einen Festplattenverschlüsselungssatz, der das Management von Verschlüsselungsschlüsseln mit gemanagten Festplatten ermöglicht.
+* Für Root-, Boot-, NVRAM-, Core- und Datenfestplatten verwendet BlueXP einen Festplattenverschlüsselungssatz, der das Management von Verschlüsselungsschlüsseln mit verwalteten Laufwerken ermöglicht.
 * Neue Festplatten verwenden ebenfalls denselben Festplattenverschlüsselungssatz.
 
 
