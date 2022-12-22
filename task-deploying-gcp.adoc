@@ -88,7 +88,7 @@ Wählen Sie das Projekt aus, in dem Cloud Volumes ONTAP gespeichert werden soll.
 Wenn in der Dropdown-Liste keine weiteren Projekte angezeigt werden, haben Sie das BlueXP-Servicekonto noch nicht mit anderen Projekten verknüpft. Rufen Sie die Google Cloud-Konsole auf, öffnen Sie den IAM-Service und wählen Sie das Projekt aus. Fügen Sie dem Projekt das Servicekonto mit der Rolle BlueXP hinzu. Sie müssen diesen Schritt für jedes Projekt wiederholen.
 
 
-NOTE: Dies ist das Servicekonto, das Sie für BlueXP eingerichtet haben. link:task-creating-gcp-service-account.html["Wie auf dieser Seite beschrieben"].
+NOTE: Dies ist das Servicekonto, das Sie für BlueXP eingerichtet haben. link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html#set-up-a-service-account-for-the-connector["Wie auf dieser Seite beschrieben"^].
 
 Klicken Sie auf *Abonnement hinzufügen*, um die ausgewählten Anmeldeinformationen einem Abonnement zuzuordnen.
 
@@ -307,7 +307,7 @@ Wählen Sie das Projekt aus, in dem Cloud Volumes ONTAP gespeichert werden soll.
 Wenn in der Dropdown-Liste keine weiteren Projekte angezeigt werden, haben Sie das BlueXP-Servicekonto noch nicht mit anderen Projekten verknüpft. Rufen Sie die Google Cloud-Konsole auf, öffnen Sie den IAM-Service und wählen Sie das Projekt aus. Fügen Sie dem Projekt das Servicekonto mit der Rolle BlueXP hinzu. Sie müssen diesen Schritt für jedes Projekt wiederholen.
 
 
-NOTE: Dies ist das Servicekonto, das Sie für BlueXP eingerichtet haben. link:task-creating-gcp-service-account.html["Wie auf dieser Seite beschrieben"].
+NOTE: Dies ist das Servicekonto, das Sie für BlueXP eingerichtet haben. link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html#set-up-a-service-account-for-the-connector["Wie auf dieser Seite beschrieben"^].
 
 Klicken Sie auf *Abonnement hinzufügen*, um die ausgewählten Anmeldeinformationen einem Abonnement zuzuordnen.
 

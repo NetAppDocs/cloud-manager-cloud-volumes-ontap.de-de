@@ -4125,7 +4125,6 @@
   <block id="23b98688a84e3975fec56c5adda952e4" category="paragraph">Wählen Sie das Projekt aus, in dem Cloud Volumes ONTAP gespeichert werden soll. Das Standardprojekt ist das Projekt, in dem sich BlueXP befindet.</block>
   <block id="851527495c0afb57caeba39ab6e50d4f" category="paragraph">Wenn in der Dropdown-Liste keine weiteren Projekte angezeigt werden, haben Sie das BlueXP-Servicekonto noch nicht mit anderen Projekten verknüpft. Rufen Sie die Google Cloud-Konsole auf, öffnen Sie den IAM-Service und wählen Sie das Projekt aus. Fügen Sie dem Projekt das Servicekonto mit der Rolle BlueXP hinzu. Sie müssen diesen Schritt für jedes Projekt wiederholen.</block>
   <block id="380bfdc134190af310ad2f9812d7569f" category="inline-link-macro">Wie auf dieser Seite beschrieben</block>
-  <block id="f521dfd49dba963e7b19cc773f33be00" category="admonition">Dies ist das Servicekonto, das Sie für BlueXP eingerichtet haben. <block ref="d1082cc762c3232516ac569780f04ada" category="inline-link-macro-rx"></block>.</block>
   <block id="27d9b3c82bd8da92f73b89a66c20ba04" category="paragraph">Klicken Sie auf *Abonnement hinzufügen*, um die ausgewählten Anmeldeinformationen einem Abonnement zuzuordnen.</block>
   <block id="b878d292874b3ab2ea5568d71ba31a73" category="paragraph">Zum Erstellen eines nutzungsbasierten Cloud Volumes ONTAP Systems müssen Sie über GCP Marketplace ein GCP-Projekt für ein Cloud Volumes ONTAP Abonnement auswählen.</block>
   <block id="0b6a93a12e94b586f0634222ff996760" category="inline-link">Verknüpfen eines Marketplace-Abonnements mit GCP-Zugangsdaten</block>
@@ -4588,4 +4587,5 @@
   <block id="80df4292f7c986dbd0920bb576487060" category="paragraph">BlueXP kann jetzt Cloud Volumes ONTAP 9.12.0 in AWS und Google Cloud implementieren und verwalten.</block>
   <block id="abd10f7bee2f791a9e8f76bf98163c27" category="paragraph">BlueXP kann jetzt Cloud Volumes ONTAP 9.12.1 implementieren und verwalten, was auch Unterstützung für neue Funktionen und zusätzliche Regionen von Cloud-Providern umfasst.</block>
   <block id="fdfad4872e8eceed069f74f82808d36e" category="list-text">Für Root-, Boot-, NVRAM-, Core- und Datenfestplatten verwendet BlueXP einen Festplattenverschlüsselungssatz, der das Management von Verschlüsselungsschlüsseln mit verwalteten Laufwerken ermöglicht.</block>
+  <block id="da9740256f1fda9e06aa732d86702abc" category="admonition">Dies ist das Servicekonto, das Sie für BlueXP eingerichtet haben. <block ref="0f8a0ed359c33dd5dbb02a467fa98093" category="inline-link-macro-rx"></block>.</block>
 </blocks>
