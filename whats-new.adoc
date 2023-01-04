@@ -20,7 +20,7 @@ Die auf dieser Seite beschriebenen Verbesserungen beziehen sich nur auf BlueXP-F
 
 
 
-== 3 Januar 2023
+== Januar 2023
 
 Die folgenden Änderungen wurden mit der Version 3.9.25 des Connectors eingeführt.
 
@@ -50,7 +50,7 @@ Weitere Informationen zu den automatisch mit Cloud Volumes ONTAP installierten O
 
 BlueXP kann jetzt Cloud Volumes ONTAP 9.12.0 in AWS und Google Cloud implementieren und verwalten.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes["Erfahren Sie mehr über die neuen Funktionen in dieser Version von Cloud Volumes ONTAP"^].
+https://docs.netapp.com/us-en/cloud-volumes-ontap-9120-relnotes["Erfahren Sie mehr über die neuen Funktionen in dieser Version von Cloud Volumes ONTAP"^].
 
 
 
@@ -281,7 +281,7 @@ Die folgenden Änderungen wurden mit der Version 3.9.19 des Connectors eingefüh
 
 BlueXP kann jetzt Cloud Volumes ONTAP 9.11.1 implementieren und verwalten, was auch Unterstützung für neue Funktionen und zusätzliche Regionen von Cloud-Providern umfasst.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes["Erfahren Sie mehr über die neuen Funktionen in dieser Version von Cloud Volumes ONTAP"^]
+https://docs.netapp.com/us-en/cloud-volumes-ontap-9111-relnotes["Erfahren Sie mehr über die neuen Funktionen in dieser Version von Cloud Volumes ONTAP"^]
 
 
 
@@ -359,7 +359,7 @@ Die folgenden Änderungen wurden mit der Version 3.9.18 des Connectors eingefüh
 
 BlueXP kann jetzt Cloud Volumes ONTAP 9.11.0 bereitstellen und verwalten.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes["Erfahren Sie mehr über die neuen Funktionen in dieser Version von Cloud Volumes ONTAP"^].
+https://docs.netapp.com/us-en/cloud-volumes-ontap-9110-relnotes["Erfahren Sie mehr über die neuen Funktionen in dieser Version von Cloud Volumes ONTAP"^].
 
 
 
@@ -612,7 +612,7 @@ Die folgenden Änderungen wurden mit der Version 3.9.13 des Connectors eingefüh
 
 BlueXP kann jetzt Cloud Volumes ONTAP 9.10.1 bereitstellen und verwalten.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes["Erfahren Sie mehr über die neuen Funktionen in dieser Version von Cloud Volumes ONTAP"^].
+https://docs.netapp.com/us-en/cloud-volumes-ontap-9101-relnotes["Erfahren Sie mehr über die neuen Funktionen in dieser Version von Cloud Volumes ONTAP"^].
 
 
 
