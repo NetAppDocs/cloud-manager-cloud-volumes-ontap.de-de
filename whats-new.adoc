@@ -20,6 +20,28 @@ Die auf dieser Seite beschriebenen Verbesserungen beziehen sich nur auf BlueXP-F
 
 
 
+== 3 Januar 2023
+
+Die folgenden Änderungen wurden mit der Version 3.9.25 des Connectors eingeführt.
+
+
+
+=== Lizenzierungspakete in Google Cloud verfügbar
+
+Optimierte und kapazitätsbasierte Edge Cache Lizenzpakete stehen für Cloud Volumes ONTAP im Google Cloud Marketplace als Pay-as-you-go-Angebot oder als Jahresvertrag zur Verfügung.
+
+Siehe link:https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html#packages["Cloud Volumes ONTAP Lizenzierung"^].
+
+
+
+=== Standardkonfiguration für Cloud Volumes ONTAP
+
+Die MTEKM-Lizenz (Multi-Tenant Encryption Key Management) ist in neuen Cloud Volumes ONTAP Implementierungen nicht mehr enthalten.
+
+Weitere Informationen zu den automatisch mit Cloud Volumes ONTAP installierten ONTAP-Funktionslizenzen finden Sie unter link:https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/reference-default-configs.html["Standardkonfiguration für Cloud Volumes ONTAP"^].
+
+
+
 == Bis 15. Dezember 2022
 
 

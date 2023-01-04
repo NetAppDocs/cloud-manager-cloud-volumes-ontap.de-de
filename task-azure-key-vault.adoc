@@ -22,7 +22,6 @@ Bei Verwendung von AKV ist zu beachten, dass standardmäßig eine LIF der Daten-
 .Voraussetzungen
 * Cloud Volumes ONTAP muss Version 9.10.1 oder höher ausführen
 * Volume Encryption (VE)-Lizenz ist installiert. (NetApp Volume Encryption-Lizenz wird automatisch auf jedem Cloud Volumes ONTAP System installiert, das beim NetApp Support registriert ist).
-* Multi-Tenant Encryption Key Management-Lizenz (MTEKM) installiert
 * Sie müssen ein Cluster- oder SVM-Administrator sein
 * Ein Active Azure Abonnement
 
