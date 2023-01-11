@@ -1823,7 +1823,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-12-09 18:59:16 +0000">12/09/2022</time>
+    <time datetime="2023-01-11 17:43:44 +0000">01/11/2023</time>
     
   
 
@@ -1852,6 +1852,48 @@
 </div>
 </div>
 <div class="sect1">
+<h2 id="worm-storage-wird-aktiviert">WORM-Storage wird aktiviert</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Wie Sie WORM-Speicher aktivieren, hängt von der verwendeten Cloud Volumes ONTAP Version ab.</p>
+</div>
+<div class="sect2">
+<h3 id="version-9-10-1-und-höher">Version 9.10.1 und höher</h3>
+<div class="paragraph">
+<p>Ab Cloud Volumes ONTAP 9.10.1 haben Sie die Möglichkeit, WORM auf Volume-Ebene zu aktivieren oder zu deaktivieren. Welche MÖGLICHKEITEN Sie WORM aktivieren möchten, hängt von Ihren Anforderungen ab.</p>
+</div>
+<div class="paragraph">
+<p>Wenn Sie eine neue Cloud Volumes ONTAP Arbeitsumgebung erstellen, werden Sie aufgefordert, WORM-Speicher zu aktivieren oder zu deaktivieren:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Wenn Sie WORM-Speicher beim Erstellen einer Arbeitsumgebung aktivieren, ist für jedes mit BlueXP erstellte Volume WORM aktiviert. Aber Sie können System Manager oder die CLI verwenden, um Volumes zu erstellen, bei denen WORM deaktiviert ist.</p>
+<div class="paragraph">
+<p>Diese Option ist die gute Wahl, wenn Sie ein dediziertes System für WORM-Speicher erstellen möchten.</p>
+</div>
+</li>
+<li>
+<p>Wenn Sie WORM-Speicher beim Erstellen einer Arbeitsumgebung deaktivieren, ist für jedes Volumen, das Sie aus BlueXP erstellen, WORM deaktiviert. Allerdings können Sie mit System Manager oder CLI Volumes erstellen, bei denen WORM aktiviert ist.</p>
+<div class="paragraph">
+<p>Diese Option ist eine gute Wahl, wenn Sie verschiedene Volume-Typen auf demselben System kombinieren möchten.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Mit beiden Optionen sollten Sie dies tun <a href="#wird-geladen">Erfahren Sie, wie das Laden funktioniert</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="version-9-10-0-und-früher">Version 9.10.0 und früher</h3>
+<div class="paragraph">
+<p>Sie können WORM Storage auf einem Cloud Volumes ONTAP System aktivieren, wenn Sie eine neue Arbeitsumgebung erstellen. SIE können WORM Storage nicht auf einzelnen Volumes aktivieren --WORM muss auf Systemebene aktiviert sein. Sie kann nur aktiviert werden, wenn Sie die Arbeitsumgebung erstellen.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="wird-geladen">Wird Geladen</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -1875,32 +1917,6 @@
 </div>
 <div class="paragraph">
 <p><a href="https://cloud.netapp.com/pricing" target="_blank" rel="noopener">"Informieren Sie sich über die Preisgestaltung für WORM Storage"</a></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="worm-storage-wird-aktiviert">WORM-Storage wird aktiviert</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Sie können WORM Storage auf einem Cloud Volumes ONTAP System aktivieren, wenn Sie eine neue Arbeitsumgebung erstellen. Dies umfasst auch die Einstellung des Standardaufbewahrungszeitraums für Dateien.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloud-manager-cloud-volumes-ontap/images/note.svg" alt="Anmerkung">
-</td>
-<td class="content">
-SIE können WORM Storage nicht auf einzelnen Volumes aktivieren --WORM muss auf Systemebene aktiviert sein.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Die folgende Abbildung zeigt, wie WORM-Storage beim Erstellen einer Arbeitsumgebung aktiviert wird:</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="./media/screenshot_enable_worm.png" alt="Zeigt die WORM-Option an, die beim Erstellen einer neuen Arbeitsumgebung verfügbar ist."></span></p>
 </div>
 </div>
 </div>
@@ -1949,7 +1965,7 @@ SIE können WORM Storage nicht auf einzelnen Volumes aktivieren --WORM muss auf 
         <div class="n-footer__copyright">
           <ul class="n-footer__copyright-list">
             <li class="n-footer__copyright-link">
-              <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
+              <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2023 NetApp, Inc.</a>
             </li>
             <li class="n-footer__copyright-link">
               <a href="https://www.netapp.com/company/legal/terms-of-use/">Allgemeine Geschäftsbedingungen</a>
